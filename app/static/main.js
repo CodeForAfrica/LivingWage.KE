@@ -193,7 +193,7 @@ function update_output(){
         var output_statement = "Try out the fair wage tool and see how your pay reflects living costs in South Africa.";
         if ((output_percentage > 0) && (output_percentage < 75))
         {
-            output_statement = "You're paying too little given the living costs and the size of your domestic worker. Take time to reassess how much you're paying by using our tool.";
+            output_statement = "You're paying too little given the living costs and the size of your domestic worker's household. Take time to reassess how much you're paying by using our tool.";
             highlight_output('label-danger');
         }
         else if ((output_percentage >= 75) && (output_percentage < 90))
@@ -203,7 +203,7 @@ function update_output(){
         }
         else if ((output_percentage >= 90) && (output_percentage < 100))
         {
-            output_statement = "You're very close to paying a fair wage given the living costs and your employee's household size. Share your results!";
+            output_statement = "You're very close to paying a fair wage given the living costs and the size of your domestic worker's household. Share your results!";
             highlight_output('label-warning');
         }
         else
