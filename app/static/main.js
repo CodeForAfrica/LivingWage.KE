@@ -6,7 +6,7 @@ function calculate_transport(household_size){
     else
         var out = Math.round(trans_cost * 5 * 4.33);
     $("#transport-total").html("R" + out);
-    console.log("transport", out);
+//    console.log("transport", out);
     return out
 }
 
@@ -16,7 +16,7 @@ function calculate_food(household_size){
     // Suggests that this program covers at least 30% of daily requirements of the students - Department of Education
     var out = Math.round(food_cost * household_size * 30);
 
-    console.log("food", out);
+//    console.log("food", out);
     $("#food-total").html("R" + out);
     return out
 }
@@ -36,7 +36,7 @@ function calculate_rent(household_size){
         violence_comment = "High likelihood of experiencing gang violence and burglaries."
     else
         violence_comment = "Much lower likelihood of experiencing violence."
-    console.log("rent", out);
+//    console.log("rent", out);
     $("#rent-total").html("R" + out);
     return out
 }
@@ -46,9 +46,9 @@ function calculate_education(household_size){
     var education_cost = $("#education-cost").val()
     var out = education_cost * (kids);
     
-    console.log("educ", out);
-    console.log("kids", kids);
-    console.log("household size", household_size);
+//    console.log("educ", out);
+//    console.log("kids", kids);
+//    console.log("household size", household_size);
     $("#education-total").html("R" + out);
     return out
 }
@@ -60,7 +60,7 @@ function calculate_health(household_size){
 
 
 
-    console.log("health", out);
+//    console.log("health", out);
     $("#health-total").html("R" + out);
     return out
 }
@@ -68,7 +68,7 @@ function calculate_health(household_size){
 function calculate_communication(household_size){
     var communication_cost = $("#communication-cost").val();
     var out = communication_cost * household_size
-    console.log("communication", out);
+//    console.log("communication", out);
     $("#communication-total").html("R" + out);
     return out
 }
@@ -76,14 +76,14 @@ function calculate_communication(household_size){
 function calculate_recreation(household_size){
     var recreation_cost = $("#recreation-cost").val();
     var out = recreation_cost * household_size;
-    console.log("recreation", out);
+//    console.log("recreation", out);
     $("#recreation-total").html("R" + out);
     return out
 }
 
 function calculate_other(household_size){
     var out = $("#other-cost").val() * household_size;
-    console.log("other", out);
+//    console.log("other", out);
     $("#other-total").html("R" + out);
     return out
 }
@@ -98,7 +98,7 @@ function calculate_expenditure(household_size) {
     total += calculate_communication(household_size);
     total += calculate_recreation(household_size);
     total += calculate_other(household_size);
-    console.log("total", total);
+//    console.log("total", total);
     return Math.round(total)
 }
 
