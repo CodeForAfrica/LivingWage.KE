@@ -514,12 +514,6 @@
         return value + ' people';
     }
 
-    $("#accordion .panel").on('shown.bs.collapse', function(){
-      $(this).find("input.slider").each(function(i){
-        $(this).slider('refresh');
-      })
-    });
-
     $(this).find(".slider").each(function(i){
       var tmp_formater = rand_formater;
       if ($(this).attr("data-slider-formater") == "children")
