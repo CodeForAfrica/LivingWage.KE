@@ -1,10 +1,21 @@
+constants = {
+    workdays_per_week : 5,
+    weeks_per_month : 4.33,
+    workdays_per_month : 5 * 4.33,
+    days_per_month : 30,
+    sanitation_threshold : 500,
+    violence_threshold : 900,
+    transition_time : 400,
+    output_low : 75,     // below this figure salary is too low
+    output_almost : 90,  // below this figure salary is almost enough
+}
 function calculate_transport(household_size) {
     var trans_cost = $("#transport-cost").val();
     var trans_direction = $("#transport-direction").val();
     if (trans_direction=="oneway")
-        var out = Math.round(trans_cost * 2 * 5 * 4.33);
+        var out = Math.round(trans_cost * 2 * constants.workdays_per_month);
     else
-        var out = Math.round(trans_cost * 5 * 4.33);
+        var out = Math.round(trans_cost * constants.workdays_per_month);
 
     $("#transport-total").html("R" + out);
 
@@ -15,7 +26,7 @@ function calculate_food(household_size) {
     var food_cost = $("#food-cost").val();
     // Account for nutrition programme. Effectively kids do not need 1 meal 5 days a week IF education is provided. 16/21*850 for kids
     // Suggests that this program covers at least 30% of daily requirements of the students - Department of Education
-    var out = Math.round(food_cost * household_size * 30);
+    var out = Math.round(food_cost * household_size * constants.days_per_month);
 
     $("#food-total").html("R" + out);
 
@@ -29,12 +40,12 @@ function calculate_rent(household_size) {
     var out = Math.round(rent_cost)
 
     //Need comments on sanitation and violence to update with rent options.
-    if (rent_cost > 0 && rent_cost < 500)
+    if (rent_cost > 0 && rent_cost < constants.sanitation_threshold)
         sanitation_comment = "Low functionality of bathrooms. High likelihood of communal bathroom. Low likelihood of reliable trash collection."
     else
         sanitation_comment = "Personal bathroom facilities. Reliable trash collection"
 
-    if (rent_cost > 0 && rent_cost < 900)
+    if (rent_cost > 0 && rent_cost < constants.violence_threshold)
         violence_comment = "High likelihood of experiencing gang violence and burglaries."
     else
         violence_comment = "Much lower likelihood of experiencing violence."
@@ -124,7 +135,7 @@ function highlight_output(class_name) {
 
 
 function update_display(class_name) {
-    var transition_time = 400;
+    var transition_time = constants.transition_time;
     var available_classes = ['display-landing', 'display-results', 'display-assumptions']
 
     if ($.inArray(class_name, available_classes) > -1) {
@@ -187,9 +198,9 @@ function update_output() {
         var monthly_pay = 0;
         // Assumption using DoL info - a month includes 4.33 weeks and a week is for 5 work days.
         if (pay_rate == "day")
-            monthly_pay = pay_amount *5 * 4.33;
+            monthly_pay = pay_amount * constants.workdays_per_month;
         else if (pay_rate == "week")
-            monthly_pay = pay_amount * 4.33;
+            monthly_pay = pay_amount * constants.weeks_per_month;
         else if (pay_rate == "month")
             monthly_pay = pay_amount;
 
@@ -198,13 +209,13 @@ function update_output() {
         output_percentage = Math.round(output_percentage);
 
         var output_statement = "Try out the fair wage tool and see how your pay reflects living costs in South Africa.";
-        if ((output_percentage > 0) && (output_percentage < 75)) {
+        if ((output_percentage > 0) && (output_percentage < constants.output_low)) {
             output_statement = "You're paying too little given the living costs and the size of your domestic worker. Take time to reassess how much you're paying by using our tool.";
             highlight_output('label-danger');
-        } else if ((output_percentage >= 75) && (output_percentage < 90)) {
+        } else if ((output_percentage >= 75) && (output_percentage < constants.output_almost)) {
             output_statement = "You're nearly there! Take time to reassess the wage by using our tool or discussing costs with your domestic worker.";
             highlight_output('label-warning');
-        } else if ((output_percentage >= 90) && (output_percentage < 100)) {
+        } else if ((output_percentage >= constants.output_almost) && (output_percentage < 100)) {
             output_statement = "You're very close to paying a fair wage given the living costs and your employee's household size. Share your results!";
             highlight_output('label-warning');
         } else {
