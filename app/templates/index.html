@@ -477,7 +477,16 @@
     // initialize dropdown selects
     $("#pay-rate").selectpicker();
     $('#assumption-container .selectpicker').selectpicker().on("change",function(){
-      update_output();
+        update_output();
+    });
+
+    $('.selectpicker').selectpicker().on("change",function(){
+        
+        var pay_amount = $("#pay-amount").val();
+        if (is_integer(pay_amount)) {
+            update_display('display-results');
+            update_output();
+        }
     });
 
     // update on click
