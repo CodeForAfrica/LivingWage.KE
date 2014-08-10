@@ -22,7 +22,7 @@ function calculate_transport(household_size) {
     else
         var out = Math.round(trans_cost * constants.workdays_per_month);
 
-    $("#transport-total").html("R" + to_rands(out));
+    $("#transport-total").html(to_rands(out));
 
     return out
 }
