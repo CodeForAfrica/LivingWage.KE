@@ -17,8 +17,8 @@ function to_rands(val) {
 function calculate_transport(household_size) {
     var trans_cost = $("#transport-cost").val();
     var trans_direction = $("#transport-direction").val();
-    if (trans_direction=="oneway")
-        var out = Math.round(trans_cost * 2 * constants.workdays_per_month);
+    if (trans_direction == "oneway")
+        var out = Math.round(2 * trans_cost * constants.workdays_per_month);
     else
         var out = Math.round(trans_cost * constants.workdays_per_month);
 
