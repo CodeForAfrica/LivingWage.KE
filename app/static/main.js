@@ -165,18 +165,9 @@ function update_display(class_name) {
     }
 }
 
-function is_integer(input) {
-    var intRegex = /^\d+$/;
-    if (intRegex.test(input)) {
-        return true
-    }
-    return false
-}
-
-
 function validate_input(household_size, pay_rate, pay_amount) {
 
-    if (!is_integer(pay_amount)) {
+    if (!$.isNumeric(pay_amount)) {
         $("#pay-amount").parents('.form-group').addClass('has-error');
         $("#pay-amount").focus();
         pay_amount = false;
