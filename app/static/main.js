@@ -9,6 +9,11 @@ constants = {
     output_low : 75,     // below this figure salary is too low
     output_almost : 90,  // below this figure salary is almost enough
 }
+
+function to_rands(val) {
+    return "R" + val;
+}
+
 function calculate_transport(household_size) {
     var trans_cost = $("#transport-cost").val();
     var trans_direction = $("#transport-direction").val();
@@ -17,7 +22,7 @@ function calculate_transport(household_size) {
     else
         var out = Math.round(trans_cost * constants.workdays_per_month);
 
-    $("#transport-total").html("R" + out);
+    $("#transport-total").html("R" + to_rands(out));
 
     return out
 }
@@ -28,7 +33,7 @@ function calculate_food(household_size) {
     // Suggests that this program covers at least 30% of daily requirements of the students - Department of Education
     var out = Math.round(food_cost * household_size * constants.days_per_month);
 
-    $("#food-total").html("R" + out);
+    $("#food-total").html(to_rands(out));
 
     return out
 }
@@ -50,7 +55,7 @@ function calculate_rent(household_size) {
     else
         violence_comment = "Much lower likelihood of experiencing violence."
 
-    $("#rent-total").html("R" + out);
+    $("#rent-total").html(to_rands(out));
 
     return out
 }
@@ -60,7 +65,7 @@ function calculate_education(household_size) {
     var education_cost = $("#education-cost").val()
     var out = education_cost * (kids);
     
-    $("#education-total").html("R" + out);
+    $("#education-total").html(to_rands(out));
 
     return out
 }
@@ -71,7 +76,7 @@ function calculate_health(household_size) {
     var out = health_cost * household_size;
     var health_comment = ""
 
-    $("#health-total").html("R" + out);
+    $("#health-total").html(to_rands(out))
 
     return out
 }
@@ -80,7 +85,7 @@ function calculate_communication(household_size) {
     var communication_cost = $("#communication-cost").val();
     var out = communication_cost * household_size
 
-    $("#communication-total").html("R" + out);
+    $("#communication-total").html(to_rands(out))
 
     return out
 }
@@ -89,7 +94,7 @@ function calculate_recreation(household_size) {
     var recreation_cost = $("#recreation-cost").val();
     var out = recreation_cost * household_size;
 
-    $("#recreation-total").html("R" + out);
+    $("#recreation-total").html(to_rands(out))
 
     return out
 }
@@ -97,7 +102,7 @@ function calculate_recreation(household_size) {
 function calculate_other(household_size) {
     var out = $("#other-cost").val() * household_size;
 
-    $("#other-total").html("R" + out);
+    $("#other-total").html(to_rands(out))
 
     return out
 }
@@ -224,8 +229,8 @@ function update_output() {
         }
 
         // show results to the user
-        $("#output-amount").html("R" + monthly_pay)
-        $("#output-monthly-need").html("R" + monthly_expenditure)
+        $("#output-amount").html(to_rands(monthly_pay))
+        $("#output-monthly-need").html(to_rands(monthly_expenditure))
 
         $("#output-percentage").html(output_percentage + "%")
         $("#output-statement").html(output_statement);
