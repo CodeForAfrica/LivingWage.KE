@@ -238,3 +238,62 @@ function update_output() {
     }
     return false
 }
+
+$(document).ready(function() {
+
+    $("#pay-amount").focus();
+
+    // initialize dropdown selects
+    $("#pay-rate").selectpicker();
+    $('#assumption-container .selectpicker').selectpicker().on("change",function() {
+        update_output();
+    });
+
+    // update on click
+    $("#go-button").on('click', function(e) {
+        e.preventDefault();
+        if (update_output())
+        {
+            update_display('display-results');
+            $("#input-form input").on("change", function() {
+              update_output();
+            })
+        }
+    })
+
+    $("#show-assumptions-btn").on('click', function() {
+        update_display('display-assumptions');
+    })
+
+    function rand_formater(value) {
+      return value + ' rand';
+    }
+
+    function child_formater(value) {
+      if (value==1)
+        return '1 child';
+      else
+        return value + ' children';
+    }
+
+    function people_formater(value) {
+      if (value==1)
+          return '1 person';
+      else
+          return value + ' people';
+    }
+
+    $(this).find(".slider").each(function(i) {
+      var tmp_formater = rand_formater;
+      if ($(this).attr("data-slider-formater") == "children")
+          tmp_formater = child_formater;
+      else if ($(this).attr("data-slider-formater") == "people")
+          tmp_formater = people_formater;
+
+      $(this).slider({ tooltip: 'always', formater: tmp_formater })
+        .on('slideStop', function(event) {
+            $(this).attr("data-slider-val", $(this).val())
+            update_output()
+        });
+    })
+});
