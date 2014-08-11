@@ -7,7 +7,7 @@ constants = {
     violence_threshold : 900,
     transition_time : 400,
     output_low : 75,     // below this figure salary is too low
-    output_almost : 90,  // below this figure salary is almost enough
+    output_almost : 90  // below this figure salary is almost enough
 }
 
 function to_rands(val) {
@@ -206,13 +206,13 @@ function update_output() {
 
         var output_statement = "Try out the fair wage tool and see how your pay reflects living costs in South Africa.";
         if ((output_percentage > 0) && (output_percentage < constants.output_low)) {
-            output_statement = "You're paying too little given the living costs and the size of your domestic worker. Take time to reassess how much you're paying by using our tool.";
+            output_statement = "You're paying too little given the living costs and the size of your domestic worker's household. Take time to reassess how much you're paying by using our tool.";
             highlight_output('label-danger');
         } else if ((output_percentage >= 75) && (output_percentage < constants.output_almost)) {
             output_statement = "You're nearly there! Take time to reassess the wage by using our tool or discussing costs with your domestic worker.";
             highlight_output('label-warning');
         } else if ((output_percentage >= constants.output_almost) && (output_percentage < 100)) {
-            output_statement = "You're very close to paying a fair wage given the living costs and your employee's household size. Share your results!";
+            output_statement = "You're very close to paying a fair wage given the living costs and the size of your domestic worker's household. Share your results!";
             highlight_output('label-warning');
         } else {
             output_statement = "You're covering your domestic worker's Minimal Need. Share your results!";
@@ -288,3 +288,4 @@ $(document).ready(function() {
         });
     })
 });
+
