@@ -11,3 +11,7 @@ per day per person
 There will be some core data in the backend including how they compare to minimum wage as well as information on costs for
 per person health, per child education, transportation, rent, and communications.
 
+Deployment
+==========
+
+This project is static HTML and Javascript and is served directly from the gh-pages branch on GitHub.
