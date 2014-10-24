@@ -24,15 +24,19 @@
 
 <div class="container display-results display-assumptions" style="display: none;">
   <div class="page-header">
-    <h1>The Minimal Need <small>Understanding the cost of living in South Africa</small></h1>
+    <div class="row">
+      <div class="col-sm-8 col-sm-offset-2">
+        <h1>Living Wage: <span class="text-muted">Are you paying your domestic worker enough?</span></h1>
+      </div>
+    </div>
   </div>
 </div>
 
 <div class="container display-landing">
   <div class="row text-center">
     <div class="jumbotron">
-      <h1>The Minimal Need</h1>
-      <p class="lead">Understanding the cost of a minimal standard of living in South Africa</p>
+      <h1>Living Wage</h1>
+      <p class="lead">Are you paying your domestic worker enough?</p>
     </div>
     <hr>
   </div>
@@ -41,88 +45,112 @@
 <div class="container display-landing display-results display-assumptions">
 
   <div class="row">
-    <div class="col-md-10 col-md-offset-1">
-      <div class="row">
-        <div class="col-sm-8 col-sm-offset-2">
-          <form id="input-form" role="form">
-            <div class="form-group">
-              <label class="control-label lead" for="pay-amount">How much do you pay your household worker?</label><br>
-              <div class="row">
-                <div class="col-xs-9">
-                  <input
-                      id="pay-amount"
-                      class="slider"
-                      style="width: 100%;"
-                      type="text"
-                      name="pay-amount"
-                      data-slider-min="50"
-                      data-slider-max="4000"
-                      data-slider-step="25"
-                      value="500"
-                      data-slider-value="500"/>
-                </div>
-                <div class="col-xs-3">
-                  <select class="selectpicker" name="pay-rate" id ="pay-rate">
-                    <option value="day">per day</option>
-                    <option value="week" selected>per week</option>
-                    <option value="month">per month</option>
-                  </select>
-                </div>
-              </div>
-            </div>
+    <div class="col-sm-8 col-sm-offset-2">
 
-            <div class="form-group">
-              <label for="household-size" class="lead">Including your household worker, how large is their household?</label><br>
+      <form id="input-form" role="form">
+        <div class="form-group">
+          <label class="control-label lead" for="pay-amount">How much do you pay your household worker?</label><br>
+          <div class="row">
+            <div class="col-xs-9">
               <input
-                  id="household-size"
+                  id="pay-amount"
                   class="slider"
-                  style="width: 500px;"
+                  style="width: 100%;"
                   type="text"
-                  name="household-size"
-                  data-slider-min="1"
-                  data-slider-max="20"
-                  data-slider-step="1"
-                  value="3"
-                  data-slider-value="3"
-                  data-slider-formater="people"/><br>
+                  name="pay-amount"
+                  data-slider-min="50"
+                  data-slider-max="4000"
+                  data-slider-step="25"
+                  value="500"
+                  data-slider-value="500"/>
             </div>
-            <p class="text-muted">75% of domestic workers are known to be sole income providers for their households (NIDS 2012).</p><br>
-            <div class="col-sm-8 col-sm-offset-2">
-              <button id="go-button" class="btn btn-primary btn-block btn-lg display-landing">Calculate expenses</button>
+            <div class="col-xs-3">
+              <select class="selectpicker" name="pay-rate" data-width="150px" id="pay-rate">
+                <option value="day">per day</option>
+                <option value="week" selected>per week</option>
+                <option value="month">per month</option>
+              </select>
             </div>
-          </form>
+          </div>
+        </div>
+      </form>
+
+      <div class="row">
+        <div class="col-sm-12">
+          <p class="lead">
+            At this rate, you are paying the equivalent of <strong><span id="output-amount">R0</span></strong> per month.
+          </p>
         </div>
       </div>
 
-      <hr class="display-landing">
+      <div class="row">
+        <div class="col-sm-8 col-sm-offset-2">
+          <button id="go-button" class="btn btn-primary btn-block btn-lg display-landing">Calculate expenses</button>
+        </div>
+      </div>
+
     </div>
   </div>
-
+  <hr class="display-landing">
 </div>
+
 
 <div class="container display-results display-assumptions" style="display: none;">
   <div class="row">
-    <h2>You pay an equivalent of <span id="output-amount" class="label">R0</span> per month.</h2>
-
-    <p class="text-muted">*We assume full time employment at five days a week and a little over four weeks a month.</p>
-
-    <h2>
-      You are paying <span id="output-percentage" class="label">0%</span> of the household's minimal need of <span id="output-monthly-need">R0</span>.
-    </h2>
-    <br>
-
-    <p class="lead"><span id="output-statement"></span></p>
-  </div>
-  <div class="row">
     <div class="col-sm-8 col-sm-offset-2">
-      <button id="show-assumptions-btn" class="btn btn-primary btn-block btn-lg display-results">Show assumptions</button>
+      <p class="lead">
+        This covers <span id="output-percentage" class="label">0%</span> of the household's minimal need of <strong><span id="output-monthly-need">R0</span></strong>.
+      </p>
+      <p class="lead"><span id="output-statement"></span></p>
+
+      <div class="row">
+        <div class="col-sm-8 col-sm-offset-2">
+          <button id="show-assumptions-btn" class="btn btn-primary btn-block btn-lg display-results">Show assumptions</button>
+        </div>
+      </div>
     </div>
   </div>
 </div>
 
 <div id="assumption-container" class="container display-assumptions" style="display: none;">
 <div class="row">
+<div class="col-sm-8 col-sm-offset-2">
+
+<h2>Assumptions</h2>
 <div class="panel-group" id="accordion">
+<!-- Household Size Panel-->
+<div class="panel panel-default">
+  <div class="panel-heading" data-toggle="collapse" data-parent="#accordion" data-target="#panel-household-size">
+    <h4 class="panel-title">
+      <span>
+        Household Size <span id="household-size-feedback" class="pull-right">... people</span>
+      </span>
+    </h4>
+  </div>
+  <div id="panel-household-size" class="panel-collapse collapse in">
+    <div class="panel-body">
+      <div class="form-group">
+        <label for="household-size" class="lead">Including your household worker, how large is their household?</label><br>
+        <input
+            id="household-size"
+            class="slider"
+            style="width: 500px;"
+            type="text"
+            name="household-size"
+            data-slider-min="1"
+            data-slider-max="20"
+            data-slider-step="1"
+            value="3"
+            data-slider-value="3"
+            data-slider-formater="people"/><br>
+      </div>
+      <p><em>
+        Note that 75% of domestic workers are known to be sole income providers for their households (Source: NIDS 2012).
+      </em></p><br>
+    </div>
+  </div>
+</div>
+<!-- Household Size Panel end-->
 
 <!-- Food Panel -->
 <div class="panel panel-default">
@@ -133,7 +161,7 @@
       </span>
     </h4>
   </div>
-  <div id="panel-food-expenses" class="panel-collapse collapse in">
+  <div id="panel-food-expenses" class="panel-collapse collapse">
     <div class="panel-body">
       <div class="form-group">
         <label for="food-cost" class="lead">Providing 2000 calories per person per day.</label><br>
@@ -445,6 +473,7 @@
   </div>
 </div><!-- Other Panel end -->
 
+</div>
 </div>
 </div>
 </div>

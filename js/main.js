@@ -64,7 +64,7 @@ function calculate_education(household_size) {
     var kids = $("#education-kids").val()
     var education_cost = $("#education-cost").val()
     var out = education_cost * (kids);
-    
+
     $("#education-total").html(to_rands(out));
 
     return out
@@ -128,12 +128,8 @@ function highlight_output(class_name) {
         for (var i = 0; i < available_classes.length; i++)
         {
             var tmp = available_classes[i];
-
-            $("#output-amount").removeClass(tmp);
             $("#output-percentage").removeClass(tmp);
         }
-
-        $("#output-amount").addClass(class_name);
         $("#output-percentage").addClass(class_name);
     }
 }
@@ -166,16 +162,16 @@ function update_display(class_name) {
 }
 
 function validate_input(household_size, pay_rate, pay_amount) {
-
     if (!$.isNumeric(pay_amount)) {
         $("#pay-amount").parents('.form-group').addClass('has-error');
         $("#pay-amount").focus();
         pay_amount = false;
     }
-
-    if (household_size && pay_rate && pay_amount)
+    if (household_size && pay_rate && pay_amount){
+        // update user feedback text
+        $("#household-size-feedback").html(household_size + " people")
         return true
-
+    }
     return false
 }
 
@@ -235,10 +231,18 @@ $(document).ready(function() {
     $("#pay-amount").focus();
 
     // initialize dropdown selects
-    $("#pay-rate").selectpicker();
+    $("#pay-rate").selectpicker().on("change", function() {
+        update_output();
+    })
+    $("#pay-amount").on("change", function() {
+        update_output();
+    })
     $('#assumption-container .selectpicker').selectpicker().on("change",function() {
         update_output();
     });
+
+    // update output based on default input values
+    update_output();
 
     // update on click
     $("#go-button").on('click', function(e) {
@@ -246,9 +250,6 @@ $(document).ready(function() {
         if (update_output())
         {
             update_display('display-results');
-            $("#input-form input").on("change", function() {
-              update_output();
-            })
         }
     })
 
@@ -257,35 +258,35 @@ $(document).ready(function() {
     })
 
     function rand_formater(value) {
-      return value + ' rand';
+        return value + ' rand';
     }
 
     function child_formater(value) {
-      if (value==1)
-        return '1 child';
-      else
-        return value + ' children';
+        if (value==1)
+            return '1 child';
+        else
+            return value + ' children';
     }
 
     function people_formater(value) {
-      if (value==1)
-          return '1 person';
-      else
-          return value + ' people';
+        if (value==1)
+            return '1 person';
+        else
+            return value + ' people';
     }
 
     $(this).find(".slider").each(function(i) {
-      var tmp_formater = rand_formater;
-      if ($(this).attr("data-slider-formater") == "children")
-          tmp_formater = child_formater;
-      else if ($(this).attr("data-slider-formater") == "people")
-          tmp_formater = people_formater;
+        var tmp_formater = rand_formater;
+        if ($(this).attr("data-slider-formater") == "children")
+            tmp_formater = child_formater;
+        else if ($(this).attr("data-slider-formater") == "people")
+            tmp_formater = people_formater;
 
-      $(this).slider({ tooltip: 'always', formater: tmp_formater })
-        .on('slideStop', function(event) {
-            $(this).attr("data-slider-val", $(this).val())
-            update_output()
-        });
+        $(this).slider({ tooltip: 'always', formater: tmp_formater })
+            .on('slideStop', function(event) {
+                $(this).attr("data-slider-val", $(this).val())
+                update_output()
+            });
     })
 });
 

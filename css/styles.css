@@ -2,6 +2,11 @@ body{
     background-image: url('../images/furley_bg.png');
 }
 
+.btn-lg{
+    margin-top: 25px;
+    margin-bottom: 25px;
+}
+
 .panel-heading:hover{
     cursor: pointer;
     background-color: #eee;
@@ -11,6 +16,10 @@ body{
     text-decoration: none;
 }
 
+#assumption-container{
+    margin-top:25px;
+}
+
 #footer{
     height: 80px;
     width: 100%;
@@ -18,4 +27,8 @@ body{
     margin-top: 20px;
     background-color: #f8f8f8;
     border-top: solid #e7e7e7 1px;
+}
+
+#output-percentage{
+    font-size: 24px;
 }
