@@ -28,3 +28,7 @@ body{
     background-color: #f8f8f8;
     border-top: solid #e7e7e7 1px;
 }
+
+#output-percentage{
+    font-size: 24px;
+}
