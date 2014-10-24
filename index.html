@@ -56,16 +56,16 @@
               <div class="row">
                 <div class="col-xs-9">
                   <input
-                  id="pay-amount"
-                  class="slider"
-                  style="width: 100%;"
-                  type="text"
-                  name="pay-amount"
-                  data-slider-min="50"
-                  data-slider-max="4000"
-                  data-slider-step="25"
-                  value="500"
-                  data-slider-value="500"/>
+                      id="pay-amount"
+                      class="slider"
+                      style="width: 100%;"
+                      type="text"
+                      name="pay-amount"
+                      data-slider-min="50"
+                      data-slider-max="4000"
+                      data-slider-step="25"
+                      value="500"
+                      data-slider-value="500"/>
                 </div>
                 <div class="col-xs-3">
                   <select class="selectpicker" name="pay-rate" id ="pay-rate">
@@ -76,28 +76,12 @@
                 </div>
               </div>
             </div>
-
-            <div class="form-group">
-              <label for="household-size" class="lead">Including your household worker, how large is their household?</label><br>
-              <input
-                  id="household-size"
-                  class="slider"
-                  style="width: 500px;"
-                  type="text"
-                  name="household-size"
-                  data-slider-min="1"
-                  data-slider-max="20"
-                  data-slider-step="1"
-                  value="3"
-                  data-slider-value="3"
-                  data-slider-formater="people"/><br>
-            </div>
-            <p class="text-muted">75% of domestic workers are known to be sole income providers for their households (NIDS 2012).</p><br>
-            <div class="col-sm-8 col-sm-offset-2">
-              <button id="go-button" class="btn btn-primary btn-block btn-lg display-landing">Calculate expenses</button>
-            </div>
           </form>
         </div>
+      </div>
+
+      <div class="col-sm-8 col-sm-offset-2">
+        <button id="go-button" class="btn btn-primary btn-block btn-lg display-landing">Calculate expenses</button>
       </div>
 
       <hr class="display-landing">
@@ -133,8 +117,39 @@
 
 <div id="assumption-container" class="container display-assumptions" style="display: none;">
 <div class="row">
-
 <div class="panel-group" id="accordion">
+
+<!-- Household Size Panel-->
+<div class="panel panel-default">
+  <div class="panel-heading" data-toggle="collapse" data-parent="#accordion" data-target="#panel-household-size">
+    <h4 class="panel-title">
+      <span>
+        Household Size <span id="household-size-feedback" class="pull-right">... people</span>
+      </span>
+    </h4>
+  </div>
+  <div id="panel-household-size" class="panel-collapse collapse in">
+    <div class="panel-body">
+      <div class="form-group">
+        <label for="household-size" class="lead">Including your household worker, how large is their household?</label><br>
+        <input
+            id="household-size"
+            class="slider"
+            style="width: 500px;"
+            type="text"
+            name="household-size"
+            data-slider-min="1"
+            data-slider-max="20"
+            data-slider-step="1"
+            value="3"
+            data-slider-value="3"
+            data-slider-formater="people"/><br>
+      </div>
+      <p>Note that 75% of domestic workers are known to be sole income providers for their households (Source: NIDS 2012).</p><br>
+    </div>
+  </div>
+</div>
+<!-- Household Size Panel end-->
 
 <!-- Food Panel-->
 <div class="panel panel-default">
@@ -145,7 +160,7 @@
       </span>
     </h4>
   </div>
-  <div id="panel-food-expenses" class="panel-collapse collapse in">
+  <div id="panel-food-expenses" class="panel-collapse collapse">
     <div class="panel-body">
       <div class="form-group">
         <label for="food-cost" class="lead">Providing 2000 calories per person per day.</label><br>

@@ -166,16 +166,16 @@ function update_display(class_name) {
 }
 
 function validate_input(household_size, pay_rate, pay_amount) {
-
     if (!$.isNumeric(pay_amount)) {
         $("#pay-amount").parents('.form-group').addClass('has-error');
         $("#pay-amount").focus();
         pay_amount = false;
     }
-
-    if (household_size && pay_rate && pay_amount)
+    if (household_size && pay_rate && pay_amount){
+        // update user feedback text
+        $("#household-size-feedback").html(household_size + " people")
         return true
-
+    }
     return false
 }
 
