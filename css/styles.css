@@ -2,6 +2,10 @@ body{
     background-image: url('../images/furley_bg.png');
 }
 
+#go-button{
+    margin-top: 50px;
+}
+
 .panel-heading:hover{
     cursor: pointer;
     background-color: #eee;

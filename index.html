@@ -62,7 +62,7 @@
                       data-slider-value="500"/>
                 </div>
                 <div class="col-xs-3">
-                  <select class="selectpicker" name="pay-rate" id ="pay-rate">
+                  <select class="selectpicker" name="pay-rate" data-width="150px" id="pay-rate">
                     <option value="day">per day</option>
                     <option value="week" selected>per week</option>
                     <option value="month">per month</option>
@@ -73,9 +73,13 @@
           </form>
         </div>
       </div>
-
-      <div class="col-sm-8 col-sm-offset-2">
-        <button id="go-button" class="btn btn-primary btn-block btn-lg display-landing">Calculate expenses</button>
+      <div class="row text-center">
+        <p>At this rate, you are paying the equivalent of <strong><span id="output-amount">R0</span></strong> per month.</p>
+      </div>
+      <div class="row">
+        <div class="col-sm-6 col-sm-offset-3">
+          <button id="go-button" class="btn btn-primary btn-block btn-lg display-landing">Calculate expenses</button>
+        </div>
       </div>
 
       <hr class="display-landing">
@@ -86,10 +90,6 @@
 
 <div class="container display-results display-assumptions" style="display: none;">
   <div class="row">
-    <h2>You pay an equivalent of <span id="output-amount" class="label">R0</span> per month.</h2>
-
-    <p class="text-muted">*We assume full time employment at five days a week and a little over four weeks a month.</p>
-
     <h2>
       You are paying <span id="output-percentage" class="label">0%</span> of the household's minimal need of <span id="output-monthly-need">R0</span>.
     </h2>
@@ -98,7 +98,7 @@
     <p class="lead"><span id="output-statement"></span></p>
   </div>
   <div class="row">
-    <div class="col-sm-8 col-sm-offset-2">
+    <div class="col-sm-6 col-sm-offset-3">
       <button id="show-assumptions-btn" class="btn btn-primary btn-block btn-lg display-results">Show assumptions</button>
     </div>
   </div>
