@@ -54,18 +54,23 @@
             <div class="form-group">
               <label class="control-label lead" for="pay-amount">How much do you pay your household worker?</label><br>
               <div class="row">
-                <div class="col-xs-4">
-                  <input  class="form-control"
-                          type="text"
-                          name="pay-amount"
-                          id="pay-amount"
-                          placeholder="Rand"
-                      />
+                <div class="col-xs-9">
+                  <input
+                  id="pay-amount"
+                  class="slider"
+                  style="width: 100%;"
+                  type="text"
+                  name="pay-amount"
+                  data-slider-min="50"
+                  data-slider-max="4000"
+                  data-slider-step="25"
+                  value="500"
+                  data-slider-value="500"/>
                 </div>
-                <div class="col-xs-5">
+                <div class="col-xs-3">
                   <select class="selectpicker" name="pay-rate" id ="pay-rate">
-                    <option value="day" selected>per day</option>
-                    <option value="week">per week</option>
+                    <option value="day">per day</option>
+                    <option value="week" selected>per week</option>
                     <option value="month">per month</option>
                   </select>
                 </div>
