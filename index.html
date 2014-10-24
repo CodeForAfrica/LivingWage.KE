@@ -41,73 +41,79 @@
 <div class="container display-landing display-results display-assumptions">
 
   <div class="row">
-    <div class="col-md-10 col-md-offset-1">
-      <div class="row">
-        <div class="col-sm-8 col-sm-offset-2">
-          <form id="input-form" role="form">
-            <div class="form-group">
-              <label class="control-label lead" for="pay-amount">How much do you pay your household worker?</label><br>
-              <div class="row">
-                <div class="col-xs-9">
-                  <input
-                      id="pay-amount"
-                      class="slider"
-                      style="width: 100%;"
-                      type="text"
-                      name="pay-amount"
-                      data-slider-min="50"
-                      data-slider-max="4000"
-                      data-slider-step="25"
-                      value="500"
-                      data-slider-value="500"/>
-                </div>
-                <div class="col-xs-3">
-                  <select class="selectpicker" name="pay-rate" data-width="150px" id="pay-rate">
-                    <option value="day">per day</option>
-                    <option value="week" selected>per week</option>
-                    <option value="month">per month</option>
-                  </select>
-                </div>
-              </div>
+    <div class="col-sm-8 col-sm-offset-2">
+
+      <form id="input-form" role="form">
+        <div class="form-group">
+          <label class="control-label lead" for="pay-amount">How much do you pay your household worker?</label><br>
+          <div class="row">
+            <div class="col-xs-9">
+              <input
+                  id="pay-amount"
+                  class="slider"
+                  style="width: 100%;"
+                  type="text"
+                  name="pay-amount"
+                  data-slider-min="50"
+                  data-slider-max="4000"
+                  data-slider-step="25"
+                  value="500"
+                  data-slider-value="500"/>
             </div>
-          </form>
+            <div class="col-xs-3">
+              <select class="selectpicker" name="pay-rate" data-width="150px" id="pay-rate">
+                <option value="day">per day</option>
+                <option value="week" selected>per week</option>
+                <option value="month">per month</option>
+              </select>
+            </div>
+          </div>
+        </div>
+      </form>
+
+      <div class="row">
+        <div class="col-sm-12">
+          <p class="lead">
+            At this rate, you are paying the equivalent of <strong><span id="output-amount">R0</span></strong> per month.
+          </p>
         </div>
       </div>
-      <div class="row text-center">
-        <p>At this rate, you are paying the equivalent of <strong><span id="output-amount">R0</span></strong> per month.</p>
-      </div>
+
       <div class="row">
-        <div class="col-sm-6 col-sm-offset-3">
+        <div class="col-sm-8 col-sm-offset-2">
           <button id="go-button" class="btn btn-primary btn-block btn-lg display-landing">Calculate expenses</button>
         </div>
       </div>
 
-      <hr class="display-landing">
     </div>
   </div>
-
+  <hr class="display-landing">
 </div>
+
 
 <div class="container display-results display-assumptions" style="display: none;">
   <div class="row">
-    <h2>
-      You are paying <span id="output-percentage" class="label">0%</span> of the household's minimal need of <span id="output-monthly-need">R0</span>.
-    </h2>
-    <br>
+    <div class="col-sm-8 col-sm-offset-2">
+      <p class="lead">
+        This covers <span id="output-percentage" class="label">0%</span> of the household's minimal need of <span id="output-monthly-need">R0</span>.
+      </p>
+      <p class="lead"><span id="output-statement"></span></p>
 
-    <p class="lead"><span id="output-statement"></span></p>
-  </div>
-  <div class="row">
-    <div class="col-sm-6 col-sm-offset-3">
-      <button id="show-assumptions-btn" class="btn btn-primary btn-block btn-lg display-results">Show assumptions</button>
+      <div class="row">
+        <div class="col-sm-8 col-sm-offset-2">
+          <button id="show-assumptions-btn" class="btn btn-primary btn-block btn-lg display-results">Show assumptions</button>
+        </div>
+      </div>
     </div>
   </div>
 </div>
 
 <div id="assumption-container" class="container display-assumptions" style="display: none;">
 <div class="row">
-<div class="panel-group" id="accordion">
+<div class="col-sm-8 col-sm-offset-2">
 
+<h2>Assumptions</h2>
+<div class="panel-group" id="accordion">
 <!-- Household Size Panel-->
 <div class="panel panel-default">
   <div class="panel-heading" data-toggle="collapse" data-parent="#accordion" data-target="#panel-household-size">
@@ -134,7 +140,9 @@
             data-slider-value="3"
             data-slider-formater="people"/><br>
       </div>
-      <p>Note that 75% of domestic workers are known to be sole income providers for their households (Source: NIDS 2012).</p><br>
+      <p><em>
+        Note that 75% of domestic workers are known to be sole income providers for their households (Source: NIDS 2012).
+      </em></p><br>
     </div>
   </div>
 </div>
@@ -461,6 +469,7 @@
   </div>
 </div><!-- Other Panel end -->
 
+</div>
 </div>
 </div>
 </div>
