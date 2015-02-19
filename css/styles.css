@@ -21,7 +21,7 @@ body{
 }
 
 #footer{
-    height: 80px;
+    height: 110px;
     width: 100%;
     padding-top: 20px;
     margin-top: 20px;
@@ -32,3 +32,11 @@ body{
 #output-percentage{
     font-size: 24px;
 }
+
+.jumbotron {
+    padding-bottom: 10px;
+    margin-bottom: 10px;
+    padding-top: 10px;
+}
+
+
