@@ -221,7 +221,7 @@ function update_output() {
 
         $("#output-percentage").html(output_percentage + "%")
         $("#output-statement").html(output_statement);
-        change_twitter_text("I am paying " + output_percentage + "%" + " of my domestic worker's minimal need. Calculate how much you are paying.");
+        change_twitter_text("I pay my domestic worker R" + monthly_pay + " which is " + output_percentage + "% of their monthly need, how much do you pay?");
         return true
     }
     return false
@@ -236,6 +236,7 @@ function change_twitter_text(txt) {
             .addClass('twitter-share-button')
             .addClass('pull-right')
             .attr('href', 'http://twitter.com/share')
+            .attr('data-url', 'http://bit.ly/1Gn9ZWS')
             .attr('data-via', 'code4sa')
             .attr('data-text', txt)
             .attr('data-hashtags', 'fairwage');
