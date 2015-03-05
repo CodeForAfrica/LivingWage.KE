@@ -39,4 +39,12 @@ body{
     padding-top: 10px;
 }
 
+.jumbotron p {
+    margin-bottom: 5px;
+}
+
+.jumbotron .small {
+    font-size: 12px;
+}
+
 
