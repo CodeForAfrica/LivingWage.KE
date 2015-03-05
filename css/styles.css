@@ -47,4 +47,7 @@ body{
     font-size: 12px;
 }
 
+.slider.slider-horizontal {
+    width: 100%;
+}
 
