@@ -221,9 +221,29 @@ function update_output() {
 
         $("#output-percentage").html(output_percentage + "%")
         $("#output-statement").html(output_statement);
+        change_twitter_text("I am paying " + output_percentage + "%" + " of my domestic worker's minimal need. Calculate how much you are paying.");
         return true
     }
     return false
+}
+
+function change_twitter_text(txt) {
+    if (typeof(twttr) != "undefined") {
+        // Remove existing iframe
+        $('#tweetBtn iframe').remove();
+        // Generate new markup
+        var tweetBtn = $('<a></a>')
+            .addClass('twitter-share-button')
+            .addClass('pull-right')
+            .attr('href', 'http://twitter.com/share')
+            .attr('data-via', 'code4sa')
+            .attr('data-text', txt)
+            .attr('data-hashtags', 'fairwage');
+        $('#tweetBtn').append(tweetBtn);
+        console.log(twttr)
+        console.log(txt)
+        twttr.widgets.load();
+    }
 }
 
 $(document).ready(function() {

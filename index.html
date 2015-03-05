@@ -7,7 +7,7 @@
   <title>The Minimal Need | Code for South Africa </title>
 
   <!-- Bootstrap -->
-  <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css" rel="stylesheet">
+  <link href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css" rel="stylesheet">
   <link href="css/bootstrap-select.min.css" rel="stylesheet">
   <link href="css/bootstrap-slider.css" rel="stylesheet">
   <link href="css/styles.css" rel="stylesheet">
@@ -21,6 +21,15 @@
   <![endif]-->
 </head>
 <body>
+
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/en_GB/sdk.js#xfbml=1&version=v2.0";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
 
 <nav class="navbar navbar-default navbar-static-top" role="navigation">
   <div class="container-fluid">
@@ -42,6 +51,13 @@
         <li><a href="http://livingwagestory.code4sa.org/#5" title="Nosiphiwo's Story">Nosiphiwo's Story</a></li>
         <li><a href="http://www.living-wage.co.za" title="Wage Calculator" target="_blank">Wage Calculator</a></li>
       </ul>
+      <div id="tweetBtn"> 
+        <a href="https://twitter.com/share" class="twitter-share-button pull-right" data-text="Check if you pay your domestic worker a fair wage" data-via="code4sa" data-hashtags="fairwage">Tweet</a>
+        <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+      </div>
+      <div id="facebookBtn">
+<div class="fb-like pull-right" data-href="http://www.living-wage.co.za" data-layout="button_count" data-action="recommend" data-show-faces="false" data-share="false"></div>
+      </div>
     </div>
   </div>
 </div>
@@ -495,14 +511,16 @@
 <div id="footer">
   <div class="col-lg-12 text-center">
     <p id="attribution">Brought to you by&nbsp;&nbsp;<a href="http://www.code4sa.org" target="_blank"><img height="34" src="images/logo.png"></a>.</p>
-<a href="https://twitter.com/share" class="twitter-share-button" data-url="http://living-wage.co.za" data-text="Are you paying your domestic worker a living wage?" data-via="code4sa" data-hashtags="livingwage">Tweet</a>
-<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+    <div id="tweetBtn">
+    <a href="https://twitter.com/share" class="twitter-share-button" data-url="http://living-wage.co.za" data-text="Are you paying your domestic worker a living wage?" data-via="code4sa" data-hashtags="livingwage">Tweet</a>
+    <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+    </div>
   </div>
 </div>
 
 <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
 <script src="https://code.jquery.com/jquery-1.11.2.min.js"></script>
-<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
+<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
 <script src="js/bootstrap-select.min.js"></script>
 <script src="js/bootstrap-slider.js"></script>
 <script src="js/main.js"></script>

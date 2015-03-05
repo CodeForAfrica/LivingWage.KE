@@ -50,3 +50,8 @@ body{
 .slider.slider-horizontal {
     width: 100%;
 }
+
+.twitter-share-button, .fb-like {
+    margin-top: 10px;
+    margin-left: 10px;
+}
