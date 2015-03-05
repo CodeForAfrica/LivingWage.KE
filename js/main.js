@@ -262,14 +262,14 @@ $(document).ready(function() {
     }
 
     function child_formater(value) {
-        if (value==1)
+        if (value == 1)
             return '1 child';
         else
             return value + ' children';
     }
 
     function people_formater(value) {
-        if (value==1)
+        if (value == 1)
             return '1 person';
         else
             return value + ' people';
