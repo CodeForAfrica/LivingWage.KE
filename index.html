@@ -1,36 +1,27 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-<meta charset="utf-8">
-<meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Code for South Africa - Living Wage Calculator</title>
-<link rel="stylesheet" href="/public/css/style-app.css">
-<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
-<link href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css" rel="stylesheet">
-<link href="css/bootstrap-select.min.css" rel="stylesheet">
-<link href="css/bootstrap-slider.css" rel="stylesheet">
-<link href="css/styles.css" rel="stylesheet">
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>The Minimal Need | Code for South Africa </title>
 
-<!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
-<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-<!--[if lt IE 9]>
-    <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
-    <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
-    <![endif]-->
+  <!-- Bootstrap -->
+  <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css" rel="stylesheet">
+  <link href="css/bootstrap-select.min.css" rel="stylesheet">
+  <link href="css/bootstrap-slider.css" rel="stylesheet">
+  <link href="css/styles.css" rel="stylesheet">
+
+
+  <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+  <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+  <!--[if lt IE 9]>
+  <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+  <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+  <![endif]-->
 </head>
-<body class="code4sa">
-<div id="navbar">
-  <img id="logo" src="/public/images/logo.png" alt="Code for South Africa" />
-  <div id="sharing">
-    <div id="twitter">
-      <a href="http://twitter.com/code4sa"><i class="fa fa-twitter"></i></a>
-    </div>
-    <div id="facebook">
-      <a href="http://facebook.com/code4sa"><i class="fa fa-facebook"></i></a>
-    </div>
-  </div>
-</div>
+<body>
+
 <div class="container">
   <div class="row text-center">
     <div class="jumbotron">
@@ -41,25 +32,28 @@
     <hr>
   </div>
 </div>
+
 <div class="container">
+
   <div class="row">
     <div class="col-sm-8 col-sm-offset-2">
+
       <form id="input-form" role="form">
         <div class="form-group">
           <label class="control-label lead" for="pay-amount">How much do you pay your household worker?</label><br>
           <div class="row">
             <div class="col-xs-9">
               <input
-              id="pay-amount"
-              class="slider"
-              style="width: 100%;"
-              type="text"
-              name="pay-amount"
-              data-slider-min="50"
-              data-slider-max="10000"
-              data-slider-step="25"
-              value="500"
-              data-slider-value="500"/>
+                  id="pay-amount"
+                  class="slider"
+                  style="width: 100%;"
+                  type="text"
+                  name="pay-amount"
+                  data-slider-min="50"
+                  data-slider-max="10000"
+                  data-slider-step="25"
+                  value="500"
+                  data-slider-value="500"/>
             </div>
             <div class="col-xs-3">
               <select class="selectpicker" name="pay-rate" data-width="150px" id="pay-rate">
@@ -75,7 +69,7 @@
       <div class="row">
         <div class="col-sm-12">
           <p class="lead">
-          At this rate, you are paying the equivalent of <strong><span id="output-amount">R0</span></strong> per month.
+            At this rate, you are paying the equivalent of <strong><span id="output-amount">R0</span></strong> per month.
           </p>
         </div>
       </div>
@@ -85,15 +79,18 @@
           <button id="go-button" class="btn btn-primary btn-block btn-lg display-landing">Calculate expenses</button>
         </div>
       </div>
+
     </div>
-  </div> <!-- row -->
+  </div>
   <hr class="display-landing">
-</div> <!-- container -->
+</div>
+
+
 <div class="container display-results display-assumptions" style="display: none;">
   <div class="row">
     <div class="col-sm-8 col-sm-offset-2">
       <p class="lead">
-      This covers <span id="output-percentage" class="label">0%</span> of the household's minimal need of <strong><span id="output-monthly-need">R0</span></strong>.
+        This covers <span id="output-percentage" class="label">0%</span> of the household's minimal need of <strong><span id="output-monthly-need">R0</span></strong>.
       </p>
       <p class="lead"><span id="output-statement"></span></p>
 
@@ -105,397 +102,397 @@
     </div>
   </div>
 </div>
+
 <div id="assumption-container" class="container display-assumptions" style="display: none;">
   <div class="row">
     <div class="col-sm-8 col-sm-offset-2">
+
       <h2>Assumptions</h2>
       <div class="panel-group" id="accordion">
-        <!-- Household Size Panel-->
-        <div class="panel panel-default">
-          <div class="panel-heading" data-toggle="collapse" data-parent="#accordion" data-target="#panel-household-size">
-            <h4 class="panel-title">
-              <span>
-                Household Size <span id="household-size-feedback" class="pull-right">... people</span>
-              </span>
-            </h4>
-          </div>
-          <div id="panel-household-size" class="panel-collapse collapse in">
-            <div class="panel-body">
-              <div class="form-group">
-                <label for="household-size" class="lead">Including your household worker, how large is their household?</label><br>
-                <input
-                id="household-size"
-                class="slider"
-                tooltip="always"
-                type="text"
-                name="household-size"
-                data-slider-min="1"
-                data-slider-max="20"
-                data-slider-step="1"
-                value="3"
-                data-slider-value="3"
-                data-slider-formater="people"/><br>
-              </div>
-              <p><em>
-                Note that 75% of domestic workers are known to be sole income providers for their households (Source: NIDS 2012).
-              </em></p><br>
+      <!-- Household Size Panel-->
+      <div class="panel panel-default">
+        <div class="panel-heading" data-toggle="collapse" data-parent="#accordion" data-target="#panel-household-size">
+          <h4 class="panel-title">
+            <span>
+              Household Size <span id="household-size-feedback" class="pull-right">... people</span>
+            </span>
+          </h4>
+        </div>
+        <div id="panel-household-size" class="panel-collapse collapse in">
+          <div class="panel-body">
+            <div class="form-group">
+              <label for="household-size" class="lead">Including your household worker, how large is their household?</label><br>
+              <input
+                  id="household-size"
+                  class="slider"
+                  tooltip="always"
+                  type="text"
+                  name="household-size"
+                  data-slider-min="1"
+                  data-slider-max="20"
+                  data-slider-step="1"
+                  value="3"
+                  data-slider-value="3"
+                  data-slider-formater="people"/><br>
             </div>
+            <p><em>
+              Note that 75% of domestic workers are known to be sole income providers for their households (Source: NIDS 2012).
+            </em></p><br>
           </div>
         </div>
-        <!-- Household Size Panel end-->
+      </div>
+      <!-- Household Size Panel end-->
 
-        <!-- Food Panel -->
-        <div class="panel panel-default">
-          <div class="panel-heading" data-toggle="collapse" data-parent="#accordion" data-target="#panel-food-expenses">
-            <h4 class="panel-title">
-              <span>
-                Food Cost <span id="food-total" class="pull-right">R...</span>
-              </span>
-            </h4>
-          </div>
-          <div id="panel-food-expenses" class="panel-collapse collapse">
-            <div class="panel-body">
-              <div class="form-group">
-                <label for="food-cost" class="lead">Providing 2000 calories per person per day.</label><br>
-                <p>Using consumer price index data on food (April 2014) and a selected basket of goods we estimate that the daily average cost per person for attaining 2000 calories is R27 (R815 per month per person). Given prices in your area, what do you think the daily food costs are per person in the household?</p>
-                <input
-                id="food-cost"
-                class="slider"
-                enabled="false"
-                style="width: 500px;"
-                type="text"
-                name="food-cost"
-                data-slider-min="5"
-                data-slider-max="100"
-                data-slider-step="1"
-                value="27"
-                data-slider-value="27"
-                data-slider-formater="rand"/><br>
-
-                <!--<button type="button" class="btn btn-danger" value="15">R15, Carb Heavy Diet</button>-->
-                <!--<button type="button" class="btn btn-primary" value="27" selected>R27, Balanced Diet</button>-->
-                <!--<button type="button" class="btn btn-success" value="36">R36, Tim Noakes Diet</button>-->
-
-              </div>
-              <p><em>
-                Source: Food - CPI Apr 2014 data, STATS SA<br>
-                We have not incorporated the food nutrition program or child support grants in our assessment. We feel our values are still quite conservative.
-              </em></p>
-            </div>
-          </div>
+      <!-- Food Panel -->
+      <div class="panel panel-default">
+        <div class="panel-heading" data-toggle="collapse" data-parent="#accordion" data-target="#panel-food-expenses">
+          <h4 class="panel-title">
+            <span>
+              Food Cost <span id="food-total" class="pull-right">R...</span>
+            </span>
+          </h4>
         </div>
-        <!-- Food Panel end -->
+        <div id="panel-food-expenses" class="panel-collapse collapse">
+          <div class="panel-body">
+            <div class="form-group">
+              <label for="food-cost" class="lead">Providing 2000 calories per person per day.</label><br>
+              <p>Using consumer price index data on food (April 2014) and a selected basket of goods we estimate that the daily average cost per person for attaining 2000 calories is R27 (R815 per month per person). Given prices in your area, what do you think the daily food costs are per person in the household?</p>
+              <input
+                  id="food-cost"
+                  class="slider"
+                  enabled="false"
+                  style="width: 500px;"
+                  type="text"
+                  name="food-cost"
+                  data-slider-min="5"
+                  data-slider-max="100"
+                  data-slider-step="1"
+                  value="27"
+                  data-slider-value="27"
+                  data-slider-formater="rand"/><br>
 
-        <!-- Transportation Panel -->
-        <div class="panel panel-default">
-          <div class="panel-heading" data-toggle="collapse" data-parent="#accordion" data-target="#panel-transport-expenses">
-            <h4 class="panel-title">
-              <span>
-                Transportation Cost <span id="transport-total" class="pull-right">R...</span>
-              </span>
-            </h4>
-          </div>
-          <div id="panel-transport-expenses" class="panel-collapse collapse">
-            <div class="panel-body">
-              <div class="form-group">
-                <label for="transport-cost" class="lead">Travel cost for your domestic worker.</label><br>
-                <p>Travel costs are known to be high for domestic workers. We assume a need of R14 one way to get to work based on an informal survey of domestic workers in Cape Town.</p>
-                <input
-                id="transport-cost"
-                class="slider"
-                enabled="false"
-                style="width: 500px;"
-                type="text"
-                name="transport-cost"
-                data-slider-min="5"
-                data-slider-max="50"
-                data-slider-step="1"
-                value="14"
-                data-slider-value="14"
-                data-slider-formater="rand"/><br>
-              </div>
-              <div class="form-group">
-                <label for="transport-direction" class="lead">Is this cost one way or for a roundtrip?</label><br>
-                <select class="selectpicker" name="transport-direction" id ="transport-direction"><br>
-                  <option value="oneway" selected>one way</option>
-                  <option value="roundtrip">round trip</option>
-                </select>
-              </div>
-              <p><em>
-                Note: We assume the cost of getting from Khayelitsha to a Cape Town suburb through a very short
-                informal survey as the base. It is true it can take up to two minibus taxi trips to leave home
-                and arrive at work. These trips combined cost between R14-15. Daily this can then be R28-30.
-                Transportation is not cheap in Cape Town (public or private) and this is likely true through South Africa.
-                Of course if the tariff or the number of trips from poorer areas to urban employer centres were lower
-                then the cost would be lower. But it can also be higher depending on the distance.
-              </em></p>
+              <!--<button type="button" class="btn btn-danger" value="15">R15, Carb Heavy Diet</button>-->
+              <!--<button type="button" class="btn btn-primary" value="27" selected>R27, Balanced Diet</button>-->
+              <!--<button type="button" class="btn btn-success" value="36">R36, Tim Noakes Diet</button>-->
 
             </div>
+            <p><em>
+              Source: Food - CPI Apr 2014 data, STATS SA<br>
+              We have not incorporated the food nutrition program or child support grants in our assessment. We feel our values are still quite conservative.
+            </em></p>
           </div>
         </div>
-        <!-- Transportation Panel end -->
+      </div>
+      <!-- Food Panel end -->
 
-        <!-- Rent Panel -->
-        <div class="panel panel-default">
-          <div class="panel-heading" data-toggle="collapse" data-parent="#accordion" data-target="#panel-rent-expenses">
-            <h4 class="panel-title">
-              <span>
-                Housing Cost <span id="rent-total" class="pull-right">R...</span>
-              </span>
-            </h4>
-          </div>
-          <div id="panel-rent-expenses" class="panel-collapse collapse">
-            <div class="panel-body">
-              <div class="form-group">
-                <label for="rent-cost" class="lead">The cost of rent and utilities (including electricity).</label><br>
-                <p>Generally speaking, higher rents are associated with better provision of sanitation services and lower crime rates.</p>
-                <input
-                id="rent-cost"
-                class="slider"
-                enabled="false"
-                style="width: 500px;"
-                type="text"
-                name="rent-cost"
-                data-slider-min="0"
-                data-slider-max="1500"
-                data-slider-step="100"
-                value="500"
-                data-slider-value="500"
-                data-slider-formater="rand"/><br>
-              </div>
-              <p><em>
-                Source: Housing - NIDS 2012, UCT. Associations with violence and sanitation taken from this data as well. Where rent was not paid (or reported), the assumption was that the household lived in informal risky settings. We don't want to highlight that as a residential option.
-              </em></p>
+      <!-- Transportation Panel -->
+      <div class="panel panel-default">
+        <div class="panel-heading" data-toggle="collapse" data-parent="#accordion" data-target="#panel-transport-expenses">
+          <h4 class="panel-title">
+            <span>
+              Transportation Cost <span id="transport-total" class="pull-right">R...</span>
+            </span>
+          </h4>
+        </div>
+        <div id="panel-transport-expenses" class="panel-collapse collapse">
+          <div class="panel-body">
+            <div class="form-group">
+              <label for="transport-cost" class="lead">Travel cost for your domestic worker.</label><br>
+              <p>Travel costs are known to be high for domestic workers. We assume a need of R14 one way to get to work based on an informal survey of domestic workers in Cape Town.</p>
+              <input
+                  id="transport-cost"
+                  class="slider"
+                  enabled="false"
+                  style="width: 500px;"
+                  type="text"
+                  name="transport-cost"
+                  data-slider-min="5"
+                  data-slider-max="50"
+                  data-slider-step="1"
+                  value="14"
+                  data-slider-value="14"
+                  data-slider-formater="rand"/><br>
             </div>
+            <div class="form-group">
+              <label for="transport-direction" class="lead">Is this cost one way or for a roundtrip?</label><br>
+              <select class="selectpicker" name="transport-direction" id ="transport-direction"><br>
+                <option value="oneway" selected>one way</option>
+                <option value="roundtrip">round trip</option>
+              </select>
+            </div>
+            <p><em>
+              Note: We assume the cost of getting from Khayelitsha to a Cape Town suburb through a very short
+              informal survey as the base. It is true it can take up to two minibus taxi trips to leave home
+              and arrive at work. These trips combined cost between R14-15. Daily this can then be R28-30.
+              Transportation is not cheap in Cape Town (public or private) and this is likely true through South Africa.
+              Of course if the tariff or the number of trips from poorer areas to urban employer centres were lower
+              then the cost would be lower. But it can also be higher depending on the distance.
+            </em></p>
+
           </div>
         </div>
-        <!-- Rent Panel end -->
+      </div>
+      <!-- Transportation Panel end -->
 
-        <!-- Health Panel -->
-        <div class="panel panel-default">
-          <div class="panel-heading" data-toggle="collapse" data-parent="#accordion" data-target="#panel-health-expenses">
-            <h4 class="panel-title">
-              <span>
-                Healthcare Cost <span id="health-total" class="pull-right">R...</span>
-              </span>
-            </h4>
+      <!-- Rent Panel -->
+      <div class="panel panel-default">
+        <div class="panel-heading" data-toggle="collapse" data-parent="#accordion" data-target="#panel-rent-expenses">
+          <h4 class="panel-title">
+            <span>
+              Housing Cost <span id="rent-total" class="pull-right">R...</span>
+            </span>
+          </h4>
+        </div>
+        <div id="panel-rent-expenses" class="panel-collapse collapse">
+          <div class="panel-body">
+            <div class="form-group">
+              <label for="rent-cost" class="lead">The cost of rent and utilities (including electricity).</label><br>
+              <p>Generally speaking, higher rents are associated with better provision of sanitation services and lower crime rates.</p>
+              <input
+                  id="rent-cost"
+                  class="slider"
+                  enabled="false"
+                  style="width: 500px;"
+                  type="text"
+                  name="rent-cost"
+                  data-slider-min="0"
+                  data-slider-max="1500"
+                  data-slider-step="100"
+                  value="500"
+                  data-slider-value="500"
+                  data-slider-formater="rand"/><br>
+            </div>
+            <p><em>
+              Source: Housing - NIDS 2012, UCT. Associations with violence and sanitation taken from this data as well. Where rent was not paid (or reported), the assumption was that the household lived in informal risky settings. We don't want to highlight that as a residential option.
+            </em></p>
           </div>
-          <div id="panel-health-expenses" class="panel-collapse collapse">
-            <div class="panel-body">
-              <div class="form-group">
-                <label for="rent-cost" class="lead">Allocation for monthly healthcare needs</label><br>
-                <p>Setting up a health budget for the household is very important. Public consultancies cost R39 per visit and for medicines. Healthcare costs could also be covered through health insurance which can cost at least R299 per month per person.</p>
-                <p>Estimate a reasonable monthly health allowance (per person)</p>
-                <input
-                id="health-cost"
-                class="slider"
-                enabled="false"
-                style="width: 500px;"
-                type="text"
-                name="health-cost"
-                data-slider-min="0"
-                data-slider-max="300"
-                data-slider-step="10"
-                value="40"
-                data-slider-value="40"
-                data-slider-formater="rand"/><br>
-              </div>
-              <p>
+        </div>
+      </div>
+      <!-- Rent Panel end -->
+
+      <!-- Health Panel -->
+      <div class="panel panel-default">
+        <div class="panel-heading" data-toggle="collapse" data-parent="#accordion" data-target="#panel-health-expenses">
+          <h4 class="panel-title">
+            <span>
+              Healthcare Cost <span id="health-total" class="pull-right">R...</span>
+            </span>
+          </h4>
+        </div>
+        <div id="panel-health-expenses" class="panel-collapse collapse">
+          <div class="panel-body">
+            <div class="form-group">
+              <label for="rent-cost" class="lead">Allocation for monthly healthcare needs</label><br>
+              <p>Setting up a health budget for the household is very important. Public consultancies cost R39 per visit and for medicines. Healthcare costs could also be covered through health insurance which can cost at least R299 per month per person.</p>
+              <p>Estimate a reasonable monthly health allowance (per person)</p>
+              <input
+                  id="health-cost"
+                  class="slider"
+                  enabled="false"
+                  style="width: 500px;"
+                  type="text"
+                  name="health-cost"
+                  data-slider-min="0"
+                  data-slider-max="300"
+                  data-slider-step="10"
+                  value="40"
+                  data-slider-value="40"
+                  data-slider-formater="rand"/><br>
+            </div>
+            <p>
               <em>
                 Sources: <br>
                 <a href="http://www.southafrica.info/services/health/healthfaq.htm" target="_blank">http://www.southafrica.info/services/health/healthfaq.htm</a><br>
                 <a href="http://www.medicalaid.co.za/MedicalAid/MedicalAidfortheLowIncomeEarner.aspx" target="_blank">http://www.medicalaid.co.za/MedicalAid/MedicalAidfortheLowIncomeEarner.aspx</a><br>
               </em>
-              </p>
-            </div>
+            </p>
           </div>
         </div>
-        <!-- Health Panel end -->
-
-        <!-- Education Panel -->
-        <div class="panel panel-default">
-          <div class="panel-heading" data-toggle="collapse" data-parent="#accordion" data-target="#panel-education-expenses">
-            <h4 class="panel-title">
-              <span>
-                Education Cost<span id="education-total" class="pull-right">R...</span>
-              </span>
-            </h4>
-          </div>
-          <div id="panel-education-expenses" class="panel-collapse collapse">
-            <div class="panel-body">
-              <div class="form-group">
-                <label for="education-cost" class="lead">The cost of sending kids to school for a household</label>
-                <p>Estimate the cost per school aged child. Expenses include stationery, uniform, textbooks, and even transportation costs.</p>
-                <input
-                id="education-cost"
-                class="slider"
-                enabled="false"
-                style="width: 500px;"
-                type="text"
-                name="education-cost"
-                data-slider-min="0"
-                data-slider-max="1000"
-                data-slider-step="20"
-                value="100"
-                data-slider-value="100"
-                data-slider-formater="rand"/><br>
-                <p>Number of school aged children. We assumed two individuals in the household were out of school.</p><br>
-                <input
-                id="education-kids"
-                class="slider"
-                enabled="false"
-                style="width: 500px;"
-                type="text"
-                name="education-kids"
-                data-slider-min="0"
-                data-slider-max="10"
-                data-slider-step="1"
-                value="2"
-                data-slider-value="2"
-                data-slider-formater="children"/><br>
-              </div>
-              <p><em>
-                Source - NIDS 2012. Median expenditure were between R100 and R200/month/kid for when education costs were reported. There isn't a clear determination of costs per month for a family sending kids to school. It's likely on transportation, stationery, etc - but there are some definite costs.
-                - We limit the slider to R1000 because households are unlikely to be willing to pay more than that for kids. Public schools with fees and private schools can cost at R1000 and be upwards of R8000/month.
-                <a href="http://www.education.gov.za/LinkClick.aspx?fileticket=oAFdXOY5hKo%3D&tabid=452&mid=1038">http://www.education.gov.za/LinkClick.aspx?fileticket=oAFdXOY5hKo%3D&tabid=452&mid=1038</a>
-              </em></p>
-            </div>
-          </div>
-        </div>
-        <!-- Education Panel end -->
-
-        <!-- Communication Panel -->
-        <div class="panel panel-default">
-          <div class="panel-heading" data-toggle="collapse" data-parent="#accordion" data-target="#panel-communication-expenses">
-            <h4 class="panel-title">
-              <span>
-                Communications Cost<span id="communication-total" class="pull-right">R...</span>
-              </span>
-            </h4>
-          </div>
-          <div id="panel-communication-expenses" class="panel-collapse collapse">
-            <div class="panel-body">
-              <div class="form-group">
-                <label for="communication-cost" class="lead">Communication costs</label><br>
-                <p>Communications are necessary for staying in touch with families, friends, accessing news, and for emergencies. Estimate the monthly cost per person in the household.</p>
-                <input
-                id="communication-cost"
-                class="slider"
-                enabled="false"
-                style="width: 500px;"
-                type="text"
-                name="communication-cost"
-                data-slider-min="0"
-                data-slider-max="1000"
-                data-slider-step="25"
-                value="100"
-                data-slider-value="100"
-                data-slider-formater="rand"/><br>
-              </div>
-            </div>
-          </div>
-        </div>
-        <!-- Communication Panel end -->
-
-        <!-- Recreation Panel -->
-        <div class="panel panel-default">
-          <div class="panel-heading" data-toggle="collapse" data-parent="#accordion" data-target="#panel-recreation-expenses">
-            <h4 class="panel-title">
-              <span>
-                Recreation Cost<span id="recreation-total" class="pull-right">R...</span>
-              </span>
-            </h4>
-          </div>
-          <div id="panel-recreation-expenses" class="panel-collapse collapse">
-            <div class="panel-body">
-              <div class="form-group">
-                <label for="recreation-cost" class="lead">Entertainment & recreation</label><br>
-                <p>It is always good to take time out from work and managing a household. Everyone needs a break! Estimate a monthly recreation cost per person in the household.</p>
-                <input
-                id="recreation-cost"
-                class="slider"
-                enabled="false"
-                style="width: 500px;"
-                type="text"
-                name="recreation-cost"
-                data-slider-min="0"
-                data-slider-max="1000"
-                data-slider-step="50"
-                value="100"
-                data-slider-value="100"
-                data-slider-formater="rand"/><br>
-              </div>
-            </div>
-          </div>
-        </div>
-        <!-- Recreation Panel end -->
-
-        <!-- Other Panel -->
-        <div class="panel panel-default">
-          <div class="panel-heading" data-toggle="collapse" data-parent="#accordion" data-target="#panel-other-expenses">
-            <h4 class="panel-title">
-              <span>
-                Other Costs<span id="other-total" class="pull-right">R...</span>
-              </span>
-            </h4>
-          </div>
-          <div id="panel-other-expenses" class="panel-collapse collapse">
-            <div class="panel-body">
-              <div class="form-group">
-                <label for="other-cost" class="lead">Miscellaneous costs incurred by the household</label><br>
-                <p>These include clothing, household items, personal care, and emergency expenses. Estimate other costs incurred per person in the household.</p>
-                <input
-                id="other-cost"
-                class="slider"
-                enabled="false"
-                style="width: 500px;"
-                type="text"
-                name="other-cost"
-                data-slider-min="0"
-                data-slider-max="1000"
-                data-slider-step="50"
-                value="200"
-                data-slider-value="200"
-                data-slider-formater="rand"/><br>
-              </div>
-              <p><em>
-                This should including for emergencies and procurement of durable goods, transportation of goods (gas cylinders, groceries, etc), implicit and explicit costs of running a household.
-              </em></p>
-            </div>
-          </div>
-        </div><!-- Other Panel end -->
       </div>
-    </div>
-  </div> <!-- row -->
-</div> <!-- assumption container -->
+      <!-- Health Panel end -->
 
-<div id="footer">
-  <div class="col-lg-12 text-center">
-    <p id="attribution">Brought to you by&nbsp;&nbsp;<a href="http://www.code4sa.org" target="_blank"><img height="34px" src="images/logo.png"></a>.</p>
-    <a href="https://twitter.com/share" class="twitter-share-button" data-url="http://living-wage.co.za" data-text="Are you paying your domestic worker a living wage?" data-via="code4sa" data-hashtags="livingwage">Tweet</a>
-    <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+      <!-- Education Panel -->
+      <div class="panel panel-default">
+        <div class="panel-heading" data-toggle="collapse" data-parent="#accordion" data-target="#panel-education-expenses">
+          <h4 class="panel-title">
+            <span>
+              Education Cost<span id="education-total" class="pull-right">R...</span>
+            </span>
+          </h4>
+        </div>
+        <div id="panel-education-expenses" class="panel-collapse collapse">
+          <div class="panel-body">
+            <div class="form-group">
+              <label for="education-cost" class="lead">The cost of sending kids to school for a household</label>
+              <p>Estimate the cost per school aged child. Expenses include stationery, uniform, textbooks, and even transportation costs.</p>
+              <input
+                  id="education-cost"
+                  class="slider"
+                  enabled="false"
+                  style="width: 500px;"
+                  type="text"
+                  name="education-cost"
+                  data-slider-min="0"
+                  data-slider-max="1000"
+                  data-slider-step="20"
+                  value="100"
+                  data-slider-value="100"
+                  data-slider-formater="rand"/><br>
+              <p>Number of school aged children. We assumed two individuals in the household were out of school.</p><br>
+              <input
+                  id="education-kids"
+                  class="slider"
+                  enabled="false"
+                  style="width: 500px;"
+                  type="text"
+                  name="education-kids"
+                  data-slider-min="0"
+                  data-slider-max="10"
+                  data-slider-step="1"
+                  value="2"
+                  data-slider-value="2"
+                  data-slider-formater="children"/><br>
+            </div>
+            <p><em>
+              Source - NIDS 2012. Median expenditure were between R100 and R200/month/kid for when education costs were reported. There isn't a clear determination of costs per month for a family sending kids to school. It's likely on transportation, stationery, etc - but there are some definite costs.
+              - We limit the slider to R1000 because households are unlikely to be willing to pay more than that for kids. Public schools with fees and private schools can cost at R1000 and be upwards of R8000/month.
+              <a href="http://www.education.gov.za/LinkClick.aspx?fileticket=oAFdXOY5hKo%3D&tabid=452&mid=1038">http://www.education.gov.za/LinkClick.aspx?fileticket=oAFdXOY5hKo%3D&tabid=452&mid=1038</a>
+            </em></p>
+          </div>
+        </div>
+      </div>
+      <!-- Education Panel end -->
+
+      <!-- Communication Panel -->
+      <div class="panel panel-default">
+        <div class="panel-heading" data-toggle="collapse" data-parent="#accordion" data-target="#panel-communication-expenses">
+          <h4 class="panel-title">
+            <span>
+              Communications Cost<span id="communication-total" class="pull-right">R...</span>
+            </span>
+          </h4>
+        </div>
+        <div id="panel-communication-expenses" class="panel-collapse collapse">
+          <div class="panel-body">
+            <div class="form-group">
+              <label for="communication-cost" class="lead">Communication costs</label><br>
+              <p>Communications are necessary for staying in touch with families, friends, accessing news, and for emergencies. Estimate the monthly cost per person in the household.</p>
+              <input
+                  id="communication-cost"
+                  class="slider"
+                  enabled="false"
+                  style="width: 500px;"
+                  type="text"
+                  name="communication-cost"
+                  data-slider-min="0"
+                  data-slider-max="1000"
+                  data-slider-step="25"
+                  value="100"
+                  data-slider-value="100"
+                  data-slider-formater="rand"/><br>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Communication Panel end -->
+
+      <!-- Recreation Panel -->
+      <div class="panel panel-default">
+        <div class="panel-heading" data-toggle="collapse" data-parent="#accordion" data-target="#panel-recreation-expenses">
+          <h4 class="panel-title">
+            <span>
+              Recreation Cost<span id="recreation-total" class="pull-right">R...</span>
+            </span>
+          </h4>
+        </div>
+        <div id="panel-recreation-expenses" class="panel-collapse collapse">
+          <div class="panel-body">
+            <div class="form-group">
+              <label for="recreation-cost" class="lead">Entertainment & recreation</label><br>
+              <p>It is always good to take time out from work and managing a household. Everyone needs a break! Estimate a monthly recreation cost per person in the household.</p>
+              <input
+                  id="recreation-cost"
+                  class="slider"
+                  enabled="false"
+                  style="width: 500px;"
+                  type="text"
+                  name="recreation-cost"
+                  data-slider-min="0"
+                  data-slider-max="1000"
+                  data-slider-step="50"
+                  value="100"
+                  data-slider-value="100"
+                  data-slider-formater="rand"/><br>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Recreation Panel end -->
+
+      <!-- Other Panel -->
+      <div class="panel panel-default">
+        <div class="panel-heading" data-toggle="collapse" data-parent="#accordion" data-target="#panel-other-expenses">
+          <h4 class="panel-title">
+            <span>
+              Other Costs<span id="other-total" class="pull-right">R...</span>
+            </span>
+          </h4>
+        </div>
+        <div id="panel-other-expenses" class="panel-collapse collapse">
+          <div class="panel-body">
+            <div class="form-group">
+              <label for="other-cost" class="lead">Miscellaneous costs incurred by the household</label><br>
+              <p>These include clothing, household items, personal care, and emergency expenses. Estimate other costs incurred per person in the household.</p>
+              <input
+                  id="other-cost"
+                  class="slider"
+                  enabled="false"
+                  style="width: 500px;"
+                  type="text"
+                  name="other-cost"
+                  data-slider-min="0"
+                  data-slider-max="1000"
+                  data-slider-step="50"
+                  value="200"
+                  data-slider-value="200"
+                  data-slider-formater="rand"/><br>
+            </div>
+            <p><em>
+              This should including for emergencies and procurement of durable goods, transportation of goods (gas cylinders, groceries, etc), implicit and explicit costs of running a household.
+            </em></p>
+          </div>
+        </div>
+      </div><!-- Other Panel end -->
+
+    </div>
   </div>
 </div>
 
+<div id="footer">
+  <div class="col-lg-12 text-center">
+    <p id="attribution">Brought to you by&nbsp;&nbsp;<a href="http://www.code4sa.org" target="_blank"><img height="34" src="images/logo.png"></a>.</p>
+<a href="https://twitter.com/share" class="twitter-share-button" data-url="http://living-wage.co.za" data-text="Are you paying your domestic worker a living wage?" data-via="code4sa" data-hashtags="livingwage">Tweet</a>
+<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+  </div>
+</div>
 
-<div id="fb-root"></div>
-<script src="/public/javascript/facetwit.js"></script>
 <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
 <script src="https://code.jquery.com/jquery-1.11.2.min.js"></script>
-<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
 <script src="js/bootstrap-select.min.js"></script>
 <script src="js/bootstrap-slider.js"></script>
 <script src="js/main.js"></script>
 
 <script>
-(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
- (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
- m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
- })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
 
-ga('create', 'UA-48399585-9', 'auto');
-ga('send', 'pageview');
+  ga('create', 'UA-48399585-9', 'auto');
+  ga('send', 'pageview');
 
 </script>
+
 </body>
 </html>

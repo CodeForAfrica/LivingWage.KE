@@ -47,24 +47,6 @@ body{
     font-size: 12px;
 }
 
-.jumbotron h1 {
-    margin-bottom: 15px;
-}
-
-.code4sa .lead {
-    margin-bottom: 5px;
-}
-
-.code4sa #attribution img {
-    height:34px;
-    margin-left: 10px;
-}
-
-.code4sa .btn {
-    background-color:#3e5771;
-}
-
 .slider.slider-horizontal {
     width: 100%;
 }
-
