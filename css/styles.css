@@ -55,3 +55,7 @@ body{
     margin-top: 10px;
     margin-left: 10px;
 }
+
+.lead {
+    line-height: 30px;
+}
