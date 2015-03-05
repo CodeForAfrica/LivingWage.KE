@@ -5,7 +5,7 @@ constants = {
     days_per_month : 30,
     sanitation_threshold : 500,
     violence_threshold : 900,
-    transition_time : 400,
+    transition_time : 200,
     output_low : 75,     // below this figure salary is too low
     output_almost : 90  // below this figure salary is almost enough
 }
@@ -148,14 +148,14 @@ function update_display(class_name) {
             if (tmp != class_name) {
                 $("." + tmp).each(function() {
                     if (!$(this).hasClass(class_name)) {
-                        $(this).hide(transition_time);
+                        $(this).slideUp(transition_time);
                     }
                 });
             }
 
             // show some stuff
             $("." + class_name).each(function() {
-                $(this).show(transition_time);
+                $(this).slideDown(transition_time);
             })
         }
     }

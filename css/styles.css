@@ -64,4 +64,7 @@ body{
     background-color:#3e5771;
 }
 
+.slider.slider-horizontal {
+    width: 100%;
+}
 
