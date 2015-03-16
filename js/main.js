@@ -239,6 +239,7 @@ function change_twitter_text(txt) {
             .attr('data-url', 'http://bit.ly/1Gn9ZWS')
             .attr('data-via', 'code4sa')
             .attr('data-text', txt)
+            .attr('data-count', 'none')
             .attr('data-hashtags', 'fairwage');
         $('#tweetBtn').append(tweetBtn);
         console.log(twttr)
