@@ -34,18 +34,30 @@ body{
 }
 
 .jumbotron {
-    padding-bottom: 10px;
     margin-bottom: 10px;
-    padding-top: 10px;
+    padding: 30px;
     border-radius: 0 !important;
-}
-
-.jumbotron p {
-    margin-bottom: 5px;
 }
 
 .jumbotron .small {
     font-size: 16px;
+}
+
+.jumbotron p{
+
+    margin: 0;
+
+}
+
+.jumbotron p.lead{
+
+    margin-bottom: 10px;
+
+}
+
+
+.jumbotron H1{
+    margin: 0 0 10px 0;
 }
 
 .slider.slider-horizontal {
