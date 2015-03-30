@@ -117,9 +117,9 @@ h1, h2, h3, h4, h5, h6{
 
     margin-bottom: 30px;
 
-    -webkit-box-shadow: 0px 0px 0px 3px rgba(30,30,30,0.1);
-    -moz-box-shadow: 0px 0px 0px 3px rgba(30,30,30,0.1);
-    box-shadow: 0px 0px 0px 3px rgba(30,30,30,0.1);
+    -webkit-box-shadow: 0px 0px 0px 1px rgba(30,30,30,0.1);
+    -moz-box-shadow: 0px 0px 0px 1px rgba(30,30,30,0.1);
+    box-shadow: 0px 0px 0px 1px rgba(30,30,30,0.1);
 
 }
 
@@ -163,9 +163,9 @@ h1, h2, h3, h4, h5, h6{
     border-radius: 0;
     color: #fff;
 
-    -webkit-box-shadow: 0px 0px 0px 3px rgba(30,30,30,0.1);
-    -moz-box-shadow: 0px 0px 0px 3px rgba(30,30,30,0.1);
-    box-shadow: 0px 0px 0px 3px rgba(30,30,30,0.1);
+    -webkit-box-shadow: 0px 0px 0px 1px rgba(30,30,30,0.1);
+    -moz-box-shadow: 0px 0px 0px 1px rgba(30,30,30,0.1);
+    box-shadow: 0px 0px 0px 1px rgba(30,30,30,0.1);
 
 }
 
