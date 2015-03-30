@@ -80,9 +80,9 @@ h1, h2, h3, h4, h5, h6{
 
     color: #09f;
 
-    border-radius: 10px;
+    border-radius: 15px;
 
-    padding: 8px;
+    padding: 8px 10px 8px 10px;
 
     font-weight: 700;
     font-size: 0.7em;
