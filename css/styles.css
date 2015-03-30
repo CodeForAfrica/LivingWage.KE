@@ -4,6 +4,7 @@
 body{
     background-image: url('../images/furley_bg.png');
     font-family: 'Roboto';
+    color: #000;
 }
 
 h1, h2, h3, h4, h5, h6{
@@ -112,23 +113,27 @@ h1, h2, h3, h4, h5, h6{
 }
 
 .section{
-
     background: #fff;
 
     padding: 20px;
 
-    margin-top: 15px;
-
-}
-
-.panel{
-
-    margin-bottom: 20px !important;
-
+    margin-bottom: 15px;
 }
 
 .question{
     font-family: 'Roboto Slab';
+}
+
+.note{
+
+    color: rgba(0,0,0,0.8);
+
+    background: rgba(255,255,255,0.4);
+
+    padding: 5px 10px 5px 10px;
+
+    border-radius: 5px;
+
 }
 
 .sources{
@@ -137,7 +142,37 @@ h1, h2, h3, h4, h5, h6{
     font-size: 0.8em;
 }
 
+.sources strong{
+    background: rgba(0,0,0,0.5);
+    padding: 0 2px 0 2px;
+    font-family: 'Roboto';
+    font-weight: 900;
+    text-transform: uppercase;
+}
+
 .navbar{
     margin-bottom: 0;
 }
 
+.panel{
+    margin-bottom: 15px !important;
+    border: 0 !important;
+    border-radius: 0;
+    color: #fff;
+}
+
+.panel-heading{
+    background-color: #fff !important;
+    border: 0 !important;
+    color: #000;
+}
+
+#panel-household-size{background: #396;}
+#panel-food-expenses{background: #993;}
+#panel-transport-expenses{background: #936;}
+#panel-rent-expenses{background: #396;}
+#panel-health-expenses{background: #993;}
+#panel-education-expenses{background: #936;}
+#panel-communication-expenses{background:#396;}
+#panel-recreation-expenses{background: #993;}
+#panel-other-expenses{background: #936;}

@@ -160,8 +160,13 @@
       <div class="section">
 
         <h2>Assumptions</h2>
-        <div class="panel-group">
+
+      </div>
+    </div>
+  </div>
         <!-- Household Size Panel-->
+  <div class="row">
+    <div class="col-sm-8 col-sm-offset-2">      
         <div class="panel panel-default">
           <div class="panel-heading" data-toggle="collapse" data-target="#panel-household-size">
             <h4 class="panel-title">
@@ -187,18 +192,23 @@
                     data-slider-value="3"
                     data-slider-formater="people"/><br>
               </div>
+              <hr>
               <p class="note">
                 75% of domestic workers are known to be sole income providers for their households.
               </p>
               <p class="sources">
-                <strong>Source:</strong> NIDS 2012
+                <strong>Sources:</strong> NIDS 2012
               </p>
             </div>
           </div>
         </div>
+      </div>
+    </div>
         <!-- Household Size Panel end-->
 
         <!-- Food Panel -->
+    <div class="row">
+      <div class="col-sm-8 col-sm-offset-2">      
         <div class="panel panel-default">
           <div class="panel-heading" data-toggle="collapse" data-target="#panel-food-expenses">
             <h4 class="panel-title">
@@ -210,8 +220,8 @@
           <div id="panel-food-expenses" class="panel-collapse collapse in">
             <div class="panel-body">
               <div class="form-group">
-                <label for="food-cost" class="lead question">What do you think the daily food costs are per person in the household?</label><br>
-                <p>Keep in mind prices in your area. Using consumer price index data on food (April 2014) and a selected basket of goods we estimate that the daily average cost per person for attaining 2000 calories is R27 (R815 per month per person).</p>
+                <label for="food-cost" class="lead question">What do you think the daily <strong>food costs</strong> are per person in the household?</label><br>
+                
                 <input
                     id="food-cost"
                     class="slider"
@@ -231,18 +241,24 @@
                 <!--<button type="button" class="btn btn-success" value="36">R36, Tim Noakes Diet</button>-->
 
               </div>
-              <p class="sources">
-                <strong>Source:</strong> Food - CPI Apr 2014 data, STATS SA
-              </p>
+              <hr>
+              <p class="note">Using consumer price index data on food (April 2014) and a selected basket of goods we estimate that the daily average cost per person for attaining 2000 calories is R27 (R815 per month per person).</p>
               <p class="note">
                 We have not incorporated the food nutrition program or child support grants in our assessment. We feel our values are still quite conservative.
+              </p>
+              <p class="sources">
+                <strong>Sources:</strong> Food - CPI Apr 2014 data, STATS SA
               </p>
             </div>
           </div>
         </div>
+      </div>
+    </div>
         <!-- Food Panel end -->
 
         <!-- Transportation Panel -->
+    <div class="row">
+      <div class="col-sm-8 col-sm-offset-2">         
         <div class="panel panel-default">
           <div class="panel-heading" data-toggle="collapse" data-target="#panel-transport-expenses">
             <h4 class="panel-title">
@@ -254,8 +270,7 @@
           <div id="panel-transport-expenses" class="panel-collapse collapse in">
             <div class="panel-body">
               <div class="form-group">
-                <label for="transport-cost" class="lead question">How much does travel cost your domestic worker?</label><br>
-                <p>Travel costs are known to be high for domestic workers. We assume a need of R14 one way to get to work based on an informal survey of domestic workers in Cape Town.</p>
+                <label for="transport-cost" class="lead question">How much are your domestic worker's <strong>travel costs</strong>?</label><br>
                 <input
                     id="transport-cost"
                     class="slider"
@@ -271,16 +286,21 @@
                     data-slider-formater="rand"/><br>
               </div>
               <div class="form-group">
-                <label for="transport-direction" class="lead question">Is this cost one way or for a roundtrip?</label><br>
+                <label for="transport-direction" class="lead question">Is this cost <strong>one way</strong> or for a <strong>roundtrip</strong>?</label><br>
                 <select class="selectpicker" name="transport-direction" id ="transport-direction"><br>
                   <option value="oneway" selected>one way</option>
                   <option value="roundtrip">round trip</option>
                 </select>
               </div>
+              <hr>
+              <p class="note">Travel costs are known to be high for domestic workers. We assume a need of R14 one way to get to work based on an informal survey of domestic workers in Cape Town.
+              </p>
               <p class="note">
                 We assume the cost of getting from Khayelitsha to a Cape Town suburb through a very short
                 informal survey as the base. It is true it can take up to two minibus taxi trips to leave home
                 and arrive at work. These trips combined cost between R14-15. Daily this can then be R28-30.
+              </p>
+              <p class="note">
                 Transportation is not cheap in Cape Town (public or private) and this is likely true through South Africa.
                 Of course if the tariff or the number of trips from poorer areas to urban employer centres were lower
                 then the cost would be lower. But it can also be higher depending on the distance.
@@ -289,9 +309,13 @@
             </div>
           </div>
         </div>
+      </div>
+    </div>
         <!-- Transportation Panel end -->
 
         <!-- Rent Panel -->
+    <div class="row">
+      <div class="col-sm-8 col-sm-offset-2">    
         <div class="panel panel-default">
           <div class="panel-heading" data-toggle="collapse in" data-target="#panel-rent-expenses">
             <h4 class="panel-title">
@@ -303,8 +327,7 @@
           <div id="panel-rent-expenses" class="panel-collapse collapse in">
             <div class="panel-body">
               <div class="form-group">
-                <label for="rent-cost" class="lead question">How much are your domestic worker's rent and utility (including electricity) costs?</label><br>
-                <p>Generally speaking, higher rents are associated with better provision of sanitation services and lower crime rates.</p>
+                <label for="rent-cost" class="lead question">How much are your domestic worker's <strong>rent and utility costs</strong> (including electricity)?</label><br>
                 <input
                     id="rent-cost"
                     class="slider"
@@ -319,18 +342,26 @@
                     data-slider-value="500"
                     data-slider-formater="rand"/><br>
               </div>
-              <p class="sources">
-                <strong>Source:</strong> Housing - NIDS 2012, UCT
+              <hr>
+              <p class="note">
+                Generally speaking, higher rents are associated with better provision of sanitation services and lower crime rates.
               </p>
               <p class="note">
                 Associations with violence and sanitation taken from this data as well. Where rent was not paid (or reported), the assumption was that the household lived in informal risky settings. We don't want to highlight that as a residential option.
               </p>
+              <p class="sources">
+                <strong>Sources:</strong> Housing - NIDS 2012, UCT
+              </p>
             </div>
           </div>
         </div>
+      </div>
+    </div>
         <!-- Rent Panel end -->
 
         <!-- Health Panel -->
+    <div class="row">
+      <div class="col-sm-8 col-sm-offset-2">     
         <div class="panel panel-default">
           <div class="panel-heading" data-toggle="collapse" data-target="#panel-health-expenses">
             <h4 class="panel-title">
@@ -343,8 +374,7 @@
             <div class="panel-body">
               <div class="form-group">
                 <label for="rent-cost" class="lead question">What is a reasonable monthly allowance for healthcare needs?</label><br>
-                <p>Setting up a health budget for the household is very important. Public consultancies cost R39 per visit and for medicines. Healthcare costs could also be covered through health insurance which can cost at least R299 per month per person.</p>
-                <p>Estimate a reasonable monthly health allowance (per person).</p>
+                <p>Estimate a reasonable monthly health allowance (per person):</p>
                 <input
                     id="health-cost"
                     class="slider"
@@ -359,6 +389,10 @@
                     data-slider-value="40"
                     data-slider-formater="rand"/><br>
               </div>
+              <hr>
+              <p class="note">
+                Setting up a health budget for the household is very important. Public consultancies cost R39 per visit and for medicines. Healthcare costs could also be covered through health insurance which can cost at least R299 per month per person.
+              </p>
               <p class="sources">
                   <strong>Sources:</strong> <br>
                   <a href="http://www.southafrica.info/services/health/healthfaq.htm" target="_blank">http://www.southafrica.info/services/health/healthfaq.htm</a><br>
@@ -367,9 +401,13 @@
             </div>
           </div>
         </div>
+      </div>
+    </div>
         <!-- Health Panel end -->
 
         <!-- Education Panel -->
+    <div class="row">
+      <div class="col-sm-8 col-sm-offset-2">         
         <div class="panel panel-default">
           <div class="panel-heading" data-toggle="collapse" ddata-target="#panel-education-expenses">
             <h4 class="panel-title">
@@ -412,7 +450,7 @@
                     data-slider-formater="children"/><br>
               </div>
               <p class="sources">
-                <strong>Source:</strong> NIDS 2012. 
+                <strong>Sources:</strong> NIDS 2012. 
               </p>
               <p class="note">
                 Median expenditure were between R100 and R200/month/kid for when education costs were reported. There isn't a clear determination of costs per month for a family sending kids to school. It's likely on transportation, stationery, etc - but there are some definite costs.
@@ -426,9 +464,13 @@
             </div>
           </div>
         </div>
+      </div>
+    </div>
         <!-- Education Panel end -->
 
         <!-- Communication Panel -->
+    <div class="row">
+      <div class="col-sm-8 col-sm-offset-2">         
         <div class="panel panel-default">
           <div class="panel-heading" data-toggle="collapse" data-target="#panel-communication-expenses">
             <h4 class="panel-title">
@@ -459,9 +501,13 @@
             </div>
           </div>
         </div>
+      </div>
+    </div>
         <!-- Communication Panel end -->
 
         <!-- Recreation Panel -->
+    <div class="row">
+      <div class="col-sm-8 col-sm-offset-2">     
         <div class="panel panel-default">
           <div class="panel-heading" data-toggle="collapse" data-target="#panel-recreation-expenses">
             <h4 class="panel-title">
@@ -492,9 +538,13 @@
             </div>
           </div>
         </div>
+      </div>
+    </div>
         <!-- Recreation Panel end -->
 
         <!-- Other Panel -->
+    <div class="row">
+      <div class="col-sm-8 col-sm-offset-2">     
         <div class="panel panel-default">
           <div class="panel-heading" data-toggle="collapse" data-target="#panel-other-expenses">
             <h4 class="panel-title">
@@ -527,9 +577,10 @@
               </p>
             </div>
           </div>
-        </div><!-- Other Panel end -->
-
         </div>
+      </div>
+    </div>
+        <!-- Other Panel end -->
 
       </div>
 
