@@ -157,21 +157,40 @@
   <div class="row">
     <div class="col-sm-8 col-sm-offset-2">
 
-      <div class="section">
+      <div class="assumptions-menu container-fluid">
 
-        <h2>Assumptions</h2>
+	     	<div class="col-sm-4 text-center">
+
+	        <h2>Assumptions</h2>
+
+	      </div>
+
+	      <div class="col-sm-8 text-center">
+
+	        <div class="assumptions-menu-icon" id="menu-household-size" data-toggle="tooltip" data-placement="top" title="Household Size">1</div>
+	        <div class="assumptions-menu-icon" id="menu-food-expenses" data-toggle="tooltip" data-placement="top" title="Food Cost">2</div>
+	        <div class="assumptions-menu-icon" id="menu-transport-expenses" data-toggle="tooltip" data-placement="top" title="Transportation Cost">3</div>
+	        <div class="assumptions-menu-icon" id="menu-rent-expenses" data-toggle="tooltip" data-placement="top" title="Housing Cost">4</div>
+	        <div class="assumptions-menu-icon" id="menu-health-expenses" data-toggle="tooltip" data-placement="top" title="Healthcare Cost">5</div>
+	        <div class="assumptions-menu-icon" id="menu-education-expenses" data-toggle="tooltip" data-placement="top" title="Education Cost">6</div>
+	        <div class="assumptions-menu-icon" id="menu-communication-expenses" data-toggle="tooltip" data-placement="top" title="Communication Cost">7</div>
+	        <div class="assumptions-menu-icon" id="menu-recreation-expenses" data-toggle="tooltip" data-placement="top" title="Recreation Cost">8</div>
+	        <div class="assumptions-menu-icon" id="menu-other-expenses" data-toggle="tooltip" data-placement="top" title="Other">9</div>
+
+	      </div>
 
       </div>
+
     </div>
   </div>
         <!-- Household Size Panel-->
   <div class="row">
     <div class="col-sm-8 col-sm-offset-2">      
-        <div class="panel panel-default">
+        <div class="panel panel-default" id="assumption-1">
           <div class="panel-heading" data-toggle="collapse" data-target="#panel-household-size">
             <h4 class="panel-title">
               <span>
-                Household Size <span id="household-size-feedback" class="pull-right">... people</span>
+                1. Household Size <span id="household-size-feedback" class="pull-right">... people</span>
               </span>
             </h4>
           </div>
@@ -208,11 +227,11 @@
         <!-- Food Panel -->
     <div class="row">
       <div class="col-sm-8 col-sm-offset-2">      
-        <div class="panel panel-default">
+        <div class="panel panel-default" id="assumption-2">
           <div class="panel-heading" data-toggle="collapse" data-target="#panel-food-expenses">
             <h4 class="panel-title">
               <span>
-                Food Cost <span id="food-total" class="pull-right">R...</span>
+                2. Food Cost <span id="food-total" class="pull-right">R...</span>
               </span>
             </h4>
           </div>
@@ -256,11 +275,11 @@
         <!-- Transportation Panel -->
     <div class="row">
       <div class="col-sm-8 col-sm-offset-2">         
-        <div class="panel panel-default">
+        <div class="panel panel-default" id="assumption-3">
           <div class="panel-heading" data-toggle="collapse" data-target="#panel-transport-expenses">
             <h4 class="panel-title">
               <span>
-                Transportation Cost <span id="transport-total" class="pull-right">R...</span>
+                3. Transportation Cost <span id="transport-total" class="pull-right">R...</span>
               </span>
             </h4>
           </div>
@@ -311,11 +330,11 @@
         <!-- Rent Panel -->
     <div class="row">
       <div class="col-sm-8 col-sm-offset-2">    
-        <div class="panel panel-default">
+        <div class="panel panel-default" id="assumption-4">
           <div class="panel-heading" data-toggle="collapse in" data-target="#panel-rent-expenses">
             <h4 class="panel-title">
               <span>
-                Housing Cost <span id="rent-total" class="pull-right">R...</span>
+                4. Housing Cost <span id="rent-total" class="pull-right">R...</span>
               </span>
             </h4>
           </div>
@@ -355,11 +374,11 @@
         <!-- Health Panel -->
     <div class="row">
       <div class="col-sm-8 col-sm-offset-2">     
-        <div class="panel panel-default">
+        <div class="panel panel-default" id="assumption-5">
           <div class="panel-heading" data-toggle="collapse" data-target="#panel-health-expenses">
             <h4 class="panel-title">
               <span>
-                Healthcare Cost <span id="health-total" class="pull-right">R...</span>
+                5. Healthcare Cost <span id="health-total" class="pull-right">R...</span>
               </span>
             </h4>
           </div>
@@ -399,11 +418,11 @@
         <!-- Education Panel -->
     <div class="row">
       <div class="col-sm-8 col-sm-offset-2">         
-        <div class="panel panel-default">
+        <div class="panel panel-default" id="assumption-6">
           <div class="panel-heading" data-toggle="collapse" ddata-target="#panel-education-expenses">
             <h4 class="panel-title">
               <span>
-                Education Cost<span id="education-total" class="pull-right">R...</span>
+                6. Education Cost<span id="education-total" class="pull-right">R...</span>
               </span>
             </h4>
           </div>
@@ -463,11 +482,11 @@
         <!-- Communication Panel -->
     <div class="row">
       <div class="col-sm-8 col-sm-offset-2">         
-        <div class="panel panel-default">
+        <div class="panel panel-default" id="assumption-7">
           <div class="panel-heading" data-toggle="collapse" data-target="#panel-communication-expenses">
             <h4 class="panel-title">
               <span>
-                Communications Cost<span id="communication-total" class="pull-right">R...</span>
+                7. Communications Cost<span id="communication-total" class="pull-right">R...</span>
               </span>
             </h4>
           </div>
@@ -502,11 +521,11 @@
         <!-- Recreation Panel -->
     <div class="row">
       <div class="col-sm-8 col-sm-offset-2">     
-        <div class="panel panel-default">
+        <div class="panel panel-default" id="assumption-8">
           <div class="panel-heading" data-toggle="collapse" data-target="#panel-recreation-expenses">
             <h4 class="panel-title">
               <span>
-                Recreation Cost<span id="recreation-total" class="pull-right">R...</span>
+                8. Recreation Cost<span id="recreation-total" class="pull-right">R...</span>
               </span>
             </h4>
           </div>
@@ -541,11 +560,11 @@
         <!-- Other Panel -->
     <div class="row">
       <div class="col-sm-8 col-sm-offset-2">     
-        <div class="panel panel-default">
+        <div class="panel panel-default" id="assumption-9">
           <div class="panel-heading" data-toggle="collapse" data-target="#panel-other-expenses">
             <h4 class="panel-title">
               <span>
-                Other Costs<span id="other-total" class="pull-right">R...</span>
+                9. Other Costs<span id="other-total" class="pull-right">R...</span>
               </span>
             </h4>
           </div>
