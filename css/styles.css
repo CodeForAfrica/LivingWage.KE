@@ -1,5 +1,9 @@
+@import url(http://fonts.googleapis.com/css?family=Roboto:400,700,900);
+@import url(http://fonts.googleapis.com/css?family=Roboto+Slab:400,700,300);
+
 body{
     background-image: url('../images/furley_bg.png');
+    font-family: 'Roboto';
 }
 
 h1, h2, h3, h4, h5, h6{
@@ -55,11 +59,15 @@ h1, h2, h3, h4, h5, h6{
 
     margin-bottom: 10px;
 
+    font-family: 'Roboto Slab';
+
 }
 
 
 .jumbotron H1{
     margin: 0 0 10px 0;
+
+    font-weight: 900;
 }
 
 .slider.slider-horizontal {
@@ -89,4 +97,14 @@ h1, h2, h3, h4, h5, h6{
 
     margin-bottom: 20px !important;
 
+}
+
+.question{
+    font-family: 'Roboto Slab';
+}
+
+.sources{
+    font-family: 'Roboto Slab';
+    font-weight: 400;
+    font-size: 0.8em;
 }
