@@ -178,7 +178,7 @@
           <div id="panel-household-size" class="panel-collapse collapse in">
             <div class="panel-body">
               <div class="form-group">
-                <label for="household-size" class="lead question">Including your household worker, how large is their household?</label><br>
+                <label for="household-size" class="lead question">Including your domestic worker, <strong>how large is their household</strong>?</label><br>
                 <input
                     id="household-size"
                     class="slider"
@@ -350,8 +350,7 @@
                 Associations with violence and sanitation taken from this data as well. Where rent was not paid (or reported), the assumption was that the household lived in informal risky settings. We don't want to highlight that as a residential option.
               </p>
               <p class="sources">
-                <strong>Sources:</strong><br> 
-                Housing - NIDS 2012, UCT
+                <strong>Sources:</strong> Housing - NIDS 2012, UCT
               </p>
             </div>
           </div>
@@ -435,7 +434,10 @@
                     value="100"
                     data-slider-value="100"
                     data-slider-formater="rand"/><br>
-                <p>Number of school aged children. We assumed two individuals in the household were out of school.</p><br>
+                </div>
+                <div class="form-group">
+                <label for="education-cost" class="lead question">How many school aged children are there in the household?</label>
+                <p>We assumed two individuals in the household were out of school.</p><br>
                 <input
                     id="education-kids"
                     class="slider"

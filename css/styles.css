@@ -131,7 +131,7 @@ h1, h2, h3, h4, h5, h6{
 
 .note{
 
-    color: rgba(0,0,0,0.8);
+    color: #000;
 
     background: rgba(255,255,255,0.4);
 
@@ -171,10 +171,30 @@ h1, h2, h3, h4, h5, h6{
 
 }
 
+.panel a{
+
+    color: #fff;
+    text-decoration: underline;
+
+}
+
 .panel-heading{
     background-color: #fff !important;
     border: 0 !important;
     color: #000;
+}
+
+.panel .slider-track {
+    background: rgba(0,0,0,0.5);
+}
+
+.panel .slider-selection{
+    background: #fff;
+}
+
+.panel .slider-handle{
+    background: #fff;
+    border: solid rgba(0,0,0,0.8) 3px;
 }
 
 #panel-household-size{background: #396;}
