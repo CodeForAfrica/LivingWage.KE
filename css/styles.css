@@ -99,10 +99,6 @@ h1, h2, h3, h4, h5, h6{
 
 }
 
-
-
-
-
 .twitter-share-button, .fb-like {
     margin-top: 10px;
     margin-left: 10px;
@@ -182,6 +178,28 @@ h1, h2, h3, h4, h5, h6{
 .slider .tooltip{
 
     margin-top: -10px;
+
+}
+
+.btn-primary{
+
+    background: #059;
+
+    border-radius: 30px;
+
+    border: 0;
+
+    width: auto;
+
+    display: inline;
+
+}
+
+.btn-primary:hover{
+
+    background: #09f;
+
+    border: 0;
 
 }
 
