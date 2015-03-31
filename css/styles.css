@@ -43,7 +43,7 @@ h1, h2, h3, h4, h5, h6{
 }
 
 .jumbotron {
-    background: #09f;
+    background: #059;
     color: #fff;
     margin-bottom: 30px;
     padding: 30px 30px 40px 30px;
@@ -81,7 +81,7 @@ h1, h2, h3, h4, h5, h6{
 
     background: #fff;
 
-    color: #09f;
+    color: #059;
 
     border-radius: 15px;
 
@@ -97,7 +97,7 @@ h1, h2, h3, h4, h5, h6{
 .jumbotron a:hover{
 
     text-decoration: none;
-    color: #059;
+    color: #000;
 
 }
 
@@ -116,6 +116,12 @@ h1, h2, h3, h4, h5, h6{
 
 	font-size: 1em;
 	font-weight: 700;
+}
+
+.btn.btn-primary i{
+
+	margin-right: 10px;
+
 }
 
 .section{
