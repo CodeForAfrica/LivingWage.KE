@@ -110,6 +110,14 @@ h1, h2, h3, h4, h5, h6{
     line-height: 30px;
 }
 
+.btn.btn-primary{
+
+	text-transform: Uppercase;
+
+	font-size: 1em;
+	font-weight: 700;
+}
+
 .section{
     background: #fff;
 
@@ -251,7 +259,7 @@ h1, h2, h3, h4, h5, h6{
 	border-radius: 50%;
 
 	margin: 5px;
-	padding-top: 2px;
+	padding-top: 3px;
 
 	text-align: center;
 
