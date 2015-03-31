@@ -280,6 +280,14 @@ h1, h2, h3, h4, h5, h6{
     opacity: 1;
 }
 
+.panel-image{
+
+	font-size: 3em;
+
+	padding: 15px 0 40px 0;
+
+}
+
 #menu-household-size, #panel-household-size{background: hsla(0,60%,40%,1);}
 #menu-food-expenses, #panel-food-expenses{background: hsla(30,60%,40%,1);}
 #menu-transport-expenses, #panel-transport-expenses{background: hsla(60,60%,40%,1);}
