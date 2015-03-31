@@ -169,12 +169,33 @@ h1, h2, h3, h4, h5, h6{
 
 }
 
-.slider.slider-horizontal {
+.slider{
 
     width: 100%;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    height: 70px;
 
-    margin-top: 5px;
+}
 
+.slider .tooltip{
+
+    margin-top: 0px;
+
+}
+
+.slider-track {
+    background: rgba(0,0,0,0.2);
+}
+
+.slider-selection{
+    background: #09f;
+}
+
+.slider-handle{
+    background: #fff;
+    border: solid #000 3px;
+    opacity: 1;
 }
 
 .slider .tooltip{
