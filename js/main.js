@@ -258,9 +258,7 @@ $(document).ready(function() {
 
         $('html, body').stop().animate({
             'scrollTop': $target.offset().top-15
-        }, 900, 'swing', function () {
-            window.location.hash = target - 15;
-        });
+        }, 900, 'swing');
     });
 
     $("#pay-amount").focus();
