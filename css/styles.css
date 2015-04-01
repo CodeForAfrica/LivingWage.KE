@@ -360,3 +360,31 @@ h1, h2, h3, h4, h5, h6{
 	display: inline;
 
 }
+
+.scroll-top-message{
+
+	font-weight: 700;
+
+	font-size: 1.2em;
+
+}
+
+.scroll-top-message a{
+
+	text-decoration: none
+
+}
+
+.scroll-top-message p:nth-child(2){
+
+	font-size: 1.2em;
+
+}
+
+.scroll-top-message .btn{
+
+	text-transform: initial;
+
+	font-size: 0.8em;
+
+}
