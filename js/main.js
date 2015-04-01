@@ -11,7 +11,12 @@ constants = {
 }
 
 function to_rands(val) {
-    return "R" + val;
+    if (val != parseInt(val)){
+        return "R" + val.toFixed(2);
+    }
+    else {
+        return "R" + val;
+    }
 }
 
 function calculate_transport(household_size) {
