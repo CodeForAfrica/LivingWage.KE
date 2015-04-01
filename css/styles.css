@@ -325,15 +325,15 @@ h1, h2, h3, h4, h5, h6{
 
 }
 
-#menu-household-size, #panel-household-size{background: hsla(0,60%,40%,1);}
-#menu-food-expenses, #panel-food-expenses{background: hsla(30,60%,40%,1);}
-#menu-transport-expenses, #panel-transport-expenses{background: hsla(60,60%,40%,1);}
-#menu-rent-expenses, #panel-rent-expenses{background: hsla(90,60%,40%,1);}
-#menu-health-expenses, #panel-health-expenses{background: hsla(120,60%,40%,1);}
-#menu-education-expenses, #panel-education-expenses{background: hsla(150,60%,40%,1);}
-#menu-communication-expenses, #panel-communication-expenses{background:hsla(180,60%,40%,1);}
-#menu-recreation-expenses, #panel-recreation-expenses{background: hsla(210,60%,40%,1);}
-#menu-other-expenses, #panel-other-expenses{background: hsla(240,60%,40%,1);}
+#menu-household-size, #panel-household-size{background: hsla(50,60%,40%,1);}
+#menu-food-expenses, #panel-food-expenses{background: hsla(75,60%,40%,1);}
+#menu-transport-expenses, #panel-transport-expenses{background: hsla(100,60%,40%,1);}
+#menu-rent-expenses, #panel-rent-expenses{background: hsla(125,60%,40%,1);}
+#menu-health-expenses, #panel-health-expenses{background: hsla(150,60%,40%,1);}
+#menu-education-expenses, #panel-education-expenses{background: hsla(175,60%,40%,1);}
+#menu-communication-expenses, #panel-communication-expenses{background:hsla(200,60%,40%,1);}
+#menu-recreation-expenses, #panel-recreation-expenses{background: hsla(225,60%,40%,1);}
+#menu-other-expenses, #panel-other-expenses{background: hsla(250,60%,40%,1);}
 
 .social-media-buttons{
 
