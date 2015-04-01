@@ -234,12 +234,11 @@ function change_twitter_text(txt) {
         // Generate new markup
         var tweetBtn = $('<a></a>')
             .addClass('twitter-share-button')
-            .addClass('pull-right')
             .attr('href', 'http://twitter.com/share')
             .attr('data-url', 'http://bit.ly/1Gn9ZWS')
             .attr('data-via', 'code4sa')
             .attr('data-text', txt)
-            .attr('data-count', 'none')
+            .attr('data-count', 'horizontal')
             .attr('data-hashtags', 'fairwage');
         $('#tweetBtn').append(tweetBtn);
         console.log(twttr)

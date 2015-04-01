@@ -332,3 +332,29 @@ h1, h2, h3, h4, h5, h6{
 #menu-communication-expenses, #panel-communication-expenses{background:hsla(180,60%,40%,1);}
 #menu-recreation-expenses, #panel-recreation-expenses{background: hsla(210,60%,40%,1);}
 #menu-other-expenses, #panel-other-expenses{background: hsla(240,60%,40%,1);}
+
+.social-media-buttons{
+
+	display: block;
+
+	width: 300px;
+
+	text-align: center;
+
+	line-height: 0;
+
+	background: #ddd;
+
+	border-radius: 20px;
+
+	padding-bottom: 10px;
+
+	margin-bottom: 15px;
+
+}
+
+.social-media-buttons div{
+
+	display: inline;
+
+}
