@@ -279,9 +279,6 @@ $(document).ready(function() {
         update_output();
     });
 
-    // initialize tooltips for 'assumptions' menu
-    $('.assumptions-menu-icon').tooltip();
-
     // update output based on default input values
     update_output();
 
