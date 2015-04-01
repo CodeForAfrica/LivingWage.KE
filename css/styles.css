@@ -247,6 +247,12 @@ h1, h2, h3, h4, h5, h6{
 
 }
 
+.label{
+
+	padding: 5px 10px;
+
+}
+
 .assumptions-menu{
 
 	margin-bottom: 15px;
