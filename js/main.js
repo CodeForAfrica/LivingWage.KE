@@ -244,7 +244,7 @@ function change_twitter_text(txt) {
             .attr('data-via', 'code4sa')
             .attr('data-text', txt)
             .attr('data-count', 'horizontal')
-            .attr('data-hashtags', 'fairwage');
+            .attr('data-hashtags', 'livingwage');
         $('#tweetBtn').append(tweetBtn);
         console.log(twttr)
         console.log(txt)
