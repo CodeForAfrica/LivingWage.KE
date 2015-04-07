@@ -283,7 +283,19 @@ $(document).ready(function() {
     update_output();
 
     // update on click
+    var twitter_bound = false;
     $("#go-button").on('click', function(e) {
+        // attach twitter widget events
+        if (!twitter_bound && typeof(twttr) != "undefined") {
+            twttr.events.bind('click', function(e) {
+                ga('send', 'event', 'twitter', 'click');
+            });
+            twttr.events.bind('tweet', function(e) {
+                ga('send', 'event', 'twitter', 'tweet');
+            });
+            twitter_bound = true;
+        }
+
         e.preventDefault();
         if (update_output())
         {
