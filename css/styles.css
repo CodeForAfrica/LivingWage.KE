@@ -30,9 +30,9 @@ h1, h2, h3, h4, h5, h6{
 }
 
 #footer{
-    height: 110px;
     width: 100%;
     padding-top: 20px;
+    padding-bottom: 10px;
     margin-top: 20px;
     background-color: #f8f8f8;
     border-top: solid #e7e7e7 1px;
