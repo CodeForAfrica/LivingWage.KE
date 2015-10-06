@@ -206,7 +206,7 @@ function update_output() {
         output_percentage = Math.round(output_percentage);
 
         var output_statement = "Try out the fair wage tool and see how your pay reflects living costs in South Africa.";
-        if ((output_percentage > 0) && (output_percentage < constants.output_low)) {
+        if ((output_percentage >= 0) && (output_percentage < constants.output_low)) {
             output_statement = "You're paying too little given the living costs and the size of your domestic worker's household. Take time to reassess how much you're paying by using our tool.";
             highlight_output('label-danger');
         } else if ((output_percentage >= 75) && (output_percentage < constants.output_almost)) {
