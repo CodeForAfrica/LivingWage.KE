@@ -10,12 +10,12 @@ constants = {
     output_almost : 90  // below this figure salary is almost enough
 }
 
-function to_rands(val) {
+function to_KSH(val) {
     if (val != parseInt(val)){
-        return "R" + val.toFixed(2);
+        return "KSH" + val.toFixed(2);   
     }
     else {
-        return "R" + val;
+        return "KSH" + val;
     }
 }
 
@@ -27,7 +27,7 @@ function calculate_transport(household_size) {
     else
         var out = Math.round(trans_cost * constants.workdays_per_month);
 
-    $("#transport-total").html(to_rands(out));
+    $("#transport-total").html(to_KSH(out));
 
     return out
 }
@@ -38,7 +38,7 @@ function calculate_food(household_size) {
     // Suggests that this program covers at least 30% of daily requirements of the students - Department of Education
     var out = Math.round(food_cost * household_size * constants.days_per_month);
 
-    $("#food-total").html(to_rands(out));
+    $("#food-total").html(to_KSH(out));
 
     return out
 }
@@ -60,7 +60,7 @@ function calculate_rent(household_size) {
     else
         violence_comment = "Much lower likelihood of experiencing violence."
 
-    $("#rent-total").html(to_rands(out));
+    $("#rent-total").html(to_KSH(out));
 
     return out
 }
@@ -70,7 +70,7 @@ function calculate_education(household_size) {
     var education_cost = $("#education-cost").val()
     var out = education_cost * (kids);
 
-    $("#education-total").html(to_rands(out));
+    $("#education-total").html(to_KSH(out));
 
     return out
 }
@@ -81,7 +81,7 @@ function calculate_health(household_size) {
     var out = health_cost * household_size;
     var health_comment = ""
 
-    $("#health-total").html(to_rands(out))
+    $("#health-total").html(to_KSH(out))
 
     return out
 }
@@ -90,7 +90,7 @@ function calculate_communication(household_size) {
     var communication_cost = $("#communication-cost").val();
     var out = communication_cost * household_size
 
-    $("#communication-total").html(to_rands(out))
+    $("#communication-total").html(to_KSH(out))
 
     return out
 }
@@ -99,7 +99,7 @@ function calculate_recreation(household_size) {
     var recreation_cost = $("#recreation-cost").val();
     var out = recreation_cost * household_size;
 
-    $("#recreation-total").html(to_rands(out))
+    $("#recreation-total").html(to_KSH(out))
 
     return out
 }
@@ -107,7 +107,7 @@ function calculate_recreation(household_size) {
 function calculate_other(household_size) {
     var out = $("#other-cost").val() * household_size;
 
-    $("#other-total").html(to_rands(out))
+    $("#other-total").html(to_KSH(out))
 
     return out
 }
@@ -221,8 +221,8 @@ function update_output() {
         }
 
         // show results to the user
-        $("#output-amount").html(to_rands(monthly_pay))
-        $("#output-monthly-need").html(to_rands(monthly_expenditure))
+        $("#output-amount").html(to_KSH(monthly_pay))
+        $("#output-monthly-need").html(to_KSH(monthly_expenditure))
 
         $("#output-percentage").html(output_percentage + "%")
         $("#output-statement").html(output_statement);
@@ -253,6 +253,25 @@ function change_twitter_text(txt) {
 }
 
 $(document).ready(function() {
+
+    $("#slideshow > div:gt(0)").hide();
+    var inter = setInterval(function() {
+      $('#slideshow > div:first')
+        .fadeOut(500)
+        .next()
+        .fadeIn(800)
+        .end()
+        .appendTo('#slideshow');
+        setTimeout(function(){
+          clearInterval(inter);
+          $('#slideshow').css('display', 'none')
+          $('#content').css('display', 'block')
+        }, 35000);
+    }, 5000);
+
+    $(window).scroll(function(){
+        $(".arrow").css("opacity", 1 - $(window).scrollTop() / 250);
+      });
 
     // function for scrolling around website (links to "#section" will scroll to that section)
     $('a[href^="#"]').on('click',function (e) {
@@ -307,8 +326,8 @@ $(document).ready(function() {
         update_display('display-assumptions');
     })
 
-    function rand_formater(value) {
-        return value + ' rand';
+    function KSH_formater(value) {
+        return value + ' KSH';
     }
 
     function child_formater(value) {
@@ -326,7 +345,7 @@ $(document).ready(function() {
     }
 
     $(this).find(".slider").each(function(i) {
-        var tmp_formater = rand_formater;
+        var tmp_formater = KSH_formater;
         if ($(this).attr("data-slider-formater") == "children")
             tmp_formater = child_formater;
         else if ($(this).attr("data-slider-formater") == "people")
