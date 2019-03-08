@@ -252,6 +252,13 @@ function change_twitter_text(txt) {
     }
 }
 
+function clearIntro(intervalObject){
+    clearInterval(intervalObject);
+    $('#slideshow').css('display', 'none');
+    $('#skip').css('display', 'none');
+    $('#content').css('display', 'block');
+}
+
 $(document).ready(function() {
 
     $("#slideshow > div:gt(0)").hide();
@@ -263,9 +270,7 @@ $(document).ready(function() {
         .end()
         .appendTo('#slideshow');
         setTimeout(function(){
-          clearInterval(inter);
-          $('#slideshow').css('display', 'none')
-          $('#content').css('display', 'block')
+            clearIntro(inter)
         }, 35000);
     }, 5000);
 
@@ -283,6 +288,10 @@ $(document).ready(function() {
         $('html, body').stop().animate({
             'scrollTop': $target.offset().top-15
         }, 900, 'swing');
+    });
+
+    $('#skip').on('click', function(){
+        clearIntro(inter);
     });
 
     $("#pay-amount").focus();
