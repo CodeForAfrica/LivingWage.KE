@@ -1,525 +1,512 @@
-@import url(http://fonts.googleapis.com/css?family=Roboto:400,700,900);
-@import url(http://fonts.googleapis.com/css?family=Roboto+Slab:400,700,300);
-@import url(https://fonts.googleapis.com/css?family=Oswald:300,400);
+@import url(http://fonts.googleapis.com/css?family=Roboto:400, 700, 900);
+@import url(http://fonts.googleapis.com/css?family=Roboto+Slab:400, 700, 300);
+@import url(https://fonts.googleapis.com/css?family=Oswald:300, 400);
 @import url(https://fonts.googleapis.com/css?family=Open+Sans);
 @import url(https://fonts.googleapis.com/css?family=Nunito);
+@import url(https://fonts.googleapis.com/css?family=Montserrat);
 
-body{
-    background: #fff;
-    font-family: 'Montseratt';
-    color: #000;
+body {
+  background: #fff;
+  font-family: "Montseratt";
+  color: #000;
 }
 
-h1, h2, h3, h4, h5, h6{
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin-top: 0;
 
-    margin-top: 0;
-
-    font-weight: 900;
-
+  font-weight: 900;
 }
 
-.btn-lg{
-    margin-top: 25px;
-    margin-bottom: 25px;
+.btn-lg {
+  margin-top: 25px;
+  margin-bottom: 25px;
 }
 
-.panel-heading:hover{
-    cursor: pointer;
-    background-color: #eee;
+.panel-heading:hover {
+  cursor: pointer;
+  background-color: #eee;
 }
 
-.panel-heading a:hover{
-    text-decoration: none;
+.panel-heading a:hover {
+  text-decoration: none;
 }
 
-#footer{
-    width: 100%;
-    padding-top: 20px;
-    padding-bottom: 10px;
-    margin-top: 20px;
-    background-color: #f8f8f8;
-    border-top: solid #e7e7e7 1px;
+#footer {
+  width: 100%;
+  padding-top: 20px;
+  padding-bottom: 10px;
+  margin-top: 20px;
+  background-color: #f8f8f8;
+  border-top: solid #e7e7e7 1px;
 }
 
-#output-percentage{
-    font-size: 24px;
+#output-percentage {
+  font-size: 24px;
 }
 
 .jumbotron {
-    background: #83BB26;
-    color: #fff;
-    margin-bottom: 30px;
-    padding: 30px 30px 40px 30px;
-    border-radius: 0 !important;
+  background: #83bb26;
+  color: #fff;
+  margin-bottom: 30px;
+  padding: 30px 30px 40px 30px;
+  border-radius: 0 !important;
 }
 
 .jumbotron .small {
-    font-size: 16px;
+  font-size: 16px;
 }
 
-.jumbotron p{
-
-    margin: 0;
-
+.jumbotron p {
+  margin: 0;
 }
 
-.jumbotron p.lead{
-
-    margin-bottom: 20px;
-    font-family: 'sans-serif';
-
+.jumbotron p.lead {
+  margin-bottom: 20px;
+  font-family: "Open Sans";
 }
 
+.jumbotron h1 {
+  margin: 0 0 10px 0;
 
-.jumbotron H1{
-    margin: 0 0 10px 0;
+  font-weight: 400;
 
-    font-weight: 400;
-
-    color: #fff;
-}
-
-.jumbotron a{
-
-    background: #fff;
-
-    color: #83BB26;
-
-    border-radius: 15px;
-
-    padding: 8px 10px 8px 10px;
-
-    font-weight: 700;
-    font-size: 0.7em;
-
-    text-transform: lowercase;
-
-}
-
-.jumbotron a:hover{
-
-    text-decoration: none;
-    color: #000;
-
-}
-
-.lead {
-    line-height: 30px;
-}
-
-.btn.btn-primary{
-
-	text-transform: Uppercase;
-
-	font-size: 1em;
-	font-weight: 700;
-}
-
-.btn.btn-primary i{
-
-	margin-right: 10px;
-
-}
-
-.section{
-    background: #fff;
-
-    padding: 20px;
-
-    margin-bottom: 30px;
-
-    -webkit-box-shadow: 0px 0px 0px 1px rgba(30,30,30,0.1);
-    -moz-box-shadow: 0px 0px 0px 1px rgba(30,30,30,0.1);
-    box-shadow: 0px 0px 0px 1px rgba(30,30,30,0.1);
-
-}
-
-.question{
-    font-family: 'Roboto Slab';
-}
-
-.note{
-
-    color: #000;
-
-    background: #fff;
-
-    padding: 5px 10px 5px 10px;
-
-    border-radius: 5px;
-
-}
-
-.sources{
-    font-family: 'Roboto Slab';
-    font-weight: 400;
-    font-size: 0.8em;
-}
-
-.sources strong{
-    background: rgba(0,0,0,0.5);
-    padding: 0 2px 0 2px;
-    font-family: 'Roboto';
-    font-weight: 900;
-    text-transform: uppercase;
-}
-
-.navbar{
-    margin-bottom: 0;
-}
-
-.panel{
-    margin-bottom: 30px !important;
-    border: 0 !important;
-    border-radius: 0;
-    color: #fff;
-    -webkit-box-shadow: 0px 0px 0px 1px rgba(30,30,30,0.1);
-    -moz-box-shadow: 0px 0px 0px 1px rgba(30,30,30,0.1);
-    box-shadow: 0px 0px 0px 1px rgba(30,30,30,0.1);
-
-}
-
-.hero-image{
-    background-image: url("../images/Slum.jpg");
-    height: 590px;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-}
-
-.slider{
-
-    width: 100%;
-    margin-top: 10px;
-    margin-bottom: 10px;
-    height: 70px;
-
-}
-
-.slider .tooltip{
-
-    margin-top: 0px;
-
-    width: 80px;
-
-}
-
-.slider-track {
-    background: rgba(0,0,0,0.2);
-}
-
-.slider-selection{
-    background: #09f;
-}
-
-.slider-handle{
-    background: #fff;
-    border: solid #000 3px;
-    opacity: 1;
-}
-
-.slider .tooltip{
-
-    margin-top: -10px;
-
-    /* Make tooltips unselectable */
-    -webkit-user-select: none; /* Chrome/Safari */        
-    -moz-user-select: none; /* Firefox */
-    -ms-user-select: none; /* IE10+ */
-    -o-user-select: none;
-    user-select: none;
-
-}
-
-.btn-primary{
-
-    background: #83BB26;
-
-    border-radius: 30px;
-
-    border: 0;
-
-    width: auto;
-
-    display: inline;
-
-}
-
-.btn-primary:hover{
-
-    background: #09f;
-
-    border: 0;
-
-}
-
-.label{
-
-	padding: 5px 10px;
-
-}
-
-.assumptions-menu{
-
-	margin-bottom: 15px;
-
-}
-
-.assumptions-menu p{
-
-	margin: 0;
-
-	line-height: 34px;
-
-	font-size: 1.1em;
-}
-
-.panel a{
-
-    color: #fff;
-    text-decoration: underline;
-
-}
-
-.panel-heading{
-    background-color: #fff !important;
-    border: 0 !important;
-    color: #000;
-}
-
-.panel .slider{
-
-    height: 70px;
-    width: 100%;
-
-}
-
-.panel .slider .tooltip{
-
-    margin-top: 0px;
-
-}
-
-.panel .slider-track {
-    background: rgba(0,0,0,0.5);
-}
-
-.panel .slider-selection{
-    background: #fff;
-}
-
-.panel .slider-handle{
-    background: #fff;
-    border: solid #000 3px;
-    opacity: 1;
-}
-
-.panel-image{
-
-	font-size: 3em;
-
-	padding: 15px 0 40px 0;
-
-}
-
-#panel-household-size{background: hsla(50,60%,40%,1);}
-#panel-food-expenses{background: hsla(75,60%,40%,1);}
-#panel-transport-expenses{background: hsla(100,60%,40%,1);}
-#panel-rent-expenses{background: hsla(125,60%,40%,1);}
-#panel-health-expenses{background: hsla(150,60%,40%,1);}
-#panel-education-expenses{background: hsla(175,60%,40%,1);}
-#panel-communication-expenses{background:hsla(200,60%,40%,1);}
-#panel-recreation-expenses{background: hsla(225,60%,40%,1);}
-#panel-other-expenses{background: hsla(250,60%,40%,1);}
-
-.social-media-buttons{
-
-	display: inline-block;
-
-	width: 140px;
-	height: 43px;
-
-	text-align: center;
-	vertical-align: middle;
-
-	line-height: 0;
-
-	background: #ddd;
-
-	padding-top: 10px;
-	padding-bottom: 10px;
-
-	margin: 0 5px 15px 5px;
-
-	border: solid #ccc 1px;
-
-	
-}
-
-.social-media-buttons div{
-
-	display: inline;
-
-}
-
-.scroll-top-message{
-
-	font-weight: 700;
-
-	font-size: 1.2em;
-
-}
-
-.scroll-top-message a{
-
-	text-decoration: none
-
-}
-
-.scroll-top-message p:nth-child(2){
-
-	font-size: 1.2em;
-
-}
-
-.scroll-top-message .btn{
-
-	text-transform: initial;
-
-	font-size: 0.8em;
-
-}
-
-#slideshow {
-    background-image:url('../images/womanWorking.jpg');
-    background-size:cover;
-    position: relative; 
-    width: 100%; 
-    height: 850px; 
-    padding: 10px;
-    text-align: center;
-    font-size: 18px;
-    font-weight: bold;
- }
- 
- #slideshow > div { 
-    position: absolute; 
-    top: 10px; 
-    left: 10px; 
-    right: 10px; 
-    bottom: 10px; 
- }
- #slideshow p{
-   color:#fff;
-   padding-top:5em;
-   font-size:2.5em;
-   font-family: Nunito;
-   overflow-wrap: break-word;
-   padding-right:4px;
-   z-index: 999;
-   padding-top: 7em;
- }
- 
- .loading{
-   background-color:#78BC40
- }
- 
- #content {
-   display: none;
- }
-
- @-moz-keyframes bounce {
-    0%, 20%, 50%, 80%, 100% {
-      -moz-transform: translateY(0);
-      transform: translateY(0);
-    }
-    40% {
-      -moz-transform: translateY(-30px);
-      transform: translateY(-50px);
-    }
-    60% {
-      -moz-transform: translateY(-5px);
-      transform: translateY(-5px);
-    }
-  }
-  @-webkit-keyframes bounce {
-    0%, 20%, 50%, 80%, 100% {
-      -webkit-transform: translateY(0);
-      transform: translateY(0);
-    }
-    40% {
-      -webkit-transform: translateY(5px);
-      transform: translateY(-20px);
-    }
-    60% {
-      -webkit-transform: translateY(-10px);
-      transform: translateY(-10px);
-    }
-  }
-  @keyframes bounce {
-    0%, 20%, 50%, 80%, 100% {
-      -moz-transform: translateY(0);
-      -ms-transform: translateY(0);
-      -webkit-transform: translateY(0);
-      transform: translateY(0);
-    }
-    40% {
-      -moz-transform: translateY(-60px);
-      -ms-transform: translateY(-70px);
-      -webkit-transform: translateY(-80px);
-      transform: translateY(-10px);
-    }
-    60% {
-      -moz-transform: translateY(-10px);
-      -ms-transform: translateY(-10px);
-      -webkit-transform: translateY(-0px);
-      transform: translateY(-10px);
-    }
-  }
-  i {
-    display: block;
-    color: #fff;
-  }
-  .arrow {
-    position: absolute;
-    bottom: 0;
-    left: 50%;
-    margin-left: -20px;
-    width: 40px;
-    height: 60px;
-  }
-
-  .arrow:HOVER {
-      cursor: pointer;
-  }
-  
-  .bounce {
-    -moz-animation: bounce 2s infinite;
-    -webkit-animation: bounce 2s infinite;
-    animation: bounce 2s infinite;
-  }
-  
-  #skip {
-    position: absolute;
-    bottom: 40px;
-    color: white;
-    font-family: Nunito;
-    right: 0;
-    padding: 10px 40px;
-    margin-right: 40px;
-    border: 2px solid white;
-    border-radius: 3px;
-    font-size: 16px;
-    transition: .5s;
-  }
-
-  #skip:HOVER {
-    text-decoration: none;
-    background: #fff;
-    color: #000;
-    cursor: pointer;
+  color: #fff;
 }
 
 .jumbotron a {
-    background: transparent;
+  background: #fff;
+
+  color: #83bb26;
+
+  border-radius: 15px;
+
+  padding: 8px 10px 8px 10px;
+
+  font-weight: 700;
+  font-size: 0.7em;
+
+  text-transform: lowercase;
+}
+
+.jumbotron a:hover {
+  text-decoration: none;
+  color: #000;
+}
+
+.lead {
+  line-height: 30px;
+}
+
+.btn.btn-primary {
+  text-transform: Uppercase;
+
+  font-size: 1em;
+  font-weight: 700;
+}
+
+.btn.btn-primary i {
+  margin-right: 10px;
+}
+
+.section {
+  background: #fff;
+
+  padding: 20px;
+
+  margin-bottom: 30px;
+
+  -webkit-box-shadow: 0px 0px 0px 1px rgba(30, 30, 30, 0.1);
+  -moz-box-shadow: 0px 0px 0px 1px rgba(30, 30, 30, 0.1);
+  box-shadow: 0px 0px 0px 1px rgba(30, 30, 30, 0.1);
+}
+
+.question {
+  font-family: "Roboto Slab";
+}
+
+.note {
+  color: #000;
+
+  background: #fff;
+
+  padding: 5px 10px 5px 10px;
+
+  border-radius: 5px;
+}
+
+.sources {
+  font-family: "Roboto Slab";
+  font-weight: 400;
+  font-size: 0.8em;
+}
+
+.sources strong {
+  background: rgba(0, 0, 0, 0.5);
+  padding: 0 2px 0 2px;
+  font-family: "Roboto";
+  font-weight: 900;
+  text-transform: uppercase;
+}
+
+.navbar {
+  margin-bottom: 0;
+}
+
+.panel {
+  margin-bottom: 30px !important;
+  border: 0 !important;
+  border-radius: 0;
+  color: #fff;
+  -webkit-box-shadow: 0px 0px 0px 1px rgba(30, 30, 30, 0.1);
+  -moz-box-shadow: 0px 0px 0px 1px rgba(30, 30, 30, 0.1);
+  box-shadow: 0px 0px 0px 1px rgba(30, 30, 30, 0.1);
+}
+
+.hero-image {
+  background-image: url("../images/Slum.jpg");
+  height: 590px;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.slider {
+  width: 100%;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  height: 70px;
+}
+
+.slider .tooltip {
+  margin-top: 0px;
+
+  width: 80px;
+}
+
+.slider-track {
+  background: rgba(0, 0, 0, 0.2);
+}
+
+.slider-selection {
+  background: #09f;
+}
+
+.slider-handle {
+  background: #fff;
+  border: solid #000 3px;
+  opacity: 1;
+}
+
+.slider .tooltip {
+  margin-top: -10px;
+
+  /* Make tooltips unselectable */
+  -webkit-user-select: none; /* Chrome/Safari */
+  -moz-user-select: none; /* Firefox */
+  -ms-user-select: none; /* IE10+ */
+  -o-user-select: none;
+  user-select: none;
+}
+
+.btn-primary {
+  background: #83bb26;
+
+  border-radius: 30px;
+
+  border: 0;
+
+  width: auto;
+
+  display: inline;
+}
+
+.btn-primary:hover {
+  background: #09f;
+
+  border: 0;
+}
+
+.label {
+  padding: 5px 10px;
+}
+
+.assumptions-menu {
+  margin-bottom: 15px;
+}
+
+.assumptions-menu p {
+  margin: 0;
+
+  line-height: 34px;
+
+  font-size: 1.1em;
+}
+
+.panel a {
+  color: #fff;
+  text-decoration: underline;
+}
+
+.panel-heading {
+  background-color: #fff !important;
+  border: 0 !important;
+  color: #000;
+}
+
+.panel .slider {
+  height: 70px;
+  width: 100%;
+}
+
+.panel .slider .tooltip {
+  margin-top: 0px;
+}
+
+.panel .slider-track {
+  background: rgba(0, 0, 0, 0.5);
+}
+
+.panel .slider-selection {
+  background: #fff;
+}
+
+.panel .slider-handle {
+  background: #fff;
+  border: solid #000 3px;
+  opacity: 1;
+}
+
+.panel-image {
+  font-size: 3em;
+
+  padding: 15px 0 40px 0;
+}
+
+#panel-household-size {
+  background: hsla(50, 60%, 40%, 1);
+}
+#panel-food-expenses {
+  background: hsla(75, 60%, 40%, 1);
+}
+#panel-transport-expenses {
+  background: hsla(100, 60%, 40%, 1);
+}
+#panel-rent-expenses {
+  background: hsla(125, 60%, 40%, 1);
+}
+#panel-health-expenses {
+  background: hsla(150, 60%, 40%, 1);
+}
+#panel-education-expenses {
+  background: hsla(175, 60%, 40%, 1);
+}
+#panel-communication-expenses {
+  background: hsla(200, 60%, 40%, 1);
+}
+#panel-recreation-expenses {
+  background: hsla(225, 60%, 40%, 1);
+}
+#panel-other-expenses {
+  background: hsla(250, 60%, 40%, 1);
+}
+
+.social-media-buttons {
+  display: inline-block;
+
+  width: 140px;
+  height: 43px;
+
+  text-align: center;
+  vertical-align: middle;
+
+  line-height: 0;
+
+  background: #ddd;
+
+  padding-top: 10px;
+  padding-bottom: 10px;
+
+  margin: 0 5px 15px 5px;
+
+  border: solid #ccc 1px;
+}
+
+.social-media-buttons div {
+  display: inline;
+}
+
+.scroll-top-message {
+  font-weight: 700;
+
+  font-size: 1.2em;
+}
+
+.scroll-top-message a {
+  text-decoration: none;
+}
+
+.scroll-top-message p:nth-child(2) {
+  font-size: 1.2em;
+}
+
+.scroll-top-message .btn {
+  text-transform: initial;
+
+  font-size: 0.8em;
+}
+
+#slideshow {
+  background-image: url("../images/womanWorking.jpg");
+  background-size: cover;
+  position: relative;
+  width: 100%;
+  height: 850px;
+  padding: 10px;
+  text-align: center;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+#slideshow > div {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  right: 10px;
+  bottom: 10px;
+}
+
+#slideshow p {
+  color: #fff;
+  padding-top: 5em;
+  font-size: 2.5em;
+  font-family: Nunito;
+  overflow-wrap: break-word;
+  padding-right: 4px;
+  z-index: 999;
+  padding-top: 7em;
+}
+
+.loading {
+  background-color: #78bc40;
+}
+
+#content {
+  display: none;
+}
+
+@-moz-keyframes bounce {
+  0%,
+  20%,
+  50%,
+  80%,
+  100% {
+    -moz-transform: translateY(0);
+    transform: translateY(0);
+  }
+  40% {
+    -moz-transform: translateY(-30px);
+    transform: translateY(-50px);
+  }
+  60% {
+    -moz-transform: translateY(-5px);
+    transform: translateY(-5px);
+  }
+}
+
+@-webkit-keyframes bounce {
+  0%,
+  20%,
+  50%,
+  80%,
+  100% {
+    -webkit-transform: translateY(0);
+    transform: translateY(0);
+  }
+  40% {
+    -webkit-transform: translateY(5px);
+    transform: translateY(-20px);
+  }
+  60% {
+    -webkit-transform: translateY(-10px);
+    transform: translateY(-10px);
+  }
+}
+
+@keyframes bounce {
+  0%,
+  20%,
+  50%,
+  80%,
+  100% {
+    -moz-transform: translateY(0);
+    -ms-transform: translateY(0);
+    -webkit-transform: translateY(0);
+    transform: translateY(0);
+  }
+  40% {
+    -moz-transform: translateY(-60px);
+    -ms-transform: translateY(-70px);
+    -webkit-transform: translateY(-80px);
+    transform: translateY(-10px);
+  }
+  60% {
+    -moz-transform: translateY(-10px);
+    -ms-transform: translateY(-10px);
+    -webkit-transform: translateY(-0px);
+    transform: translateY(-10px);
+  }
+}
+
+i {
+  display: block;
+  color: #fff;
+}
+
+.arrow {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  margin-left: -20px;
+  width: 40px;
+  height: 60px;
+}
+
+.arrow:hover {
+  cursor: pointer;
+}
+
+.bounce {
+  -moz-animation: bounce 2s infinite;
+  -webkit-animation: bounce 2s infinite;
+  animation: bounce 2s infinite;
+}
+
+#skip {
+  position: absolute;
+  bottom: 30px;
+  color: white;
+  font-family: Nunito;
+  right: 0;
+  padding: 10px 40px;
+  margin-right: 40px;
+  border: 2px solid white;
+  border-radius: 3px;
+  font-size: 16px;
+  transition: 0.5s;
+}
+
+#skip:hover {
+  text-decoration: none;
+  background: #fff;
+  color: #000;
+  cursor: pointer;
+}
+
+.jumbotron a {
+  background: transparent;
 }
