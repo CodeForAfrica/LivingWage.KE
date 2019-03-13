@@ -1,8 +1,7 @@
-@import url(http://fonts.googleapis.com/css?family=Roboto:400, 700, 900);
-@import url(http://fonts.googleapis.com/css?family=Roboto+Slab:400, 700, 300);
-@import url(https://fonts.googleapis.com/css?family=Oswald:300, 400);
+@import url(http://fonts.googleapis.com/css?family=Roboto:400,700,900);
+@import url(http://fonts.googleapis.com/css?family=Roboto+Slab:400,700,300);
+@import url(https://fonts.googleapis.com/css?family=Oswald:300,400);
 @import url(https://fonts.googleapis.com/css?family=Open+Sans);
-@import url(https://fonts.googleapis.com/css?family=Nunito);
 @import url(https://fonts.googleapis.com/css?family=Montserrat);
 
 body {
@@ -365,7 +364,7 @@ h6 {
   background-size: cover;
   position: relative;
   width: 100%;
-  height: 850px;
+  height: 100vh;
   padding: 10px;
   text-align: center;
   font-size: 18px;
@@ -384,7 +383,7 @@ h6 {
   color: #fff;
   padding-top: 5em;
   font-size: 2.5em;
-  font-family: Nunito;
+  font-family: 'Open Sans';
   overflow-wrap: break-word;
   padding-right: 4px;
   z-index: 999;
@@ -416,6 +415,10 @@ h6 {
     -moz-transform: translateY(-5px);
     transform: translateY(-5px);
   }
+  100%{
+    -moz-transform: translateY(-5px);
+    transform: translateY(-5px);
+  }
 }
 
 @-webkit-keyframes bounce {
@@ -432,6 +435,10 @@ h6 {
     transform: translateY(-20px);
   }
   60% {
+    -webkit-transform: translateY(-10px);
+    transform: translateY(-10px);
+  }
+  100%{
     -webkit-transform: translateY(-10px);
     transform: translateY(-10px);
   }
@@ -460,6 +467,12 @@ h6 {
     -webkit-transform: translateY(-0px);
     transform: translateY(-10px);
   }
+  100%{
+    -moz-transform: translateY(-10px);
+    -ms-transform: translateY(-10px);
+    -webkit-transform: translateY(-0px);
+    transform: translateY(-10px);
+  }
 }
 
 i {
@@ -469,9 +482,7 @@ i {
 
 .arrow {
   position: absolute;
-  bottom: 0;
   left: 50%;
-  margin-left: -20px;
   width: 40px;
   height: 60px;
 }
@@ -490,7 +501,7 @@ i {
   position: absolute;
   bottom: 30px;
   color: white;
-  font-family: Nunito;
+  font-family: 'Open Sans';
   right: 0;
   padding: 10px 40px;
   margin-right: 40px;
@@ -509,4 +520,42 @@ i {
 
 .jumbotron a {
   background: transparent;
+}
+
+#share {
+	width: 100%;
+  	margin: 100px auto;
+  	text-align: center;
+}
+
+/* buttons */
+
+#share a {
+	width: 50px;
+  	height: 50px;
+  	display: inline-block;
+  	margin: 8px;
+  	border-radius: 50%;
+  	font-size: 24px;
+  	color: #fff;
+	opacity: 0.75;
+	transition: opacity 0.15s linear;
+}
+
+#share a:hover {
+	opacity: 1;
+}
+
+/* icons */
+
+#share i {
+  	position: relative;
+  	top: 50%;
+  	transform: translateY(-50%);
+}
+
+/* colors */
+
+.facebook {
+ 	background: #4394DA;
 }

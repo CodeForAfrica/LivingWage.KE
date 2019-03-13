@@ -5,16 +5,24 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Living Wage | People Daily Kenya </title>
+  <meta property="og:url"           content="https://livingwage.codeforkenya.org/" />
+  <meta property="og:type"          content="website" />
+  <meta property="og:title"         content="Living Wage | People Daily Kenya" />
+  <meta property="og:description"   content="Are you paying your domestic worker enough?" />
+  <meta property="og:image"         content="https://livingwage.codeforkenya.org/images/womanWorking.jpg" />
 
   <!-- Bootstrap -->
   <link href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css" rel="stylesheet">
   <link href="css/bootstrap-select.min.css" rel="stylesheet">
   <link href="css/bootstrap-slider.css" rel="stylesheet">
   <link href="css/styles.css" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"> -->
 
   <!-- Font Awesome -->
-  <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+  <!-- <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css"> -->
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+
+
 
   <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
   <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -24,15 +32,6 @@
   <![endif]-->
 </head>
 <body>
-
-<div id="fb-root"></div>
-<script>(function(d, s, id) {
-  var js, fjs = d.getElementsByTagName(s)[0];
-  if (d.getElementById(id)) return;
-  js = d.createElement(s); js.id = id;
-  js.src = "//connect.facebook.net/en_GB/sdk.js#xfbml=1&version=v2.0";
-  fjs.parentNode.insertBefore(js, fjs);
-}(document, 'script', 'facebook-jssdk'));</script>
 
 <!-- <nav class="navbar navbar-default navbar-static-top" role="navigation">
   <div class="container-fluid">
@@ -57,6 +56,7 @@
   </div>
 </div>
 </nav> -->
+
 <div id='load'>
     <div id="slideshow">
         <div>
@@ -180,29 +180,42 @@
             <div class="section" id="results">
       
               <p class="lead">
-                This covers <span id="output-percentage" class="label">0%</span> of the household's minimal need of <strong><span id="output-monthly-need">R0</span></strong>.
+                This covers <span id="output-percentage" class="label">0%</span> of the household's minimal need of <strong><span id="output-monthly-need">KSH0</span></strong>.
               </p>
-      
-            <div class="text-center">
-      
-                <div class="social-media-buttons">
-      
-                    <div id="tweetBtn"> 
-                      <a href="https://twitter.com/share" class="twitter-share-button" data-count="horizontal" data-text="Check if you pay your domestic worker a fair wage" data-via="code4sa" data-hashtags="livingwage" datasize="large">Tweet</a>
-                      <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
-                    </div>
-      
-                  </div>
-      
-                  <div class="social-media-buttons">
-      
-                    <div id="facebookBtn">
-                      <div class="fb-like" data-href="http://www.living-wage.co.za" data-layout="button_count" data-action="like" data-show-faces="true" data-share="true"></div>
-                    </div>
-      
-                </div>
-      
+    
+
+      <div class="text-center">
+
+          <div class="social-media-buttons">
+  
+              <div id="tweetBtn"> 
+                <a href="https://twitter.com/share" class="twitter-share-button" data-count="horizontal" data-text="Check if you pay your domestic worker a fair wage" data-via="People Daily" data-hashtags="livingwage" datasize="large">Tweet</a>
+                <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
               </div>
+    
+            </div>
+          <div class="social-media-buttons">
+              <div>
+                  <!-- Load Facebook SDK for JavaScript -->
+                  <div id="fb-root"></div>
+                  <script>(function(d, s, id) {
+                    var js, fjs = d.getElementsByTagName(s)[0];
+                    if (d.getElementById(id)) return;
+                    js = d.createElement(s); js.id = id;
+                    js.src = "https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v3.0";
+                    fjs.parentNode.insertBefore(js, fjs);
+                  }(document, 'script', 'facebook-jssdk'));</script>
+                
+                  <!-- Your share button code -->
+                  <div class="fb-share-button" 
+                    data-href="https://livingwage.codeforkenya.org/" 
+                    data-layout="button_count">
+                  </div>
+                
+              </div>
+          </div>
+  
+        </div>
       
               <p class="lead"><span id="output-statement"></span></p>
       
