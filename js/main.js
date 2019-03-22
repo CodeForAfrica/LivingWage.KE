@@ -1,44 +1,45 @@
 constants = {
-    workdays_per_week : 5,
-    weeks_per_month : 4.33,
-    workdays_per_month : 5 * 4.33,
-    days_per_month : 30,
-    sanitation_threshold : 500,
-    violence_threshold : 900,
-    transition_time : 200,
-    output_low : 75,     // below this figure salary is too low
-    output_almost : 90  // below this figure salary is almost enough
+    workdays_per_week: 5,
+    weeks_per_month: 4.33,
+    workdays_per_month: 5 * 4.33,
+    days_per_month: 30,
+    sanitation_threshold: 500,
+    violence_threshold: 900,
+    transition_time: 200,
+    output_low: 75, // below this figure salary is too low
+    output_almost: 90 // below this figure salary is almost enough
 }
 
-function to_rands(val) {
-    if (val != parseInt(val)){
-        return "R" + val.toFixed(2);
-    }
-    else {
-        return "R" + val;
+function to_KSH(val) {
+    if (val != parseInt(val)) {
+        return "KSH" + val.toFixed(2);
+    } else {
+        return "KSH" + val;
     }
 }
 
 function calculate_transport(household_size) {
     var trans_cost = $("#transport-cost").val();
     var trans_direction = $("#transport-direction").val();
-    if (trans_direction == "oneway")
+    if (trans_direction == "oneway") 
         var out = Math.round(2 * trans_cost * constants.workdays_per_month);
-    else
+    else 
         var out = Math.round(trans_cost * constants.workdays_per_month);
-
-    $("#transport-total").html(to_rands(out));
+    
+    $("#transport-total").html(to_KSH(out));
 
     return out
 }
 
 function calculate_food(household_size) {
     var food_cost = $("#food-cost").val();
-    // Account for nutrition programme. Effectively kids do not need 1 meal 5 days a week IF education is provided. 16/21*850 for kids
-    // Suggests that this program covers at least 30% of daily requirements of the students - Department of Education
+    // Account for nutrition programme. Effectively kids do not need 1 meal 5 days a
+    // week IF education is provided. 16/21*850 for kids Suggests that this program
+    // covers at least 30% of daily requirements of the students - Department of
+    // Education
     var out = Math.round(food_cost * household_size * constants.days_per_month);
 
-    $("#food-total").html(to_rands(out));
+    $("#food-total").html(to_KSH(out));
 
     return out
 }
@@ -50,17 +51,18 @@ function calculate_rent(household_size) {
     var out = Math.round(rent_cost)
 
     //Need comments on sanitation and violence to update with rent options.
-    if (rent_cost > 0 && rent_cost < constants.sanitation_threshold)
-        sanitation_comment = "Low functionality of bathrooms. High likelihood of communal bathroom. Low likelihood of reliable trash collection."
-    else
+    if (rent_cost > 0 && rent_cost < constants.sanitation_threshold) 
+        sanitation_comment = "Low functionality of bathrooms. High likelihood of communal bathroom. Low likeli" +
+                "hood of reliable trash collection."
+    else 
         sanitation_comment = "Personal bathroom facilities. Reliable trash collection"
 
-    if (rent_cost > 0 && rent_cost < constants.violence_threshold)
+    if (rent_cost > 0 && rent_cost < constants.violence_threshold) 
         violence_comment = "High likelihood of experiencing gang violence and burglaries."
-    else
+    else 
         violence_comment = "Much lower likelihood of experiencing violence."
 
-    $("#rent-total").html(to_rands(out));
+    $("#rent-total").html(to_KSH(out));
 
     return out
 }
@@ -70,7 +72,7 @@ function calculate_education(household_size) {
     var education_cost = $("#education-cost").val()
     var out = education_cost * (kids);
 
-    $("#education-total").html(to_rands(out));
+    $("#education-total").html(to_KSH(out));
 
     return out
 }
@@ -81,7 +83,7 @@ function calculate_health(household_size) {
     var out = health_cost * household_size;
     var health_comment = ""
 
-    $("#health-total").html(to_rands(out))
+    $("#health-total").html(to_KSH(out))
 
     return out
 }
@@ -90,7 +92,7 @@ function calculate_communication(household_size) {
     var communication_cost = $("#communication-cost").val();
     var out = communication_cost * household_size
 
-    $("#communication-total").html(to_rands(out))
+    $("#communication-total").html(to_KSH(out))
 
     return out
 }
@@ -99,7 +101,7 @@ function calculate_recreation(household_size) {
     var recreation_cost = $("#recreation-cost").val();
     var out = recreation_cost * household_size;
 
-    $("#recreation-total").html(to_rands(out))
+    $("#recreation-total").html(to_KSH(out))
 
     return out
 }
@@ -107,7 +109,7 @@ function calculate_recreation(household_size) {
 function calculate_other(household_size) {
     var out = $("#other-cost").val() * household_size;
 
-    $("#other-total").html(to_rands(out))
+    $("#other-total").html(to_KSH(out))
 
     return out
 }
@@ -130,8 +132,7 @@ function calculate_expenditure(household_size) {
 function highlight_output(class_name) {
     var available_classes = ['label-danger', 'label-warning', 'label-success']
     if ($.inArray(class_name, available_classes) > -1) {
-        for (var i = 0; i < available_classes.length; i++)
-        {
+        for (var i = 0; i < available_classes.length; i++) {
             var tmp = available_classes[i];
             $("#output-percentage").removeClass(tmp);
         }
@@ -139,47 +140,48 @@ function highlight_output(class_name) {
     }
 }
 
-
 function update_display(class_name) {
     var transition_time = constants.transition_time;
     var available_classes = ['display-landing', 'display-results', 'display-assumptions']
 
     if ($.inArray(class_name, available_classes) > -1) {
 
-        for (var i = 0; i < available_classes.length; i++)
-        {
+        for (var i = 0; i < available_classes.length; i++) {
             var tmp = available_classes[i];
             // hide some stuff
             if (tmp != class_name) {
-                $("." + tmp).each(function() {
-                    if (!$(this).hasClass(class_name)) {
-                        $(this).slideUp(transition_time);
-                    }
-                });
+                $("." + tmp)
+                    .each(function () {
+                        if (!$(this).hasClass(class_name)) {
+                            $(this).slideUp(transition_time);
+                        }
+                    });
             }
 
             // show some stuff
-            $("." + class_name).each(function() {
-                $(this).slideDown(transition_time);
-            })
+            $("." + class_name)
+                .each(function () {
+                    $(this).slideDown(transition_time);
+                })
         }
     }
 }
 
 function validate_input(household_size, pay_rate, pay_amount) {
     if (!$.isNumeric(pay_amount)) {
-        $("#pay-amount").parents('.form-group').addClass('has-error');
+        $("#pay-amount")
+            .parents('.form-group')
+            .addClass('has-error');
         $("#pay-amount").focus();
         pay_amount = false;
     }
-    if (household_size && pay_rate && pay_amount){
+    if (household_size && pay_rate && pay_amount) {
         // update user feedback text
         $("#household-size-feedback").html(household_size + " people")
         return true
     }
     return false
 }
-
 
 function update_output() {
 
@@ -193,27 +195,33 @@ function update_output() {
 
         // calculate monthly pay
         var monthly_pay = 0;
-        // Assumption using DoL info - a month includes 4.33 weeks and a week is for 5 work days.
-        if (pay_rate == "day")
+        // Assumption using DoL info - a month includes 4.33 weeks and a week is for 5
+        // work days.
+        if (pay_rate == "day") 
             monthly_pay = pay_amount * constants.workdays_per_month;
-        else if (pay_rate == "week")
+        else if (pay_rate == "week") 
             monthly_pay = pay_amount * constants.weeks_per_month;
-        else if (pay_rate == "month")
+        else if (pay_rate == "month") 
             monthly_pay = pay_amount;
-
+        
         var output_percentage = (monthly_pay / monthly_expenditure);
         output_percentage *= 100;
         output_percentage = Math.round(output_percentage);
 
-        var output_statement = "Try out the fair wage tool and see how your pay reflects living costs in South Africa.";
+        var output_statement = "Try out the fair wage tool and see how your pay reflects living costs in South A" +
+                "frica.";
         if ((output_percentage >= 0) && (output_percentage < constants.output_low)) {
-            output_statement = "You're paying too little given the living costs and the size of your domestic worker's household. Take time to reassess how much you're paying by using our tool.";
+            output_statement = "You're paying too little given the living costs and the size of your domestic wo" +
+                    "rker's household. Take time to reassess how much you're paying by using our tool" +
+                    ".";
             highlight_output('label-danger');
         } else if ((output_percentage >= 75) && (output_percentage < constants.output_almost)) {
-            output_statement = "You're nearly there! Take time to reassess the wage by using our tool or discussing costs with your domestic worker.";
+            output_statement = "You're nearly there! Take time to reassess the wage by using our tool or discuss" +
+                    "ing costs with your domestic worker.";
             highlight_output('label-warning');
         } else if ((output_percentage >= constants.output_almost) && (output_percentage < 100)) {
-            output_statement = "You're very close to paying a fair wage given the living costs and the size of your domestic worker's household. Share your results!";
+            output_statement = "You're very close to paying a fair wage given the living costs and the size of y" +
+                    "our domestic worker's household. Share your results!";
             highlight_output('label-warning');
         } else {
             output_statement = "You're covering your domestic worker's Minimal Need. Share your results!";
@@ -221,8 +229,8 @@ function update_output() {
         }
 
         // show results to the user
-        $("#output-amount").html(to_rands(monthly_pay))
-        $("#output-monthly-need").html(to_rands(monthly_expenditure))
+        $("#output-amount").html(to_KSH(monthly_pay))
+        $("#output-monthly-need").html(to_KSH(monthly_expenditure))
 
         $("#output-percentage").html(output_percentage + "%")
         $("#output-statement").html(output_statement);
@@ -246,97 +254,140 @@ function change_twitter_text(txt) {
             .attr('data-count', 'horizontal')
             .attr('data-hashtags', 'livingwage');
         $('#tweetBtn').append(tweetBtn);
-        console.log(twttr)
-        console.log(txt)
-        twttr.widgets.load();
+        twttr
+            .widgets
+            .load();
     }
 }
 
-$(document).ready(function() {
+function clearIntro(intervalObject) {
+    clearInterval(intervalObject);
+    $('#slideshow').css('display', 'none');
+    $('#skip').css('display', 'none');
+    $('#content').css('display', 'block');
+}
 
-    // function for scrolling around website (links to "#section" will scroll to that section)
-    $('a[href^="#"]').on('click',function (e) {
-        e.preventDefault();
+$(document)
+    .ready(function () {
 
-        var target = this.hash;
-        var $target = $(target);
+        $("#slideshow > div:gt(0)").hide();
+        var inter = setInterval(function () {
+            $('#slideshow > div:first')
+                .fadeOut(500)
+                .next()
+                .fadeIn(800)
+                .end()
+                .appendTo('#slideshow');
+            setTimeout(function () {
+                clearIntro(inter)
+            }, 35000);
+        }, 5000);
 
-        $('html, body').stop().animate({
-            'scrollTop': $target.offset().top-15
-        }, 900, 'swing');
-    });
+        $(window).scroll(function () {
+            $(".arrow").css("opacity", 1 - $(window).scrollTop() / 250);
+        });
 
-    $("#pay-amount").focus();
+        // function for scrolling around website (links to "#section" will scroll to
+        // that section)
+        $('a[href^="#"]').on('click', function (e) {
+            e.preventDefault();
 
-    // initialize dropdown selects
-    $("#pay-rate").selectpicker().on("change", function() {
-        update_output();
-    })
-    $("#pay-amount").on("change", function() {
-        update_output();
-    })
-    $('#assumption-container .selectpicker').selectpicker().on("change",function() {
-        update_output();
-    });
+            var target = this.hash;
+            var $target = $(target);
 
-    // update output based on default input values
-    update_output();
+            $('html, body')
+                .stop()
+                .animate({
+                    'scrollTop': $target
+                        .offset()
+                        .top - 15
+                }, 900, 'swing');
+        });
 
-    // update on click
-    var twitter_bound = false;
-    $("#go-button").on('click', function(e) {
-        // attach twitter widget events
-        if (!twitter_bound && typeof(twttr) != "undefined") {
-            twttr.events.bind('click', function(e) {
-                ga('send', 'event', 'twitter', 'click');
+        $('#skip').on('click', function () {
+            clearIntro(inter);
+        });
+
+        $("#pay-amount").focus();
+
+        // initialize dropdown selects
+        $("#pay-rate")
+            .selectpicker()
+            .on("change", function () {
+                update_output();
+            })
+        $("#pay-amount").on("change", function () {
+            update_output();
+        })
+        $('#assumption-container .selectpicker')
+            .selectpicker()
+            .on("change", function () {
+                update_output();
             });
-            twttr.events.bind('tweet', function(e) {
-                ga('send', 'event', 'twitter', 'tweet');
-            });
-            twitter_bound = true;
+
+        // update output based on default input values
+        update_output();
+
+        // update on click
+        var twitter_bound = false;
+        $("#go-button").on('click', function (e) {
+            // attach twitter widget events
+            if (!twitter_bound && typeof(twttr) != "undefined") {
+                twttr
+                    .events
+                    .bind('click', function (e) {
+                        ga('send', 'event', 'twitter', 'click');
+                    });
+                twttr
+                    .events
+                    .bind('tweet', function (e) {
+                        ga('send', 'event', 'twitter', 'tweet');
+                    });
+                twitter_bound = true;
+            }
+
+            e.preventDefault();
+            if (update_output()) {
+                update_display('display-results');
+            }
+        })
+
+        $("#show-assumptions-btn").on('click', function () {
+            update_display('display-assumptions');
+        })
+
+        function KSH_formater(value) {
+            return value + ' KSH';
         }
 
-        e.preventDefault();
-        if (update_output())
-        {
-            update_display('display-results');
-        }
-    })
-
-    $("#show-assumptions-btn").on('click', function() {
-        update_display('display-assumptions');
-    })
-
-    function rand_formater(value) {
-        return value + ' rand';
-    }
-
-    function child_formater(value) {
-        if (value == 1)
-            return '1 child';
-        else
-            return value + ' children';
-    }
-
-    function people_formater(value) {
-        if (value == 1)
-            return '1 person';
-        else
-            return value + ' people';
-    }
-
-    $(this).find(".slider").each(function(i) {
-        var tmp_formater = rand_formater;
-        if ($(this).attr("data-slider-formater") == "children")
-            tmp_formater = child_formater;
-        else if ($(this).attr("data-slider-formater") == "people")
-            tmp_formater = people_formater;
-
-        $(this).slider({ tooltip: 'always', formater: tmp_formater })
-            .on('slideStop', function(event) {
-                $(this).attr("data-slider-val", $(this).val())
-                update_output()
-            });
-    })
-});
-
+        function child_formater(value) {
+            if (value == 1) 
+                return '1 child';
+            else 
+                return value + ' children';
+            }
+        
+        function people_formater(value) {
+            if (value == 1) 
+                return '1 person';
+            else 
+                return value + ' people';
+            }
+        
+        $(this)
+            .find(".slider")
+            .each(function (i) {
+                var tmp_formater = KSH_formater;
+                if ($(this).attr("data-slider-formater") == "children") 
+                    tmp_formater = child_formater;
+                else if ($(this).attr("data-slider-formater") == "people") 
+                    tmp_formater = people_formater;
+                
+                $(this)
+                    .slider({tooltip: 'always', formater: tmp_formater})
+                    .on('slideStop', function (event) {
+                        $(this).attr("data-slider-val", $(this).val())
+                        update_output()
+                    });
+            })
+    });
