@@ -1,15 +1,14 @@
-@import url(https://fonts.googleapis.com/css?family=Roboto:400,700,900);
-@import url(https://fonts.googleapis.com/css?family=Roboto+Slab:400,700,300);
-@import url(https://fonts.googleapis.com/css?family=Open+Sans);
+@import url('https://fonts.googleapis.com/css?family=Merriweather:400,900|Noto+Serif:400,700');
 
 body {
   background: #fff;
-  font-family: "Open Sans";
+  font-family: 'Noto Serif', serif;
   color: #000;
 }
 
 h1, h2, h3, h4, h5, h6 {
   margin-top: 0;
+  font-family: 'Merriweather', serif;
   font-weight: 900;
 }
 
@@ -58,7 +57,7 @@ h1, h2, h3, h4, h5, h6 {
 
 .jumbotron p.lead {
   margin-bottom: 20px;
-  font-family: "Open Sans";
+  font-family: 'Noto Serif', serif;
 }
 
 .jumbotron h1 {
@@ -117,7 +116,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .question {
-  font-family: "Roboto Slab";
+  font-family: 'Merriweather', serif;
 }
 
 .note {
@@ -131,7 +130,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .sources {
-  font-family: "Roboto Slab";
+  font-family: 'Merriweather', serif;
   font-weight: 400;
   font-size: 0.8em;
 }
@@ -139,7 +138,7 @@ h1, h2, h3, h4, h5, h6 {
 .sources strong {
   background: rgba(0, 0, 0, 0.5);
   padding: 0 2px 0 2px;
-  font-family: "Roboto";
+  font-family: 'Merriweather', serif;
   font-weight: 900;
   text-transform: uppercase;
 }
@@ -184,7 +183,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .slider-selection {
-  background: #09f;
+  background: #83bb26;
 }
 
 .slider-handle {
@@ -217,7 +216,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .btn-primary:hover {
-  background: #09f;
+  background: #83bb26;
 
   border: 0;
 }
@@ -376,7 +375,7 @@ h1, h2, h3, h4, h5, h6 {
   color: #fff;
   padding-top: 5em;
   font-size: 2.5em;
-  font-family: 'Open Sans';
+  font-family: 'Noto Serif', serif;
   overflow-wrap: break-word;
   padding-right: 4px;
   z-index: 999;
@@ -468,11 +467,6 @@ h1, h2, h3, h4, h5, h6 {
   }
 }
 
-i {
-  display: block;
-  color: #fff;
-}
-
 .arrow {
   position: absolute;
   left: 50%;
@@ -494,7 +488,7 @@ i {
   position: absolute;
   bottom: 30px;
   color: white;
-  font-family: 'Open Sans';
+  font-family: 'Noto Serif', serif;
   right: 0;
   padding: 10px 40px;
   margin-right: 40px;
@@ -509,10 +503,6 @@ i {
   background: #fff;
   color: #000;
   cursor: pointer;
-}
-
-.jumbotron a {
-  background: transparent;
 }
 
 #share {

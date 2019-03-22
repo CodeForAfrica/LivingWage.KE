@@ -20,6 +20,20 @@ title: People Daily Kenya | Living Wage
 # Short description of your site
 description: Are you paying your domestic worker enough?
 
+# List of stories
+story:
+  - title: Story 1
+    url: /#
+  - title: Story 2
+    url: /#
+  - title: Story 3
+    url: /#
+
+
+twitter: PeopleDailyKe
+facebook: PeopleDailyKe
+instagram: peopledailyke
+
 # --- Don't need to touch anything below here (but you can if you want) --- #
 
 # Output options (more information on Jekyll's site)

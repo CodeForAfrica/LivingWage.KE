@@ -1,3 +1,5 @@
+---
+---
 constants = {
     workdays_per_week: 5,
     weeks_per_month: 4.33,
@@ -10,11 +12,11 @@ constants = {
     output_almost: 90 // below this figure salary is almost enough
 }
 
-function to_KSH(val) {
+function to_currency(val) {
     if (val != parseInt(val)) {
-        return "KSH" + val.toFixed(2);
+        return "KSH" + commafy(val.toFixed(2));
     } else {
-        return "KSH" + val;
+        return "KSH" + commafy(val);
     }
 }
 
@@ -26,7 +28,7 @@ function calculate_transport(household_size) {
     else 
         var out = Math.round(trans_cost * constants.workdays_per_month);
     
-    $("#transport-total").html(to_KSH(out));
+    $("#transport-total").html(to_currency(out));
 
     return out
 }
@@ -39,7 +41,7 @@ function calculate_food(household_size) {
     // Education
     var out = Math.round(food_cost * household_size * constants.days_per_month);
 
-    $("#food-total").html(to_KSH(out));
+    $("#food-total").html(to_currency(out));
 
     return out
 }
@@ -62,7 +64,7 @@ function calculate_rent(household_size) {
     else 
         violence_comment = "Much lower likelihood of experiencing violence."
 
-    $("#rent-total").html(to_KSH(out));
+    $("#rent-total").html(to_currency(out));
 
     return out
 }
@@ -72,7 +74,7 @@ function calculate_education(household_size) {
     var education_cost = $("#education-cost").val()
     var out = education_cost * (kids);
 
-    $("#education-total").html(to_KSH(out));
+    $("#education-total").html(to_currency(out));
 
     return out
 }
@@ -83,7 +85,7 @@ function calculate_health(household_size) {
     var out = health_cost * household_size;
     var health_comment = ""
 
-    $("#health-total").html(to_KSH(out))
+    $("#health-total").html(to_currency(out))
 
     return out
 }
@@ -92,7 +94,7 @@ function calculate_communication(household_size) {
     var communication_cost = $("#communication-cost").val();
     var out = communication_cost * household_size
 
-    $("#communication-total").html(to_KSH(out))
+    $("#communication-total").html(to_currency(out))
 
     return out
 }
@@ -101,7 +103,7 @@ function calculate_recreation(household_size) {
     var recreation_cost = $("#recreation-cost").val();
     var out = recreation_cost * household_size;
 
-    $("#recreation-total").html(to_KSH(out))
+    $("#recreation-total").html(to_currency(out))
 
     return out
 }
@@ -109,7 +111,7 @@ function calculate_recreation(household_size) {
 function calculate_other(household_size) {
     var out = $("#other-cost").val() * household_size;
 
-    $("#other-total").html(to_KSH(out))
+    $("#other-total").html(to_currency(out))
 
     return out
 }
@@ -229,8 +231,8 @@ function update_output() {
         }
 
         // show results to the user
-        $("#output-amount").html(to_KSH(monthly_pay))
-        $("#output-monthly-need").html(to_KSH(monthly_expenditure))
+        $("#output-amount").html(to_currency(monthly_pay))
+        $("#output-monthly-need").html(to_currency(monthly_expenditure))
 
         $("#output-percentage").html(output_percentage + "%")
         $("#output-statement").html(output_statement);
@@ -248,15 +250,13 @@ function change_twitter_text(txt) {
         var tweetBtn = $('<a></a>')
             .addClass('twitter-share-button')
             .attr('href', 'http://twitter.com/share')
-            .attr('data-url', 'http://bit.ly/1Gn9ZWS')
-            .attr('data-via', 'code4sa')
+            .attr('data-url', '{{ site.url }}')
+            .attr('data-via', '{{ site.twitter }}')
             .attr('data-text', txt)
             .attr('data-count', 'horizontal')
             .attr('data-hashtags', 'livingwage');
         $('#tweetBtn').append(tweetBtn);
-        twttr
-            .widgets
-            .load();
+        twttr.widgets.load();
     }
 }
 
