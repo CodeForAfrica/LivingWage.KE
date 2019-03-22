@@ -15,3 +15,18 @@ Deployment
 ==========
 
 This project is static HTML and Javascript and is served directly from the gh-pages branch on GitHub.
+
+
+### Attribution
+
+Kibera slum Nairobi Kenya
+Kibera slum Nairobi Kenya, garbage truck
+Credit: Ninaras
+https://commons.wikimedia.org/wiki/File:Kibera_slum_Nairobi_Kenya_01.jpg
+
+
+Lucy Nyangasi, domestic worker, Kenya 
+Lucy Nyangasi–26 years old–goes about her daily household work in the house of the family she works for in Nairobi, Kenya Wednesday, Feb. 3, 2016.
+Credit: Solidarity Center/Kate Holt
+https://www.flickr.com/photos/62762640@N02/29009854634/in/album-72157672568408660/
+https://www.flickr.com/photos/62762640@N02/29525342922/in/album-72157672568408660/

@@ -1,23 +1,15 @@
-@import url(http://fonts.googleapis.com/css?family=Roboto:400,700,900);
-@import url(http://fonts.googleapis.com/css?family=Roboto+Slab:400,700,300);
-@import url(https://fonts.googleapis.com/css?family=Oswald:300,400);
+@import url(https://fonts.googleapis.com/css?family=Roboto:400,700,900);
+@import url(https://fonts.googleapis.com/css?family=Roboto+Slab:400,700,300);
 @import url(https://fonts.googleapis.com/css?family=Open+Sans);
-@import url(https://fonts.googleapis.com/css?family=Montserrat);
 
 body {
   background: #fff;
-  font-family: "Montseratt";
+  font-family: "Open Sans";
   color: #000;
 }
 
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
+h1, h2, h3, h4, h5, h6 {
   margin-top: 0;
-
   font-weight: 900;
 }
 
@@ -167,8 +159,8 @@ h6 {
 }
 
 .hero-image {
-  background-image: url("../images/Slum.jpg");
-  height: 590px;
+  background-image: url("/img/slum/original.jpg");
+  height: 50vh;
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -360,7 +352,7 @@ h6 {
 }
 
 #slideshow {
-  background-image: url("../images/womanWorking.jpg");
+  background-image: url("/img/domestic-worker/original.jpg");
   background-size: cover;
   position: relative;
   width: 100%;
@@ -377,6 +369,7 @@ h6 {
   left: 10px;
   right: 10px;
   bottom: 10px;
+  background-color: rgba(0, 0, 0, 0.3);
 }
 
 #slideshow p {
