@@ -171,10 +171,8 @@ function update_display(class_name) {
 
 function validate_input(household_size, pay_rate, pay_amount) {
     if (!$.isNumeric(pay_amount)) {
-        $("#pay-amount")
-            .parents('.form-group')
-            .addClass('has-error');
-        $("#pay-amount").focus();
+        $("#pay-amount-" + pay_rate).parents('.form-group').addClass('has-error');
+        $("#pay-amount-" + pay_rate).focus();
         pay_amount = false;
     }
     if (household_size && pay_rate && pay_amount) {
@@ -185,12 +183,28 @@ function validate_input(household_size, pay_rate, pay_amount) {
     return false
 }
 
+function update_sliders(rate) {
+    // Update all the sliders to show the equivalent of the matching value
+
+    $("#pay-amount-day").slider('setValue', $("#pay-amount").val() / constants.workdays_per_month, true);
+    $("#pay-amount-week").slider('setValue', $("#pay-amount").val() / constants.weeks_per_month, true);
+    $("#pay-amount-month").slider('setValue', parseFloat($("#pay-amount").val()), true);
+
+    // Hide all sliders.
+    $("#outer-pay-amount-day").hide();
+    $("#outer-pay-amount-week").hide();
+    $("#outer-pay-amount-month").hide();
+
+    // Show the slider matching the selected rate.
+    $("#outer-pay-amount-" + rate).show();
+}
+
 function update_output() {
 
     // read input
     var household_size = $("#household-size").val();
     var pay_rate = $("#pay-rate").val();
-    var pay_amount = $("#pay-amount").val();
+    var pay_amount = $("#pay-amount-" + pay_rate).val();
 
     if (validate_input(household_size, pay_rate, pay_amount)) {
         var monthly_expenditure = calculate_expenditure(household_size);
@@ -199,12 +213,18 @@ function update_output() {
         var monthly_pay = 0;
         // Assumption using DoL info - a month includes 4.33 weeks and a week is for 5
         // work days.
-        if (pay_rate == "day") 
+        if (pay_rate == "day") {
             monthly_pay = pay_amount * constants.workdays_per_month;
-        else if (pay_rate == "week") 
+        }
+        else if (pay_rate == "week") {
             monthly_pay = pay_amount * constants.weeks_per_month;
-        else if (pay_rate == "month") 
+        }
+        else if (pay_rate == "month") {
             monthly_pay = pay_amount;
+        }
+
+        // Update the overall pay-amount input box.
+        $("#pay-amount").val(monthly_pay);
         
         var output_percentage = (monthly_pay / monthly_expenditure);
         output_percentage *= 100;
@@ -308,15 +328,22 @@ $(document)
             clearIntro(inter);
         });
 
-        $("#pay-amount").focus();
+        $("#pay-amount-day").focus();
 
         // initialize dropdown selects
         $("#pay-rate")
             .selectpicker()
             .on("change", function () {
+                update_sliders($("#pay-rate").val());
                 update_output();
             })
-        $("#pay-amount").on("change", function () {
+        $("#pay-amount-day").on("change", function() {
+            update_output();
+        })
+        $("#pay-amount-week").on("change", function() {
+            update_output();
+        })
+        $("#pay-amount-month").on("change", function () {
             update_output();
         })
         $('#assumption-container .selectpicker')
@@ -356,8 +383,8 @@ $(document)
             update_display('display-assumptions');
         })
 
-        function KSH_formater(value) {
-            return value + ' KSH';
+        function currency_formater(value,  symbol='KSH') {
+            return symbol + ' ' + value;
         }
 
         function child_formater(value) {
@@ -377,7 +404,7 @@ $(document)
         $(this)
             .find(".slider")
             .each(function (i) {
-                var tmp_formater = KSH_formater;
+                var tmp_formater = currency_formater;
                 if ($(this).attr("data-slider-formater") == "children") 
                     tmp_formater = child_formater;
                 else if ($(this).attr("data-slider-formater") == "people") 

@@ -203,6 +203,10 @@ h1, h2, h3, h4, h5, h6 {
   user-select: none;
 }
 
+#outer-pay-amount-week, #outer-pay-amount-month {
+  display: none;
+}
+
 .btn-primary {
   background: #83bb26;
 

@@ -83,20 +83,52 @@
   
           <form id="input-form" role="form">
             <div class="form-group">
-              <label class="control-label lead question" for="pay-amount">How much do you pay your household worker?</label><br>
+              <label class="control-label lead question" for="pay-amount-day">How much do you pay your household worker?</label><br>
               <div class="row">
                 <div class="col-sm-9">
                   <input
-                      id="pay-amount"
-                      class="slider"
-                      style="width: 100%;"
-                      type="text"
-                      name="pay-amount"
-                      data-slider-min="50"
-                      data-slider-max="10000"
-                      data-slider-step="10"
-                      value="500"
-                      data-slider-value="500"/>
+                    id="pay-amount"
+                    type="text"
+                    style="display: none;"/>
+                  <div id="outer-pay-amount-day">
+                    <input
+                        id="pay-amount-day"
+                        class="slider"
+                        style="width: 100%;"
+                        type="text"
+                        name="pay-amount"
+                        data-slider-min="100"
+                        data-slider-max="3000"
+                        data-slider-step="10"
+                        value="100"
+                        data-slider-value="800"/>
+                  </div>
+                  <div id="outer-pay-amount-week">
+                    <input
+                        id="pay-amount-week"
+                        class="slider"
+                        style="width: 100%;"
+                        type="text"
+                        name="pay-amount-week"
+                        data-slider-min="500"
+                        data-slider-max="15000"
+                        data-slider-step="50"
+                        value="500"
+                        data-slider-value="3000"/>
+                  </div>
+                  <div id="outer-pay-amount-month">
+                    <input
+                        id="pay-amount-month"
+                        class="slider"
+                        style="width: 100%;"
+                        type="text"
+                        name="pay-amount-month"
+                        data-slider-min="2000"
+                        data-slider-max="60000"
+                        data-slider-step="100"
+                        value="2000"
+                        data-slider-value="10000"/>
+                  </div>
                 </div>
                 <div class="col-sm-3">
                   <select class="selectpicker" name="pay-rate" data-width="100%" id="pay-rate">
