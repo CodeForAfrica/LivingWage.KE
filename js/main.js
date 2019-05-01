@@ -207,7 +207,9 @@ function update_output() {
     var pay_amount = $("#pay-amount-" + pay_rate).val();
 
     if (validate_input(household_size, pay_rate, pay_amount)) {
-        var monthly_expenditure = calculate_expenditure(household_size);
+        // Assumption: Monthly Expenditure is contribution of 80% of the total household expenditure
+        var household_contribution = 0.8;
+        var monthly_expenditure = calculate_expenditure(household_size) * household_contribution;
 
         // calculate monthly pay
         var monthly_pay = 0;
@@ -252,11 +254,11 @@ function update_output() {
 
         // show results to the user
         $("#output-amount").html(to_currency(monthly_pay))
-        $("#output-monthly-need").html(to_currency(monthly_expenditure))
+        $("#output-monthly-need").html(to_currency(monthly_expenditure * 1/household_contribution))
 
         $("#output-percentage").html(output_percentage + "%")
         $("#output-statement").html(output_statement);
-        change_twitter_text("I pay my domestic worker R" + monthly_pay + " which is " + output_percentage + "% of their monthly need, how much do you pay?");
+        change_twitter_text("I pay my domestic worker Ksh." + monthly_pay + " which is " + output_percentage + "% of their monthly need, how much do you pay?");
         return true
     }
     return false
