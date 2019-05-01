@@ -1,0 +1,737 @@
+<div class="container-fluid">
+    <div class="row text-center">
+      <div class="jumbotron">
+        <h1>Living Wage Calculator</h1>
+        <p class="lead">Are you paying your domestic worker enough?</p>
+        <p class="small"><a href="{{ site.url }}" target="_blank">Read more about domestic worker wages <i class="fa fa-external-link-alt"></i></a></p>
+      </div>
+    </div>
+  </div>
+      
+  <div class="container">
+  
+    <div class="row" id="row_scroll">
+      <div class="col-sm-8 col-sm-offset-2">
+  
+        <div class="section">
+  
+          <form id="input-form" role="form">
+            <div class="form-group">
+              <label class="control-label lead question" for="pay-amount-day">How much do you pay your household worker?</label><br>
+              <div class="row">
+                <div class="col-sm-9">
+                  <input
+                    id="pay-amount"
+                    type="text"
+                    style="display: none;"/>
+                  <div id="outer-pay-amount-day">
+                    <input
+                        id="pay-amount-day"
+                        class="slider"
+                        style="width: 100%;"
+                        type="text"
+                        name="pay-amount"
+                        data-slider-min="100"
+                        data-slider-max="3000"
+                        data-slider-step="50"
+                        value="800"
+                        data-slider-value="800"/>
+                  </div>
+                  <div id="outer-pay-amount-week">
+                    <input
+                        id="pay-amount-week"
+                        class="slider"
+                        style="width: 100%;"
+                        type="text"
+                        name="pay-amount-week"
+                        data-slider-min="500"
+                        data-slider-max="15000"
+                        data-slider-step="50"
+                        value="3000"
+                        data-slider-value="3000"/>
+                  </div>
+                  <div id="outer-pay-amount-month">
+                    <input
+                        id="pay-amount-month"
+                        class="slider"
+                        style="width: 100%;"
+                        type="text"
+                        name="pay-amount-month"
+                        data-slider-min="2000"
+                        data-slider-max="60000"
+                        data-slider-step="100"
+                        value="10000"
+                        data-slider-value="10000"/>
+                  </div>
+                </div>
+                <div class="col-sm-3">
+                  <select class="selectpicker" name="pay-rate" data-width="100%" id="pay-rate">
+                    <option value="day" selected>per day</option>
+                    <option value="week">per week</option>
+                    <option value="month">per month</option>
+                  </select>
+                </div>
+              </div>
+            </div>
+          </form>
+  
+          <div class="row">
+            <div class="col-sm-12">
+              <p class="lead">
+                At this rate, you are paying the equivalent of <strong><span id="output-amount">KSH0</span></strong> per month.
+              </p>
+            </div>
+          </div>
+  
+          <div class="row">
+            <div class="col-sm-8 col-sm-offset-2 text-center">
+              <button id="go-button" class="btn btn-primary btn-block btn-lg display-landing"><i class="fa fa-calculator"></i>Calculate expenses</button>
+            </div>
+          </div>
+  
+        </div>
+  
+      </div>
+    </div>
+  
+  </div>
+      
+      
+  <div class="container display-results display-assumptions" style="display: none;">
+    <div class="row">
+      <div class="col-sm-8 col-sm-offset-2">
+  
+        <div class="section" id="results">
+  
+          <p class="lead">
+            This covers <span id="output-percentage" class="label">0%</span> of your domestic worker's contribution to their household's minimal need of <strong><span id="output-monthly-need">KSH0</span></strong>.
+          </p>
+
+
+  <div class="text-center">
+
+      <div class="social-media-buttons">
+
+          <div id="tweetBtn"> 
+            <a href="https://twitter.com/share" class="twitter-share-button" data-count="horizontal" data-text="Check if you pay your domestic worker a fair wage" data-via="{{ site.twitter }}" data-hashtags="livingwage" datasize="large">Tweet</a>
+            <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+          </div>
+
+        </div>
+      <div class="social-media-buttons">
+          <div>
+              <!-- Your share button code -->
+              <div class="fb-share-button" 
+                data-href="{{ site.url }}" 
+                data-layout="button_count">
+              </div>
+            
+          </div>
+      </div>
+
+    </div>
+  
+          <p class="lead"><span id="output-statement"></span></p>
+  
+          <div class="row">
+            <div class="col-sm-8 col-sm-offset-2 text-center">
+              <button id="show-assumptions-btn" class="btn btn-primary btn-block btn-lg display-results"><i class="fa fa-arrow-circle-down"></i> Show assumptions</button>
+            </div>
+          </div>
+  
+        </div>
+  
+      </div>
+    </div>
+  </div>
+      
+  <div id="assumption-container" class="container display-assumptions" style="display: none;">
+    <div class="row">
+      <div class="col-sm-8 col-sm-offset-2">
+  
+        <div class="assumptions-menu container-fluid">
+  
+                <div class="col-sm-3 text-center">
+  
+              <h2>Assumptions</h2>
+  
+            </div>
+  
+            <div class="col-sm-9 text-center">
+  
+              <p>Our calculations are based on <strong style="display: inline-block;">9 assumptions</strong>.</p>
+  
+            </div>
+  
+        </div>
+  
+      </div>
+    </div>
+          <!-- Household Size Panel-->
+    <div class="row">
+      <div class="col-sm-8 col-sm-offset-2">      
+          <div class="panel panel-default" id="assumption-1">
+            <div class="panel-heading" data-toggle="collapse" data-target="#panel-household-size">
+              <h4 class="panel-title">
+                <span>
+                  1. Household Size <span id="household-size-feedback" class="pull-right">... people</span>
+                </span>
+              </h4>
+            </div>
+            <div id="panel-household-size" class="panel-collapse collapse in">
+              <div class="panel-body">
+  
+              <div class="row">
+  
+                  <div class="col-sm-9">
+  
+                    <div class="form-group">
+                      <label for="household-size" class="lead question">Including your domestic worker, <strong>how large is their household</strong>?</label><br>
+                      <input
+                          id="household-size"
+                          class="slider"
+                          tooltip="always"
+                          type="text"
+                          name="household-size"
+                          data-slider-min="1"
+                          data-slider-max="10"
+                          data-slider-step="1"
+                          value="2"
+                          data-slider-value="2"
+                          data-slider-formater="people"/><br>
+                    </div>
+  
+                    </div>
+                    <div class="col-sm-3 text-center panel-image">
+  
+                            <i class="fa fa-users fa-3x"></i>
+  
+                    </div>
+  
+                  </div>
+  
+                <p class="note">
+                  Domestic workers are often consulted for important decisions within the family with 60% of them providing financial assistance for their households.
+                </p>
+                <p class="sources">
+                  <strong>Source:</strong> <a href="http://www.kudheiha.org/domestic-workers/">Domestic Workers</a>
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+          <!-- Household Size Panel end-->
+  
+          <!-- Food Panel -->
+      <div class="row">
+        <div class="col-sm-8 col-sm-offset-2">      
+          <div class="panel panel-default" id="assumption-2">
+            <div class="panel-heading" data-toggle="collapse" data-target="#panel-food-expenses">
+              <h4 class="panel-title">
+                <span>
+                  2. Food Cost <span id="food-total" class="pull-right">KSH...</span>
+                </span>
+              </h4>
+            </div>
+            <div id="panel-food-expenses" class="panel-collapse collapse in">
+              <div class="panel-body">
+  
+                              <div class="row">
+  
+                                  <div class="col-sm-9">
+  
+                                          <div class="form-group">
+                              <label for="food-cost" class="lead question">What do you estimate are the daily <strong>food costs</strong> per person in your domestic worker's household?</label><br>
+                              
+                              <input
+                                  id="food-cost"
+                                  class="slider"
+                                  enabled="false"
+                                  type="text"
+                                  name="food-cost"
+                                  data-slider-min="5"
+                                  data-slider-max="2000"
+                                  data-slider-step="10"
+                                  value="180"
+                                  data-slider-value="180"
+                                  data-slider-formater="KSH"/><br>
+  
+                            </div>
+  
+                                    </div>
+                                    <div class="col-sm-3 text-center panel-image">
+  
+                                          <i class="fa fa-shopping-cart fa-3x"></i>
+  
+                                    </div>
+  
+                              </div>            	
+  
+                
+                <p class="note">Using consumer price index data on food (January 2019) and a selected basket of goods, <strong>we estimate that the daily average cost per person for attaining 2000 calories is Ksh 180</strong> (KSH 5,400 per month per person).</p>
+                <p class="note">
+                  We have not incorporated the food nutrition program or child support grants in our assessment. We feel our values are still quite conservative.
+                </p>
+                <p class="sources">
+                  <strong>Source:</strong> <a href="https://openafrica.net/dataset/cpi_kenya_2018">CPI January 2019, KNBS</a>
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+          <!-- Food Panel end -->
+  
+          <!-- Transportation Panel -->
+      <div class="row">
+        <div class="col-sm-8 col-sm-offset-2">         
+          <div class="panel panel-default" id="assumption-3">
+            <div class="panel-heading" data-toggle="collapse" data-target="#panel-transport-expenses">
+              <h4 class="panel-title">
+                <span>
+                  3. Transportation Cost <span id="transport-total" class="pull-right">KSH...</span>
+                </span>
+              </h4>
+            </div>
+            <div id="panel-transport-expenses" class="panel-collapse collapse in">
+              <div class="panel-body">
+  
+                              <div class="row">
+  
+                                  <div class="col-sm-9">
+  
+                                          <div class="form-group">
+                              <label for="transport-cost" class="lead question">How much does it cost your domestic worker to <strong>get to work</strong>?</label><br>
+                              <input
+                                  id="transport-cost"
+                                  class="slider"
+                                  enabled="false"
+                                  type="text"
+                                  name="transport-cost"
+                                  data-slider-min="30"
+                                  data-slider-max="200"
+                                  data-slider-step="5"
+                                  value="50"
+                                  data-slider-value="50"
+                                  data-slider-formater="KSH"/><br>
+                            </div>
+                            <div class="form-group">
+                              <label for="transport-direction" class="lead question">Is this cost <strong>one way</strong> or for a <strong>roundtrip</strong>?</label><br>
+                              <select class="selectpicker" name="transport-direction" id ="transport-direction"><br>
+                                <option value="oneway" selected>one way</option>
+                                <option value="roundtrip">round trip</option>
+                              </select>
+                            </div>							    
+  
+                                    </div>
+                                    <div class="col-sm-3 text-center panel-image">
+  
+                                            <i class="fa fa-bus fa-3x"></i>
+  
+                                    </div>
+  
+                              </div>
+  
+                <p class="note">Travel costs are known to be high for domestic workers. <strong>We assume a need of KSH50 one way to get to work</strong>, based on the Consumer Price Indices and Inflation Rates for January 2019
+                </p>
+                <p class="note">
+                  We assume the cost of getting from Kawangware to a Nairobi suburb as the base. It is true it can take up to two minibus taxi trips to leave home and arrive at work. These trips combined cost between KSH30-50. Daily this can then be KSH60-100.
+                </p>
+                <p class="note">
+                  Transportation is not cheap in Nairobi (public or private) and this is likely true through Kenya.
+                  Of course if the tariff or the number of trips from poorer areas to urban employer centres were lower
+                  then the cost would be lower. But it can also be higher depending on the distance.
+                </p>
+  
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+          <!-- Transportation Panel end -->
+  
+          <!-- Rent Panel -->
+      <div class="row">
+        <div class="col-sm-8 col-sm-offset-2">    
+          <div class="panel panel-default" id="assumption-4">
+            <div class="panel-heading" data-toggle="collapse" data-target="#panel-rent-expenses">
+              <h4 class="panel-title">
+                <span>
+                  4. Housing Cost <span id="rent-total" class="pull-right">R...</span>
+                </span>
+              </h4>
+            </div>
+            <div id="panel-rent-expenses" class="panel-collapse collapse in">
+              <div class="panel-body">
+  
+                              <div class="row">
+  
+                                  <div class="col-sm-9">
+  
+                                          <div class="form-group">
+                              <label for="rent-cost" class="lead question">How much do you estimate are your domestic worker's <strong>rent and utility costs</strong> (including electricity)?</label><br>
+                              <input
+                                  id="rent-cost"
+                                  class="slider"
+                                  enabled="false"
+                                  type="text"
+                                  name="rent-cost"
+                                  data-slider-min="0"
+                                  data-slider-max="10000"
+                                  data-slider-step="50"
+                                  value="4500"
+                                  data-slider-value="4500"
+                                  data-slider-formater="KSH"/><br>
+                            </div>
+  
+                                    </div>
+                                    <div class="col-sm-3 text-center panel-image">
+  
+                                            <i class="fa fa-building fa-3x"></i>
+  
+                                    </div>
+  
+                              </div>            	
+  
+                <p class="note">
+                  Generally speaking, higher rents are associated with better provision of sanitation services and lower crime rates.
+                </p>
+                <p class="note">
+                  Associations with violence and sanitation taken from this data as well. Where rent was not paid (or reported), the assumption was that the household lived in informal risky settings. We don't want to highlight that as a residential option.
+                </p>
+                <p class="sources">
+                  <strong>Source:</strong> <a href="https://openafrica.net/dataset/cpi_kenya_2018">CPI January 2019, KNBS</a>
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+          <!-- Rent Panel end -->
+  
+          <!-- Health Panel -->
+      <div class="row">
+        <div class="col-sm-8 col-sm-offset-2">     
+          <div class="panel panel-default" id="assumption-5">
+            <div class="panel-heading" data-toggle="collapse" data-target="#panel-health-expenses">
+              <h4 class="panel-title">
+                <span>
+                  5. Healthcare Cost <span id="health-total" class="pull-right">KSH...</span>
+                </span>
+              </h4>
+            </div>
+            <div id="panel-health-expenses" class="panel-collapse collapse in">
+              <div class="panel-body">
+  
+                              <div class="row">
+  
+                                  <div class="col-sm-9">
+  
+                            <div class="form-group">
+                              <label for="rent-cost" class="lead question">What is a reasonable monthly allowance for <strong>healthcare</strong> needs?</label><br>
+                              <p>Estimate a reasonable monthly health allowance (per person):</p>
+                              <input
+                                  id="health-cost"
+                                  class="slider"
+                                  enabled="false"
+                                  type="text"
+                                  name="health-cost"
+                                  data-slider-min="0"
+                                  data-slider-max="5000"
+                                  data-slider-step="50"
+                                  value="550"
+                                  data-slider-value="550"
+                                  data-slider-formater="KSH"/><br>
+                            </div>
+  
+                                    </div>
+                                    <div class="col-sm-3 text-center panel-image">
+  
+                                            <i class="fa fa-stethoscope fa-3x"></i>
+  
+                                    </div>
+  
+                              </div>
+  
+                <p class="note">
+                  Setting up a health budget for the household is very important. <strong>Public consultancies cost KSH550 per visit and for medicines.</strong> Healthcare costs could also be covered through health insurance which can cost at least KSH 150 per month per person.
+                </p>
+                <p class="sources">
+                    <strong>Sources:</strong> <br>
+                    <a href="https://www.who.int/choice/country/ken/cost/en/" target="_blank">Choosing Interventions that are Cost Effective (WHO-CHOICE)</a><br>
+                    <a href="https://calculator.co.ke/nhif-contribution-rates" target="_blank">NHIF Contribution Rates</a>
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+          <!-- Health Panel end -->
+  
+          <!-- Education Panel -->
+      <div class="row">
+        <div class="col-sm-8 col-sm-offset-2">         
+          <div class="panel panel-default" id="assumption-6">
+            <div class="panel-heading" data-toggle="collapse" data-target="#panel-education-expenses">
+              <h4 class="panel-title">
+                <span>
+                  6. Education Cost<span id="education-total" class="pull-right">R...</span>
+                </span>
+              </h4>
+            </div>
+            <div id="panel-education-expenses" class="panel-collapse collapse in">
+              <div class="panel-body">
+  
+                              <div class="row">
+  
+                                  <div class="col-sm-9">
+  
+                                          <div class="form-group">
+                              <label for="education-cost" class="lead question">What much do you estimate your domestic worker spends on <strong>sending kids to school</strong>?</label>
+                              <p>Estimate the cost per school aged child: </p>
+                              <input
+                                  id="education-cost"
+                                  class="slider"
+                                  enabled="false"
+                                  type="text"
+                                  name="education-cost"
+                                  data-slider-min="0"
+                                  data-slider-max="10000"
+                                  data-slider-step="100"
+                                  value="2400"
+                                  data-slider-value="2400"
+                                  data-slider-formater="KSH"/><br>
+                              </div>
+                              <div class="form-group">
+                              <label for="education-cost" class="lead question">How many school-aged children are there in the household?</label>
+                              
+                              <input
+                                  id="education-kids"
+                                  class="slider"
+                                  enabled="false"
+                                  type="text"
+                                  name="education-kids"
+                                  data-slider-min="0"
+                                  data-slider-max="7"
+                                  data-slider-step="1"
+                                  value="1"
+                                  data-slider-value="1"
+                                  data-slider-formater="children"/><br>
+                            </div>  
+  
+                                    </div>
+                                    <div class="col-sm-3 text-center panel-image">
+  
+                                        <i class="fa fa-graduation-cap fa-2x"></i>
+                                      <i class="fa fa-child fa-3x"></i> 
+  
+                                    </div>
+  
+                              </div>
+  
+                              <p class="note">
+                                  Expenses include stationery, uniform, textbooks, and even transportation costs.
+                              </p>
+  
+                              <p class="note">
+                                  We assume three individuals in the household are in school.
+                              </p>
+  
+                <p class="note">
+                  <strong>Median expenditure on education is between kSH1000 and KSH5000 per month per kid.</strong> There isn't a clear determination of costs per month for a family sending kids to school. It's likely on transportation, stationery, etc - but there are some definite costs.
+                </p>
+                <p class="note">
+                  We limit the slider to KSH10000 because households are unlikely to be willing to pay more than that for kids. Public schools with fees and private schools can cost at KSH1000 and be upwards of KSH5000/month.
+                </p>
+                <p class="sources">
+                  <strong>Source:</strong> <a href="https://openafrica.net/dataset/cpi_kenya_2018">CPI January 2019, KNBS</a>
+                  </ul>
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+          <!-- Education Panel end -->
+  
+          <!-- Communication Panel -->
+      <div class="row">
+        <div class="col-sm-8 col-sm-offset-2">         
+          <div class="panel panel-default" id="assumption-7">
+            <div class="panel-heading" data-toggle="collapse" data-target="#panel-communication-expenses">
+              <h4 class="panel-title">
+                <span>
+                  7. Communications Cost<span id="communication-total" class="pull-right">KSH...</span>
+                </span>
+              </h4>
+            </div>
+            <div id="panel-communication-expenses" class="panel-collapse collapse in">
+              <div class="panel-body">
+  
+                              <div class="row">
+  
+                                  <div class="col-sm-9">
+  
+                                          <div class="form-group">
+                              <label for="communication-cost" class="lead question">What do you estimate each member of your domestic worker's household spends on <strong>communication</strong>?</label><br>
+                              <p>Estimate the monthly cost per person in the household:</p>
+                              <input
+                                  id="communication-cost"
+                                  class="slider"
+                                  enabled="false"
+                                  type="text"
+                                  name="communication-cost"
+                                  data-slider-min="0"
+                                  data-slider-max="2000"
+                                  data-slider-step="50"
+                                  value="450"
+                                  data-slider-value="450"
+                                  data-slider-formater="KSH"/>
+                            </div>
+  
+                                    </div>
+                                    <div class="col-sm-3 text-center panel-image">
+  
+                                    <i class="fa fa-mobile fa-3x"></i>
+  
+                                    </div>
+  
+                              </div>
+  
+                  <p class="note">
+                    Communications are necessary for staying in touch with families, friends, accessing news, and for emergencies. 
+                  </p>
+                
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+          <!-- Communication Panel end -->
+  
+          <!-- Recreation Panel -->
+      <div class="row">
+        <div class="col-sm-8 col-sm-offset-2">     
+          <div class="panel panel-default" id="assumption-8">
+            <div class="panel-heading" data-toggle="collapse" data-target="#panel-recreation-expenses">
+              <h4 class="panel-title">
+                <span>
+                  8. Recreation Cost<span id="recreation-total" class="pull-right">R...</span>
+                </span>
+              </h4>
+            </div>
+            <div id="panel-recreation-expenses" class="panel-collapse collapse in">
+              <div class="panel-body">
+  
+                              <div class="row">
+  
+                                  <div class="col-sm-9">
+  
+                            <div class="form-group">
+                              <label for="recreation-cost" class="lead question">How much do you estimate each household members spends on <strong>entertainment & recreation</strong>?</label><br>
+                              <p>Estimate a monthly recreation cost per person in the household:</p>
+                              <input
+                                  id="recreation-cost"
+                                  class="slider"
+                                  enabled="false"
+                                  type="text"
+                                  name="recreation-cost"
+                                  data-slider-min="0"
+                                  data-slider-max="2500"
+                                  data-slider-step="50"
+                                  value="500"
+                                  data-slider-value="500"
+                                  data-slider-formater="KSH"/>
+                            </div>
+  
+                                    </div>
+                                    <div class="col-sm-3 text-center panel-image">
+  
+                                        <i class="fa fa-futbol-o fa-2x"></i> <i class="fa fa-music fa-2x"></i> <i class="fa fa-gamepad fa-2x"></i>
+  
+                                    </div>
+  
+                              </div>
+  
+                              <p class="note">
+                  It is always good to take time out from work and managing a household. Everyone needs a break!
+                </p>
+  
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+          <!-- Recreation Panel end -->
+  
+          <!-- Other Panel -->
+      <div class="row">
+        <div class="col-sm-8 col-sm-offset-2">     
+          <div class="panel panel-default" id="assumption-9">
+            <div class="panel-heading" data-toggle="collapse" data-target="#panel-other-expenses">
+              <h4 class="panel-title">
+                <span>
+                  9. Other Costs<span id="other-total" class="pull-right">R...</span>
+                </span>
+              </h4>
+            </div>
+            <div id="panel-other-expenses" class="panel-collapse collapse in">
+              <div class="panel-body">
+  
+                              <div class="row">
+  
+                                  <div class="col-sm-9">
+  
+                            <div class="form-group">
+                              <label for="other-cost" class="lead question">How much would you estimate are <strong>other miscellaneous costs</strong> incurred by your domestic worker's household?</label><br>
+                              <input
+                                  id="other-cost"
+                                  class="slider"
+                                  enabled="false"
+                                  type="text"
+                                  name="other-cost"
+                                  data-slider-min="0"
+                                  data-slider-max="2000"
+                                  data-slider-step="50"
+                                  value="350"
+                                  data-slider-value="350"
+                                  data-slider-formater="KSH"/>
+                            </div>
+  
+                                    </div>
+                                    <div class="col-sm-3 text-center panel-image">
+  
+                                            <i class="fa fa-question fa-3x"></i> 
+  
+                                    </div>
+  
+                              </div>
+  
+                <p class="note">
+                    These include clothing, household items, personal care, and emergency expenses. Estimate other costs incurred per person in the household.
+                </p>
+                <p class="note">
+                  This should include for emergencies and procurement of durable goods, transportation of goods (gas cylinders, groceries, etc), implicit and explicit costs of running a household.
+                </p>
+  
+            </div>
+          </div>
+        </div>
+      </div>
+          <!-- Other Panel end -->
+  
+        </div>
+  
+          <div class="row text-center scroll-top-message">
+  
+                  <div class="col-sm-8 col-sm-offset-2">
+  
+                      <p>Using your input, we've calculated the minimum amount you should pay your domestic worker.</p>
+                      <p><a href="#results" onclick="javascript: pymChild.scrollParentToChildEl('row_scroll');"><button class="btn btn-primary btn-sm"><i class="fa fa-arrow-circle-up fa-lg"></i>Click here to see the results</button></a></p>
+  
+                  </div>
+  
+  
+              </div>
+  </div>

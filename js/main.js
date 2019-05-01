@@ -167,6 +167,9 @@ function update_display(class_name) {
                 })
         }
     }
+    setTimeout(function() {
+        pymChild.sendHeight();
+    }, transition_time)
 }
 
 function validate_input(household_size, pay_rate, pay_amount) {
