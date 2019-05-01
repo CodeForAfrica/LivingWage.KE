@@ -28,11 +28,17 @@ h1, h2, h3, h4, h5, h6 {
 
 #footer {
   width: 100%;
-  padding-top: 20px;
-  padding-bottom: 10px;
+  padding-top: 40px;
+  padding-bottom: 30px;
   margin-top: 20px;
   background-color: #f8f8f8;
   border-top: solid #e7e7e7 1px;
+}
+
+#footer img {
+  max-width: 100%;
+  max-height: 55px;
+  margin: 15px 10px;
 }
 
 #output-percentage {
