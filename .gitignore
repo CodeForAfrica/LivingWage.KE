@@ -40,3 +40,4 @@ nosetests.xml
 env/
 
 _site
+*.DS_Store
